@@ -8,13 +8,13 @@ import time
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
-from . import sources, filters, db
+from . import sources, filters, db, onchain
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "shortlist"
 MAX_DEEP_CHECKS = 80      # tokens that get info+security calls per run (rate limits)
 MAX_OUTCOME_CHECKS = 40
-SCAN_BUDGET_S = 18 * 60    # stop scanning networks after 18 min so deep checks + commit always happen
+SCAN_BUDGET_S = 13 * 60    # stop scanning networks after 18 min so deep checks + commit always happen
 
 
 def main():
@@ -23,8 +23,41 @@ def main():
     con = db.connect()
     stats = {"pools": 0, "new": 0, "market_pass": 0, "shortlisted": 0}
 
-    # 1) collect new pools, keep unseen tokens that pass market rules
     candidates = []
+
+    def consider(p):
+        if not p["token"] or not p["pool"]:
+            return
+        key = f'{p["network"]}:{p["token"]}'
+        if db.seen(con, key) or any(c["token"] == p["token"] for c in candidates):
+            return
+        stats["new"] += 1
+        ok, _ = filters.market_pass(p)
+        if ok:
+            candidates.append(p)
+            con.execute("DELETE FROM young WHERE key=?", (key,))
+        elif p["created_at"] and p["created_at"] >= (now_dt - timedelta(hours=48)).strftime("%Y-%m-%dT%H:%M:%SZ"):
+            db.add_young(con, now, p)   # too early to judge: re-check next runs for up to 48h
+
+    # 0) re-check young pools (< 48h) that failed earlier: 30 pools per call
+    cutoff48 = (now_dt - timedelta(hours=48)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    con.execute("DELETE FROM young WHERE created_at < ?", (cutoff48,))
+    by_net = {}
+    for net, pool in con.execute("SELECT network, pool FROM young"):
+        by_net.setdefault(net, []).append(pool)
+    rechecked, calls = 0, 0
+    for net, pools in by_net.items():
+        for i in range(0, len(pools), 30):
+            if calls >= 90:
+                break
+            calls += 1
+            for p in sources.pools_multi(net, pools[i:i + 30]):
+                rechecked += 1
+                consider(p)
+    stats["young_rechecked"] = rechecked
+    stats["young_promoted"] = len(candidates)
+
+    # 1) collect new + trending pools
     networks = sources.all_networks()
     stats["networks"] = len(networks)
     big = {"solana", "eth", "bsc", "base", "arbitrum"}   # busy chains get 2 pages, always first
@@ -38,17 +71,12 @@ def main():
         if time.time() - t0 > SCAN_BUDGET_S:
             break
         scanned += 1
-        for p in sources.new_pools(net, pages=2 if net in big else 1):
+        pools = sources.new_pools(net, pages=2 if net in big else 1)
+        if net in big:
+            pools += sources.trending_pools(net)
+        for p in pools:
             stats["pools"] += 1
-            if not p["token"]:
-                continue
-            key = f'{net}:{p["token"]}'
-            if db.seen(con, key) or any(c["token"] == p["token"] for c in candidates):
-                continue
-            stats["new"] += 1
-            ok, _ = filters.market_pass(p)   # rejects aren't stored: a young pool may qualify next run
-            if ok:
-                candidates.append(p)
+            consider(p)
     stats["networks_scanned"] = scanned
     stats["market_pass"] = len(candidates)
     candidates.sort(key=lambda c: c["liquidity_usd"] or 0, reverse=True)
@@ -72,7 +100,16 @@ def main():
     stats["shortlisted"] = len(shortlist)
     shortlist.sort(key=lambda s: s["score"], reverse=True)
 
-    # 3) new real protocols (DefiLlama)
+    # 3a) on-chain protocol discovery: new contracts pulling big stablecoin inflows
+    baseline = con.execute("SELECT COUNT(*) FROM sinks").fetchone()[0] == 0
+    raw_sinks, coverage = onchain.money_sinks()
+    sinks = [s for s in raw_sinks if db.save_sink(con, now, s, baseline)]
+    stats["sinks_checked"] = len(raw_sinks)
+    stats["new_sinks"] = len(sinks)
+    stats["onchain_hours"] = coverage
+    stats["sinks_baseline_run"] = baseline
+
+    # 3b) DefiLlama kept as a secondary, delayed source
     protocols = [pr for pr in sources.new_llama_protocols() if db.save_protocol(con, now, pr)]
 
     # 4) outcome tracking for past shortlisted tokens (feeds the learning base)
@@ -98,7 +135,7 @@ def main():
     con.commit()
     con.close()
 
-    report = {"generated_at": now, "stats": stats, "tokens": shortlist, "new_protocols": protocols}
+    report = {"generated_at": now, "stats": stats, "tokens": shortlist, "new_sinks": sinks, "new_protocols": protocols}
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "latest.json").write_text(json.dumps(report, indent=1, ensure_ascii=False))
     (OUT / f'{now_dt.strftime("%Y-%m-%d_%H")}.json').write_text(json.dumps(report, ensure_ascii=False))

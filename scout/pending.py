@@ -56,7 +56,11 @@ def pending():
         d["key"] = key
         d["description"] = (d.get("description") or "")[:400]
         prots.append(d)
-    print(json.dumps({"tokens": toks, "protocols": prots}, ensure_ascii=False))
+    sinks = [{"key": k, "chain": c, "address": a, "inflow_usd_window": v, "first_seen": f}
+             for k, c, a, v, f in con.execute(
+                 "SELECT key, chain, address, inflow_usd, first_seen FROM sinks WHERE stage='new' ORDER BY inflow_usd DESC")
+             if k not in done]
+    print(json.dumps({"tokens": toks, "onchain_new_contracts": sinks, "protocols": prots}, ensure_ascii=False))
 
 
 if __name__ == "__main__":

@@ -58,33 +58,47 @@ def all_networks(max_pages=10):
     return nets or ["solana", "eth", "bsc", "base", "arbitrum"]
 
 
+def _pool(p, network):
+    a = p.get("attributes", {})
+    rel = p.get("relationships", {})
+    base_id = (rel.get("base_token", {}).get("data") or {}).get("id", "")
+    tx = (a.get("transactions") or {}).get("h24") or {}
+    return {
+        "network": network,
+        "pool": a.get("address"),
+        "name": a.get("name"),
+        "token": base_id.split("_", 1)[1] if "_" in base_id else base_id,
+        "dex": (rel.get("dex", {}).get("data") or {}).get("id"),
+        "created_at": a.get("pool_created_at"),
+        "liquidity_usd": _f(a.get("reserve_in_usd")),
+        "fdv_usd": _f(a.get("fdv_usd")),
+        "mcap_usd": _f(a.get("market_cap_usd")),
+        "vol_24h": _f((a.get("volume_usd") or {}).get("h24")),
+        "buys_24h": tx.get("buys") or 0,
+        "sells_24h": tx.get("sells") or 0,
+        "buyers_24h": tx.get("buyers") or 0,
+        "price_chg_24h": _f((a.get("price_change_percentage") or {}).get("h24")),
+    }
+
+
 def new_pools(network, pages=1):
-    """Newest pools on a network, flattened."""
+    """Newest pools on a network (on-chain indexed, minutes of latency)."""
     out = []
     for page in range(1, pages + 1):
         js = _gt(f"/networks/{network}/new_pools", {"page": page})
-        for p in (js or {}).get("data", []):
-            a = p.get("attributes", {})
-            rel = p.get("relationships", {})
-            base_id = (rel.get("base_token", {}).get("data") or {}).get("id", "")
-            tx = (a.get("transactions") or {}).get("h24") or {}
-            out.append({
-                "network": network,
-                "pool": a.get("address"),
-                "name": a.get("name"),
-                "token": base_id.split("_", 1)[1] if "_" in base_id else base_id,
-                "dex": (rel.get("dex", {}).get("data") or {}).get("id"),
-                "created_at": a.get("pool_created_at"),
-                "liquidity_usd": _f(a.get("reserve_in_usd")),
-                "fdv_usd": _f(a.get("fdv_usd")),
-                "mcap_usd": _f(a.get("market_cap_usd")),
-                "vol_24h": _f((a.get("volume_usd") or {}).get("h24")),
-                "buys_24h": tx.get("buys") or 0,
-                "sells_24h": tx.get("sells") or 0,
-                "buyers_24h": tx.get("buyers") or 0,
-                "price_chg_24h": _f((a.get("price_change_percentage") or {}).get("h24")),
-            })
+        out += [_pool(p, network) for p in (js or {}).get("data", [])]
     return out
+
+
+def trending_pools(network, duration="6h"):
+    js = _gt(f"/networks/{network}/trending_pools", {"duration": duration})
+    return [_pool(p, network) for p in (js or {}).get("data", [])]
+
+
+def pools_multi(network, addrs):
+    """Re-check up to 30 pools in one call (young pools that failed the market filter earlier)."""
+    js = _gt(f"/networks/{network}/pools/multi/{','.join(addrs[:30])}")
+    return [_pool(p, network) for p in (js or {}).get("data", [])]
 
 
 def pool_now(network, pool):

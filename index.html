@@ -72,8 +72,16 @@
     </table></div>
   </section>
 
+  <section class="card wide">
+    <h2>💰 Contracts جداد كيجلبو الفلوس (on-chain، USDC/USDT)</h2>
+    <div class="scroll"><table>
+      <thead><tr><th>Chain</th><th>Contract</th><th>دخل ف 4 ساعات</th><th>Agent 2</th></tr></thead>
+      <tbody id="sinks"></tbody>
+    </table></div>
+  </section>
+
   <section class="card">
-    <h2>🏗️ بروتوكولات جداد (DefiLlama)</h2>
+    <h2>🏗️ بروتوكولات جداد (DefiLlama — متعطل)</h2>
     <div class="scroll"><table>
       <thead><tr><th>Protocol</th><th>Category</th><th>Chains</th><th>TVL</th><th>Agent 2</th></tr></thead>
       <tbody id="prot"></tbody>
@@ -144,7 +152,8 @@ async function load(){
   const last = vals[vals.length-1];
   TOKENS = (latest?.tokens) || [];
   const pend = TOKENS.filter(t => !DONE[`${t.market.network}:${t.market.token}`]).length
-    + (latest?.new_protocols||[]).filter(p => !DONE[`protocol:${p.id}`]).length;
+    + (latest?.new_protocols||[]).filter(p => !DONE[`protocol:${p.id}`]).length
+    + (latest?.new_sinks||[]).filter(s => !DONE[`sink:${s.chain}:${s.address}`]).length;
   const today = vals.filter(v => v.slice(0,10) === new Date().toISOString().slice(0,10)).length;
   document.getElementById("a2status").innerHTML = `${last ? `<span class="pill ok">آخر تحليل قبل ${ago(last)}</span>` : `<span class="pill">مازال ما حلل والو</span>`}<br>الـ run الجاي: ${inMin(nextAt(53))}`;
   document.getElementById("a2kpis").innerHTML = kpi(fmt(vals.length),"مشاريع تحللو (total)") + kpi(fmt(today),"تحللو اليوم") + kpi(fmt(pend),"كيتسناو (آخر scan)");
@@ -156,6 +165,13 @@ async function load(){
     <td>${esc((p.chains||[]).slice(0,3).join(", "))}</td><td class="num">$${fmt(p.tvl)}</td>
     <td>${DONE["protocol:"+p.id] ? `<span class="pill ok">تحلل</span>` : `<span class="pill warn">كيتسنى</span>`}</td></tr>`).join("")
     || `<tr><td colspan="5" class="mut">والو ف آخر scan.</td></tr>`;
+
+  const EXP = {eth:"etherscan.io", base:"basescan.org", arbitrum:"arbiscan.io", bsc:"bscscan.com"};
+  document.getElementById("sinks").innerHTML = (latest?.new_sinks||[]).map(s => `<tr><td>${esc(s.chain)}</td>
+    <td><a href="https://${EXP[s.chain]||"etherscan.io"}/address/${esc(s.address)}" target="_blank" rel="noopener" style="direction:ltr">${esc(s.address.slice(0,10))}…</a></td>
+    <td class="num">$${fmt(s.inflow_usd)}</td>
+    <td>${DONE[`sink:${s.chain}:${s.address}`] ? `<span class="pill ok">تحلل</span>` : `<span class="pill warn">كيتسنى</span>`}</td></tr>`).join("")
+    || `<tr><td colspan="4" class="mut">${latest?.stats?.sinks_baseline_run ? "أول run: كيسجل الـ contracts المعروفين (baseline)، الجداد كيبانو من الـ run الجاي." : "والو جديد ف آخر scan."}</td></tr>`;
 
   document.getElementById("runs").innerHTML = (runs||[]).slice().reverse().slice(0,60).map(r => `<tr>
     <td class="mut">${esc(r.at.slice(5,16).replace("T"," "))}</td><td class="num">${r.networks_scanned ?? r.networks}</td><td class="num">${fmt(r.pools)}</td>

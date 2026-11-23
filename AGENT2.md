@@ -13,6 +13,7 @@
 4. **DEEP items only:** website + docs, X account age/activity, team, contract (verified source, owner powers, upgradeability — Etherscan tools for EVM), tokenomics/unlocks, liquidity lock, audits, TVL. Then the profit angle:
    - early entry (spot), points/airdrop farming, LP/staking yield, arbitrage, or *none*;
    - entry condition, invalidation, main risk, size suggestion as % of a risk budget.
+   - **`onchain_new_contracts`** (contracts that just started receiving ≥ $250k stablecoins, found on-chain before any listing): identify each with Etherscan tools (`get_contract_source`, `get_contract_creation`, recent `get_token_transfers`): what protocol is it (vault, bridge, perp, lending, CEX deposit contract, MEV/arb bot?), deployer history, age, is it verified, does it have a token or points program. Bots, bridges' internal contracts and CEX contracts → SKIP. A genuinely new protocol pulling money early is the highest-value signal of this system.
 5. Write `claude/scanner/reports/YYYY-MM-DD_HH.md` in the Project: table of all items (key, verdict, 1-line reason) + DEEP sections.
 6. Mark everything processed: `python -m scout.pending --mark KEY ...`, commit `data/analyzed.json`, push.
 7. **Learning:** for tokens analyzed ≥1 day ago that have new snapshots in `data/scout.sqlite` (`snapshots` table), compare verdict vs outcome (rugged? liquidity gone? up/down?). Add short, evidence-backed lessons to the knowledge base (pattern → outcome, with counts). Update existing lessons rather than duplicating.

@@ -18,6 +18,12 @@ CREATE TABLE IF NOT EXISTS snapshots (   -- outcome tracking: 1d / 7d / 30d
   key TEXT, ts TEXT, liquidity_usd REAL, fdv_usd REAL, vol_24h REAL, price_chg_24h REAL,
   PRIMARY KEY (key, ts)
 );
+CREATE TABLE IF NOT EXISTS young (       -- pools that failed the market filter while < 48h old: re-checked each run
+  key TEXT PRIMARY KEY, network TEXT, pool TEXT, created_at TEXT, first_seen TEXT
+);
+CREATE TABLE IF NOT EXISTS sinks (       -- contracts receiving big stablecoin inflows (on-chain protocol discovery)
+  key TEXT PRIMARY KEY, chain TEXT, address TEXT, first_seen TEXT, stage TEXT, inflow_usd REAL, last_inflow_usd REAL
+);
 CREATE TABLE IF NOT EXISTS protocols (
   id TEXT PRIMARY KEY, name TEXT, first_seen TEXT, category TEXT, chains TEXT,
   tvl REAL, url TEXT, twitter TEXT, audits TEXT, data TEXT
@@ -58,3 +64,20 @@ def save_protocol(con, now, pr):
                 (pr["id"], pr["name"], now, pr["category"], json.dumps(pr["chains"]), pr["tvl"],
                  pr["url"], pr["twitter"], json.dumps(pr.get("audit_links")), json.dumps(pr)))
     return True
+
+
+def add_young(con, now, p):
+    con.execute("INSERT OR IGNORE INTO young VALUES (?,?,?,?,?)",
+                (f'{p["network"]}:{p["token"]}', p["network"], p["pool"], p["created_at"], now))
+
+
+def save_sink(con, now, s, baseline):
+    """Returns True only for a sink never seen before (and not during the baseline run)."""
+    key = f'sink:{s["chain"]}:{s["address"]}'
+    row = con.execute("SELECT 1 FROM sinks WHERE key=?", (key,)).fetchone()
+    if row:
+        con.execute("UPDATE sinks SET last_inflow_usd=? WHERE key=?", (s["inflow_usd"], key))
+        return False
+    con.execute("INSERT INTO sinks VALUES (?,?,?,?,?,?,?)",
+                (key, s["chain"], s["address"], now, "baseline" if baseline else "new", s["inflow_usd"], s["inflow_usd"]))
+    return not baseline
