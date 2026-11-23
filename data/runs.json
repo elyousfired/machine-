@@ -9,5 +9,27 @@
 "networks_scanned": 82,
 "outcome_snapshots": 0,
 "protocols": 12
+},
+{
+"at": "2026-11-23T18:33:30Z",
+"pools": 388,
+"new": 376,
+"market_pass": 55,
+"shortlisted": 28,
+"young_rechecked": 0,
+"young_promoted": 0,
+"networks": 222,
+"networks_scanned": 81,
+"sinks_checked": 266,
+"new_sinks": 0,
+"onchain_hours": {
+"eth": 4.0,
+"base": 4.0,
+"arbitrum": 0.01,
+"bsc": 2.77
+},
+"sinks_baseline_run": true,
+"outcome_snapshots": 0,
+"protocols": 0
 }
 ]
