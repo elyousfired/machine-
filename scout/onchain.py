@@ -9,7 +9,7 @@ import requests
 
 TRANSFER = "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
 MIN_INFLOW_USD = 250_000
-PER_CHAIN_BUDGET_S = 100
+PER_CHAIN_BUDGET_S = 60
 
 CHAINS = {
     "eth": {"rpc": ["https://ethereum-rpc.publicnode.com", "https://eth.llamarpc.com"],

@@ -14,7 +14,7 @@ import requests
 CFG = Path(__file__).resolve().parent.parent / "data" / "testnets.json"
 SAMPLE_BLOCKS = 160
 MIN_USERS = 25            # unique senders inside the sample
-PER_NET_BUDGET_S = 35
+PER_NET_BUDGET_S = 20
 
 DEFAULT = {
     "sepolia": {"rpc": ["https://ethereum-sepolia-rpc.publicnode.com"], "explorer": "https://sepolia.etherscan.io", "chainid": 11155111},

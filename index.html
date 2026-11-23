@@ -81,6 +81,14 @@
   </section>
 
   <section class="card wide">
+    <h2>🪙 Contracts كيديرو mint لبزاف ديال الـ wallets (مقري من البلوكات)</h2>
+    <div class="scroll"><table>
+      <thead><tr><th>Chain</th><th>Contract</th><th>نوع</th><th>Name</th><th>Wallets</th><th>Mints</th><th>Proxy</th><th>Agent 2</th></tr></thead>
+      <tbody id="mints"></tbody>
+    </table></div>
+  </section>
+
+  <section class="card wide">
     <h2>🧪 مشاريع ف Testnet (بزاف ديال الـ users جداد)</h2>
     <div class="scroll"><table>
       <thead><tr><th>Testnet</th><th>Contract</th><th>Users (sample)</th><th>Txs (sample)</th><th>Agent 2</th></tr></thead>
@@ -162,7 +170,8 @@ async function load(){
   const pend = TOKENS.filter(t => !DONE[`${t.market.network}:${t.market.token}`]).length
     + (latest?.new_protocols||[]).filter(p => !DONE[`protocol:${p.id}`]).length
     + (latest?.new_sinks||[]).filter(s => !DONE[`sink:${s.chain}:${s.address}`]).length
-    + (latest?.new_testnet||[]).filter(c => !DONE[`testnet:${c.testnet}:${c.address}`]).length;
+    + (latest?.new_testnet||[]).filter(c => !DONE[`testnet:${c.testnet}:${c.address}`]).length
+    + (latest?.new_mints||[]).filter(c => !DONE[`mint:${c.chain}:${c.address}`]).length;
   const today = vals.filter(v => v.slice(0,10) === new Date().toISOString().slice(0,10)).length;
   document.getElementById("a2status").innerHTML = `${last ? `<span class="pill ok">آخر تحليل قبل ${ago(last)}</span>` : `<span class="pill">مازال ما حلل والو</span>`}<br>الـ run الجاي: ${inMin(nextAt(53))}`;
   document.getElementById("a2kpis").innerHTML = kpi(fmt(vals.length),"مشاريع تحللو (total)") + kpi(fmt(today),"تحللو اليوم") + kpi(fmt(pend),"كيتسناو (آخر scan)");
@@ -181,6 +190,13 @@ async function load(){
     <td class="num">$${fmt(s.inflow_usd)}</td>
     <td>${DONE[`sink:${s.chain}:${s.address}`] ? `<span class="pill ok">تحلل</span>` : `<span class="pill warn">كيتسنى</span>`}</td></tr>`).join("")
     || `<tr><td colspan="4" class="mut">${latest?.stats?.sinks_baseline_run ? "أول run: كيسجل الـ contracts المعروفين (baseline)، الجداد كيبانو من الـ run الجاي." : "والو جديد ف آخر scan."}</td></tr>`;
+
+  document.getElementById("mints").innerHTML = (latest?.new_mints||[]).map(c => `<tr><td>${esc(c.chain)}</td>
+    <td style="direction:ltr">${EXP[c.chain] ? `<a href="https://${EXP[c.chain]}/address/${esc(c.address)}" target="_blank" rel="noopener">${esc(c.address.slice(0,10))}…</a>` : esc(c.address.slice(0,10))+"…"}</td>
+    <td><span class="pill">${esc(c.kind||"?")}</span></td><td>${esc((c.name||"")+(c.symbol?" ("+c.symbol+")":""))}</td>
+    <td class="num">${c.recipients}</td><td class="num">${c.mints}</td><td>${c.proxy_impl?"✓":"–"}</td>
+    <td>${DONE[`mint:${c.chain}:${c.address}`] ? `<span class="pill ok">تحلل</span>` : `<span class="pill warn">كيتسنى</span>`}</td></tr>`).join("")
+    || `<tr><td colspan="8" class="mut">والو جديد ف آخر scan (أول scan ديال كل chain كيكون baseline).</td></tr>`;
 
   document.getElementById("testnet").innerHTML = (latest?.new_testnet||[]).map(c => `<tr><td>${esc(c.testnet)}</td>
     <td><a href="${esc(c.explorer)}" target="_blank" rel="noopener" style="direction:ltr">${esc(c.address.slice(0,10))}…</a></td>

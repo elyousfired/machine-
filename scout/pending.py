@@ -62,7 +62,10 @@ def pending():
              if k not in done]
     tn = [dict(json.loads(dat), key=k) for k, dat in con.execute(
               "SELECT key, data FROM testnet WHERE stage='new' ORDER BY users DESC") if k not in done]
-    print(json.dumps({"tokens": toks, "onchain_new_contracts": sinks, "testnet_projects": tn, "protocols": prots},
+    mn = [dict(json.loads(dat), key=k) for k, dat in con.execute(
+              "SELECT key, data FROM mints WHERE stage='new' ORDER BY recipients DESC") if k not in done]
+    print(json.dumps({"tokens": toks, "mass_mint_contracts": mn, "onchain_new_contracts": sinks,
+                      "testnet_projects": tn, "protocols": prots},
                      ensure_ascii=False))
 
 

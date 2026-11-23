@@ -8,13 +8,13 @@ import time
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
-from . import sources, filters, db, onchain, testnet
+from . import sources, filters, db, onchain, testnet, mints
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "shortlist"
 MAX_DEEP_CHECKS = 80      # tokens that get info+security calls per run (rate limits)
 MAX_OUTCOME_CHECKS = 40
-SCAN_BUDGET_S = 9 * 60    # stop scanning networks after 9 min so deep checks + commit always happen
+SCAN_BUDGET_S = 8 * 60    # stop scanning networks after 8 min so deep checks + commit always happen
 
 
 def main():
@@ -123,7 +123,29 @@ def main():
     stats["testnet_new"] = len(tn_new)
     stats["testnets"] = tn_status
 
-    # 3c) DefiLlama kept as a secondary, delayed source
+    # 3c) mints read from blocks: contracts minting to many wallets, then read + classify the contract
+    raw_m, m_cov, m_rpcs = mints.mass_mints()
+    stages = [(c, db.mint_status(con, now, c)) for c in raw_m]
+    new_mints = []
+    for c, st in stages:
+        if st == "baseline" and mints.younger_than_7d(m_rpcs[c["chain"]], c):
+            st = "new"     # deployed this week: report it even during the chain's baseline run
+            c["age"] = "<7d"
+        if st == "baseline":
+            db.save_mint(con, now, c, "baseline")
+        elif st == "new":
+            mints.enrich(c, m_rpcs[c["chain"]])
+            if c.get("kind") == "dex_lp":
+                db.save_mint(con, now, c, "skip_lp")
+                continue
+            db.save_mint(con, now, c, "new")
+            new_mints.append(c)
+    stats["mints_hot"] = len(raw_m)
+    stats["mints_new"] = len(new_mints)
+    stats["mints_chains_ok"] = sum(1 for v in m_cov.values() if v)
+    stats["mints_chains"] = len(m_cov)
+
+    # 3d) DefiLlama kept as a secondary, delayed source
     protocols = [pr for pr in sources.new_llama_protocols() if db.save_protocol(con, now, pr)]
 
     # 4) outcome tracking for past shortlisted tokens (feeds the learning base)
@@ -149,7 +171,7 @@ def main():
     con.commit()
     con.close()
 
-    report = {"generated_at": now, "stats": stats, "tokens": shortlist, "new_sinks": sinks, "new_testnet": tn_new, "new_protocols": protocols}
+    report = {"generated_at": now, "stats": stats, "tokens": shortlist, "new_sinks": sinks, "new_testnet": tn_new, "new_mints": new_mints, "new_protocols": protocols}
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "latest.json").write_text(json.dumps(report, indent=1, ensure_ascii=False))
     (OUT / f'{now_dt.strftime("%Y-%m-%d_%H")}.json').write_text(json.dumps(report, ensure_ascii=False))

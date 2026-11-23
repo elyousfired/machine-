@@ -27,6 +27,9 @@ CREATE TABLE IF NOT EXISTS sinks (       -- contracts receiving big stablecoin i
 CREATE TABLE IF NOT EXISTS testnet (     -- testnet contracts with many unique users (airdrop farming targets)
   key TEXT PRIMARY KEY, testnet TEXT, address TEXT, first_seen TEXT, stage TEXT, users REAL, last_users REAL, data TEXT
 );
+CREATE TABLE IF NOT EXISTS mints (       -- contracts minting to many wallets (protocol deposits, NFT/badge campaigns)
+  key TEXT PRIMARY KEY, chain TEXT, address TEXT, first_seen TEXT, stage TEXT, recipients REAL, last_recipients REAL, data TEXT
+);
 CREATE TABLE IF NOT EXISTS protocols (
   id TEXT PRIMARY KEY, name TEXT, first_seen TEXT, category TEXT, chains TEXT,
   tvl REAL, url TEXT, twitter TEXT, audits TEXT, data TEXT
@@ -97,3 +100,19 @@ def save_testnet(con, now, c):
                 (key, c["testnet"], c["address"], now, "baseline" if baseline else "new",
                  c["users_sample"], c["users_sample"], json.dumps(c)))
     return not baseline
+
+
+def mint_status(con, now, c):
+    """'new' for a never-seen contract (unless its chain is being baselined), else None. Updates counters."""
+    key = f'mint:{c["chain"]}:{c["address"]}'
+    if con.execute("SELECT 1 FROM mints WHERE key=?", (key,)).fetchone():
+        con.execute("UPDATE mints SET last_recipients=? WHERE key=?", (c["recipients"], key))
+        return None
+    baseline = con.execute("SELECT COUNT(*) FROM mints WHERE chain=?", (c["chain"],)).fetchone()[0] == 0
+    return "baseline" if baseline else "new"
+
+
+def save_mint(con, now, c, stage):
+    con.execute("INSERT OR IGNORE INTO mints VALUES (?,?,?,?,?,?,?,?)",
+                (f'mint:{c["chain"]}:{c["address"]}', c["chain"], c["address"], now, stage,
+                 c["recipients"], c["recipients"], json.dumps(c)))
