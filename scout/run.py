@@ -28,6 +28,9 @@ def main():
     def consider(p):
         if not p["token"] or not p["pool"]:
             return
+        # trending lists include old tokens: only projects whose pool is < 7 days old count as "new"
+        if p["created_at"] and p["created_at"] < (now_dt - timedelta(days=7)).strftime("%Y-%m-%dT%H:%M:%SZ"):
+            return
         key = f'{p["network"]}:{p["token"]}'
         if db.seen(con, key) or any(c["token"] == p["token"] for c in candidates):
             return
