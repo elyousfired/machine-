@@ -77,7 +77,7 @@ def add_young(con, now, p):
                 (f'{p["network"]}:{p["token"]}', p["network"], p["pool"], p["created_at"], now))
 
 
-def save_sink(con, now, s, baseline):
+def save_sink(con, now, s, baseline, old=False):
     """Returns True only for a sink never seen before (and not during the baseline run)."""
     key = f'sink:{s["chain"]}:{s["address"]}'
     row = con.execute("SELECT 1 FROM sinks WHERE key=?", (key,)).fetchone()
@@ -85,8 +85,9 @@ def save_sink(con, now, s, baseline):
         con.execute("UPDATE sinks SET last_inflow_usd=? WHERE key=?", (s["inflow_usd"], key))
         return False
     con.execute("INSERT INTO sinks VALUES (?,?,?,?,?,?,?)",
-                (key, s["chain"], s["address"], now, "baseline" if baseline else "new", s["inflow_usd"], s["inflow_usd"]))
-    return not baseline
+                (key, s["chain"], s["address"], now, "baseline" if baseline else "old" if old else "new",
+                 s["inflow_usd"], s["inflow_usd"]))
+    return not baseline and not old
 
 
 def save_testnet(con, now, c):

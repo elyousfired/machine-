@@ -88,7 +88,8 @@ def scan_chain(chain, hours=4):
                 continue    # EOA (wallet / CEX hot wallet), not a protocol
         except Exception:
             continue
-        out.append({"chain": chain, "address": addr, "inflow_usd": round(usd)})
+        out.append({"chain": chain, "address": addr, "inflow_usd": round(usd),
+                    "block_7d": max(1, latest - int(7 * 86400 / secs_per_block))})
     hours_cov = round((latest - covered_from + 1) * secs_per_block / 3600, 2)
     return out, hours_cov
 

@@ -106,7 +106,13 @@ def main():
     # 3a) on-chain protocol discovery: new contracts pulling big stablecoin inflows
     baseline = con.execute("SELECT COUNT(*) FROM sinks").fetchone()[0] == 0
     raw_sinks, coverage = onchain.money_sinks()
-    sinks = [s for s in raw_sinks if db.save_sink(con, now, s, baseline)]
+    sinks = []
+    for s in raw_sinks:
+        known = con.execute("SELECT 1 FROM sinks WHERE key=?", (f'sink:{s["chain"]}:{s["address"]}',)).fetchone()
+        # an established contract that simply wasn't in the top list before is not "new": require age < 7d
+        old = (not known and not baseline and mints.younger_than_7d(onchain.CHAINS[s["chain"]]["rpc"], s) is False)
+        if db.save_sink(con, now, s, baseline, old):
+            sinks.append(s)
     stats["sinks_checked"] = len(raw_sinks)
     stats["new_sinks"] = len(sinks)
     stats["onchain_hours"] = coverage
