@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chain Scout — Agent 1 & Agent 2</title>
+<style>
+  :root { --bg:#0e1116; --card:#161b22; --line:#262d36; --tx:#e6edf3; --mut:#8b949e; --ok:#3fb950; --warn:#d29922; --bad:#f85149; --acc:#58a6ff; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--tx); font:14px/1.5 system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif; }
+  header { padding:20px 24px; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; }
+  h1 { font-size:20px; margin:0; } h2 { font-size:16px; margin:0 0 12px; }
+  .mut { color:var(--mut); font-size:12px; }
+  main { padding:20px 24px; display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px; }
+  .wide { grid-column:1/-1; }
+  .kpis { display:grid; grid-template-columns:repeat(auto-fit,minmax(110px,1fr)); gap:10px; }
+  .kpi { background:#0b0f14; border:1px solid var(--line); border-radius:8px; padding:10px; }
+  .kpi b { display:block; font-size:20px; font-variant-numeric:tabular-nums; }
+  .kpi span { color:var(--mut); font-size:12px; }
+  .pill { display:inline-block; padding:2px 8px; border-radius:20px; font-size:12px; border:1px solid var(--line); }
+  .ok { color:var(--ok); border-color:var(--ok); } .warn { color:var(--warn); border-color:var(--warn); } .bad { color:var(--bad); border-color:var(--bad); }
+  table { width:100%; border-collapse:collapse; font-size:13px; }
+  th, td { padding:7px 8px; border-bottom:1px solid var(--line); text-align:right; white-space:nowrap; }
+  th { color:var(--mut); font-weight:500; position:sticky; top:0; background:var(--card); }
+  td.num { font-variant-numeric:tabular-nums; direction:ltr; text-align:left; }
+  .scroll { max-height:520px; overflow:auto; }
+  a { color:var(--acc); text-decoration:none; }
+  .tag { font-size:11px; color:var(--warn); margin-left:4px; }
+  .flow { display:flex; align-items:center; gap:10px; flex-wrap:wrap; font-size:13px; }
+  .flow .step { background:#0b0f14; border:1px solid var(--line); border-radius:8px; padding:8px 12px; }
+  input { background:#0b0f14; color:var(--tx); border:1px solid var(--line); border-radius:6px; padding:6px 10px; width:220px; }
+</style>
+</head>
+<body>
+<header>
+  <div><h1>Chain Scout</h1><div class="mut">Agent 1 كيسكاني · Agent 2 كيحلل · كلشي read-only</div></div>
+  <div class="mut" id="updated">كيتحمل…</div>
+</header>
+<main>
+  <section class="card wide">
+    <div class="flow">
+      <div class="step">⛓️ 200+ chain</div>→
+      <div class="step">Agent 1: فلتر السوق</div>→
+      <div class="step">فحص الكونترا + السوشيال</div>→
+      <div class="step">Shortlist</div>→
+      <div class="step">Agent 2: تحليل + تعلم</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>🤖 Agent 1 — السكانر</h2>
+    <div id="a1status" class="mut">…</div>
+    <div class="kpis" id="a1kpis" style="margin-top:12px"></div>
+  </section>
+
+  <section class="card">
+    <h2>🧠 Agent 2 — المحلل</h2>
+    <div id="a2status" class="mut">…</div>
+    <div class="kpis" id="a2kpis" style="margin-top:12px"></div>
+    <p class="mut" style="margin:12px 0 0">التقارير والـ knowledge base خاصين (ف الـ Project ديال Claude)، ماشي هنا.</p>
+  </section>
+
+  <section class="card wide">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:12px">
+      <h2 style="margin:0">📋 Shortlist (كاع المشاريع اللي دازو الفلاتر)</h2>
+      <input id="q" placeholder="قلب: سمية، chain…">
+    </div>
+    <div class="scroll"><table>
+      <thead><tr><th>Score</th><th>Chain</th><th>Token</th><th>Liquidity</th><th>Vol 24h</th><th>Buyers</th><th>24h %</th><th>Links</th><th>تحذيرات</th><th>Agent 2</th><th>تشاف</th></tr></thead>
+      <tbody id="tok"></tbody>
+    </table></div>
+  </section>
+
+  <section class="card">
+    <h2>🏗️ بروتوكولات جداد (DefiLlama)</h2>
+    <div class="scroll"><table>
+      <thead><tr><th>Protocol</th><th>Category</th><th>Chains</th><th>TVL</th><th>Agent 2</th></tr></thead>
+      <tbody id="prot"></tbody>
+    </table></div>
+  </section>
+
+  <section class="card">
+    <h2>🕓 سجل الـ runs ديال Agent 1</h2>
+    <div class="scroll"><table>
+      <thead><tr><th>الوقت</th><th>Chains</th><th>Pools</th><th>جداد</th><th>دازو السوق</th><th>Shortlist</th></tr></thead>
+      <tbody id="runs"></tbody>
+    </table></div>
+  </section>
+</main>
+
+<script>
+const REPO = "elyousfired/machine-";
+const RAW = `https://raw.githubusercontent.com/${REPO}/main/`;
+const fmt = n => n == null ? "–" : n >= 1e6 ? (n/1e6).toFixed(2)+"M" : n >= 1e3 ? (n/1e3).toFixed(1)+"k" : (+n).toFixed(0);
+const ago = iso => { if(!iso) return "–"; const m = Math.round((Date.now()-new Date(iso))/60000);
+  return m < 60 ? `${m} دقيقة` : m < 1440 ? `${Math.round(m/60)} ساعة` : `${Math.round(m/1440)} يوم`; };
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const kpi = (v,l) => `<div class="kpi"><b>${v}</b><span>${l}</span></div>`;
+async function j(url){ try{ const r = await fetch(url+(url.includes("?")?"&":"?")+"t="+Date.now()); return r.ok ? r.json() : null; }catch(e){ return null; } }
+function nextAt(minute){ const d = new Date(); d.setUTCSeconds(0,0);
+  for(let i=0;i<300;i++){ if(d.getUTCHours()%4===0 && d.getUTCMinutes()===minute && d>new Date()) return d; d.setUTCMinutes(d.getUTCMinutes()+1); }
+  return null; }
+const inMin = d => d ? `بعد ${Math.round((d-new Date())/60000)} دقيقة (${d.toISOString().slice(11,16)} UTC)` : "–";
+
+let TOKENS = [], DONE = {};
+function renderTokens(){
+  const q = document.getElementById("q").value.trim().toLowerCase();
+  const rows = TOKENS.filter(t => !q || JSON.stringify([t.market.name,t.market.network,t.info.symbol]).toLowerCase().includes(q));
+  document.getElementById("tok").innerHTML = rows.map(t => {
+    const m = t.market, i = t.info, key = `${m.network}:${m.token}`;
+    const links = [...(i.websites||[]).slice(0,1).map(u=>`<a href="${esc(u)}" target="_blank" rel="noopener">site</a>`),
+      i.twitter ? `<a href="https://x.com/${esc(i.twitter)}" target="_blank" rel="noopener">X</a>` : "",
+      `<a href="https://www.geckoterminal.com/${esc(m.network)}/pools/${esc(m.pool)}" target="_blank" rel="noopener">chart</a>`].filter(Boolean).join(" · ");
+    const sc = t.score >= 70 ? "ok" : t.score >= 55 ? "warn" : "bad";
+    const chg = m.price_chg_24h; const chgC = chg == null ? "" : chg >= 0 ? "color:var(--ok)" : "color:var(--bad)";
+    return `<tr><td><span class="pill ${sc}">${t.score}</span></td><td>${esc(m.network)}</td><td>${esc(m.name)}</td>
+      <td class="num">$${fmt(m.liquidity_usd)}</td><td class="num">$${fmt(m.vol_24h)}</td><td class="num">${fmt(m.buyers_24h)}</td>
+      <td class="num" style="${chgC}">${chg==null?"–":chg.toFixed(0)+"%"}</td><td>${links}</td>
+      <td>${(t.warnings||[]).map(w=>`<span class="tag">${esc(w)}</span>`).join("") || "–"}</td>
+      <td>${DONE[key] ? `<span class="pill ok">تحلل</span>` : `<span class="pill warn">كيتسنى</span>`}</td>
+      <td class="mut">${ago(m.created_at)}</td></tr>`;
+  }).join("") || `<tr><td colspan="11" class="mut">مازال ما كاين والو — كيتسنى أول run ديال Agent 1.</td></tr>`;
+}
+
+async function load(){
+  const [latest, runs, done, gh] = await Promise.all([
+    j(RAW+"data/shortlist/latest.json"), j(RAW+"data/runs.json"), j(RAW+"data/analyzed.json"),
+    j(`https://api.github.com/repos/${REPO}/actions/runs?per_page=1`)]);
+  DONE = done || {};
+
+  // Agent 1
+  const run = gh?.workflow_runs?.[0];
+  const st = !run ? `<span class="pill">ما كاين حتى run</span>`
+    : run.status !== "completed" ? `<span class="pill warn">⏳ خدام دابا</span>`
+    : run.conclusion === "success" ? `<span class="pill ok">✓ سالا مزيان</span>` : `<span class="pill bad">✗ ${esc(run.conclusion)}</span>`;
+  document.getElementById("a1status").innerHTML = `${st} ${run ? `· بدا قبل ${ago(run.run_started_at||run.created_at)} · <a href="${run.html_url}" target="_blank" rel="noopener">logs</a>` : ""}<br>الـ run الجاي: ${inMin(nextAt(17))}`;
+  const s = latest?.stats || {};
+  document.getElementById("a1kpis").innerHTML = kpi(s.networks_scanned ?? s.networks ?? "–","chains تسكانو") + kpi(fmt(s.pools),"pools تشافو")
+    + kpi(fmt(s.new),"جداد") + kpi(fmt(s.market_pass),"دازو السوق") + kpi(fmt(s.shortlisted),"Shortlist") + kpi(fmt(s.outcome_snapshots),"تتبع النتائج");
+
+  // Agent 2
+  const vals = Object.values(DONE).sort();
+  const last = vals[vals.length-1];
+  TOKENS = (latest?.tokens) || [];
+  const pend = TOKENS.filter(t => !DONE[`${t.market.network}:${t.market.token}`]).length
+    + (latest?.new_protocols||[]).filter(p => !DONE[`protocol:${p.id}`]).length;
+  const today = vals.filter(v => v.slice(0,10) === new Date().toISOString().slice(0,10)).length;
+  document.getElementById("a2status").innerHTML = `${last ? `<span class="pill ok">آخر تحليل قبل ${ago(last)}</span>` : `<span class="pill">مازال ما حلل والو</span>`}<br>الـ run الجاي: ${inMin(nextAt(53))}`;
+  document.getElementById("a2kpis").innerHTML = kpi(fmt(vals.length),"مشاريع تحللو (total)") + kpi(fmt(today),"تحللو اليوم") + kpi(fmt(pend),"كيتسناو (آخر scan)");
+
+  renderTokens();
+
+  document.getElementById("prot").innerHTML = (latest?.new_protocols||[]).map(p => `<tr>
+    <td>${p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.name)}</a>` : esc(p.name)}</td><td>${esc(p.category)}</td>
+    <td>${esc((p.chains||[]).slice(0,3).join(", "))}</td><td class="num">$${fmt(p.tvl)}</td>
+    <td>${DONE["protocol:"+p.id] ? `<span class="pill ok">تحلل</span>` : `<span class="pill warn">كيتسنى</span>`}</td></tr>`).join("")
+    || `<tr><td colspan="5" class="mut">والو ف آخر scan.</td></tr>`;
+
+  document.getElementById("runs").innerHTML = (runs||[]).slice().reverse().slice(0,60).map(r => `<tr>
+    <td class="mut">${esc(r.at.slice(5,16).replace("T"," "))}</td><td class="num">${r.networks_scanned ?? r.networks}</td><td class="num">${fmt(r.pools)}</td>
+    <td class="num">${fmt(r.new)}</td><td class="num">${fmt(r.market_pass)}</td><td class="num">${fmt(r.shortlisted)}</td></tr>`).join("")
+    || `<tr><td colspan="6" class="mut">مازال.</td></tr>`;
+
+  document.getElementById("updated").textContent = latest ? `آخر scan: قبل ${ago(latest.generated_at)} · كيتجدد كل دقيقة` : "كيتسنى أول scan";
+}
+document.getElementById("q").addEventListener("input", renderTokens);
+load(); setInterval(load, 60000);
+</script>
+</body>
+</html>

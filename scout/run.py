@@ -4,6 +4,7 @@ Output for Agent 2:  data/shortlist/latest.json  (+ a dated copy)
 """
 import json
 import sys
+import time
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
@@ -13,6 +14,7 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "shortlist"
 MAX_DEEP_CHECKS = 80      # tokens that get info+security calls per run (rate limits)
 MAX_OUTCOME_CHECKS = 40
+SCAN_BUDGET_S = 18 * 60    # stop scanning networks after 18 min so deep checks + commit always happen
 
 
 def main():
@@ -25,8 +27,17 @@ def main():
     candidates = []
     networks = sources.all_networks()
     stats["networks"] = len(networks)
-    big = {"solana", "eth", "bsc", "base", "arbitrum"}   # busy chains get 2 pages
+    big = {"solana", "eth", "bsc", "base", "arbitrum"}   # busy chains get 2 pages, always first
+    import random
+    rest = [n for n in networks if n not in big]
+    random.shuffle(rest)          # if the time budget cuts the loop, other chains get covered next runs
+    networks = [n for n in networks if n in big] + rest
+    t0 = time.time()
+    scanned = 0
     for net in networks:
+        if time.time() - t0 > SCAN_BUDGET_S:
+            break
+        scanned += 1
         for p in sources.new_pools(net, pages=2 if net in big else 1):
             stats["pools"] += 1
             if not p["token"]:
@@ -38,6 +49,7 @@ def main():
             ok, _ = filters.market_pass(p)   # rejects aren't stored: a young pool may qualify next run
             if ok:
                 candidates.append(p)
+    stats["networks_scanned"] = scanned
     stats["market_pass"] = len(candidates)
     candidates.sort(key=lambda c: c["liquidity_usd"] or 0, reverse=True)
 
@@ -90,6 +102,11 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "latest.json").write_text(json.dumps(report, indent=1, ensure_ascii=False))
     (OUT / f'{now_dt.strftime("%Y-%m-%d_%H")}.json').write_text(json.dumps(report, ensure_ascii=False))
+    # run log for the dashboard (last 300 runs)
+    log_path = ROOT / "data" / "runs.json"
+    log = json.loads(log_path.read_text()) if log_path.exists() else []
+    log.append({"at": now, **stats, "protocols": len(protocols)})
+    log_path.write_text(json.dumps(log[-300:], indent=0))
     print(json.dumps(stats))
 
 
