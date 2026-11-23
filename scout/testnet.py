@@ -14,7 +14,7 @@ import requests
 CFG = Path(__file__).resolve().parent.parent / "data" / "testnets.json"
 SAMPLE_BLOCKS = 160
 MIN_USERS = 25            # unique senders inside the sample
-PER_NET_BUDGET_S = 60
+PER_NET_BUDGET_S = 35
 
 DEFAULT = {
     "sepolia": {"rpc": ["https://ethereum-sepolia-rpc.publicnode.com"], "explorer": "https://sepolia.etherscan.io", "chainid": 11155111},
@@ -25,14 +25,124 @@ DEFAULT = {
     "monad-testnet": {"rpc": ["https://testnet-rpc.monad.xyz"], "explorer": "https://testnet.monadexplorer.com", "chainid": 10143},
     "linea-sepolia": {"rpc": ["https://rpc.sepolia.linea.build"], "explorer": "https://sepolia.lineascan.build", "chainid": 59141},
     "scroll-sepolia": {"rpc": ["https://sepolia-rpc.scroll.io"], "explorer": "https://sepolia.scrollscan.com", "chainid": 534351},
+    "eth-hoodi": {"rpc": ["https://ethereum-hoodi-rpc.publicnode.com"], "explorer": "https://hoodi.etherscan.io", "chainid": 560048},
+    "unichain-sepolia": {"rpc": ["https://sepolia.unichain.org"], "explorer": "https://sepolia.uniscan.xyz", "chainid": 1301},
+    "zksync-sepolia": {"rpc": ["https://sepolia.era.zksync.dev"], "explorer": "https://sepolia.explorer.zksync.io", "chainid": 300},
+    "mantle-sepolia": {"rpc": ["https://rpc.sepolia.mantle.xyz"], "explorer": "https://sepolia.mantlescan.xyz", "chainid": 5003},
+    "blast-sepolia": {"rpc": ["https://sepolia.blast.io"], "explorer": "https://sepolia.blastscan.io", "chainid": 168587773},
+    "ink-sepolia": {"rpc": ["https://rpc-gel-sepolia.inkonchain.com"], "explorer": "https://explorer-sepolia.inkonchain.com", "chainid": 763373},
+    "berachain-bepolia": {"rpc": ["https://bepolia.rpc.berachain.com"], "explorer": "https://testnet.berascan.com", "chainid": 80069},
+    "abstract-testnet": {"rpc": ["https://api.testnet.abs.xyz"], "explorer": "https://sepolia.abscan.org", "chainid": 11124},
+    "sonic-testnet": {"rpc": ["https://rpc.blaze.soniclabs.com"], "explorer": "https://testnet.sonicscan.org", "chainid": 57054},
+    "megaeth-testnet": {"rpc": ["https://carrot.megaeth.com/rpc"], "explorer": "https://www.megaexplorer.xyz", "chainid": 6342},
+    "polygon-amoy": {"rpc": ["https://polygon-amoy-bor-rpc.publicnode.com"], "explorer": "https://amoy.polygonscan.com", "chainid": 80002},
+    "avalanche-fuji": {"rpc": ["https://avalanche-fuji-c-chain-rpc.publicnode.com"], "explorer": "https://testnet.snowtrace.io", "chainid": 43113},
+    # non-EVM testnets
+    "sui-testnet": {"type": "sui", "rpc": ["https://fullnode.testnet.sui.io:443"], "explorer": "https://suiscan.xyz/testnet/object"},
+    "aptos-testnet": {"type": "aptos", "rpc": ["https://api.testnet.aptoslabs.com/v1"], "explorer": "https://explorer.aptoslabs.com/account"},
+    "solana-devnet": {"type": "solana", "rpc": ["https://api.devnet.solana.com"], "explorer": "https://explorer.solana.com/address", "suffix": "?cluster=devnet"},
+    "solana-testnet": {"type": "solana", "rpc": ["https://api.testnet.solana.com"], "explorer": "https://explorer.solana.com/address", "suffix": "?cluster=testnet"},
 }
+
+# programs/infra that every tx touches: never a "project"
+SOL_SKIP = {"11111111111111111111111111111111", "ComputeBudget111111111111111111111111111111", "Vote111111111111111111111111111111111111111",
+            "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA", "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb", "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr",
+            "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL", "AddressLookupTab1e1111111111111111111111111", "Memo1UhkJRfHyvLMcVucJwxXeuD728EqVDDwQDxFMNo",
+            "BPFLoaderUpgradeab1e11111111111111111111111", "Config1111111111111111111111111111111111111", "Stake11111111111111111111111111111111111111"}
 
 
 def load_cfg():
+    """data/testnets.json overrides/extends DEFAULT. Set "disabled": true on an entry to skip it."""
+    user = json.loads(CFG.read_text()) if CFG.exists() else {}
+    merged = {**DEFAULT, **user}
     if not CFG.exists():
         CFG.parent.mkdir(parents=True, exist_ok=True)
-        CFG.write_text(json.dumps(DEFAULT, indent=1))
-    return json.loads(CFG.read_text())
+        CFG.write_text(json.dumps({}, indent=1))
+    return {k: v for k, v in merged.items() if not v.get("disabled")}
+
+
+def _rpc1(urls, method, params):
+    js = _post(urls, {"jsonrpc": "2.0", "id": 1, "method": method, "params": params})
+    if "error" in js:
+        raise RuntimeError(str(js["error"])[:200])
+    return js["result"]
+
+
+def _rank(name, cfg, users, txs, t0):
+    hot = sorted(((a, len(s)) for a, s in users.items() if len(s) >= MIN_USERS), key=lambda x: -x[1])[:60]
+    return [{"testnet": name, "address": a, "users_sample": n, "txs_sample": txs[a],
+             "explorer": f'{cfg.get("explorer", "")}/{"address/" if not cfg.get("type") else ""}{a}{cfg.get("suffix", "")}', "chainid": cfg.get("chainid")}
+            for a, n in hot]
+
+
+def scan_sui(name, cfg):
+    """Unique senders per Move package over the latest transactions."""
+    t0, users, txs, cursor = time.time(), {}, {}, None
+    for _ in range(12):
+        if time.time() - t0 > PER_NET_BUDGET_S:
+            break
+        res = _rpc1(cfg["rpc"], "suix_queryTransactionBlocks",
+                    [{"options": {"showInput": True}}, cursor, 50, True])
+        for tx in res.get("data", []):
+            d = ((tx.get("transaction") or {}).get("data") or {})
+            sender = d.get("sender")
+            for cmd in ((d.get("transaction") or {}).get("transactions") or []):
+                mc = cmd.get("MoveCall") if isinstance(cmd, dict) else None
+                if mc and mc.get("package") and not mc["package"].startswith("0x0000000000000000000000000000000000000000000000000000000000000"):
+                    users.setdefault(mc["package"], set()).add(sender)
+                    txs[mc["package"]] = txs.get(mc["package"], 0) + 1
+        cursor = res.get("nextCursor")
+        if not res.get("hasNextPage"):
+            break
+    return _rank(name, cfg, users, txs, t0)
+
+
+def scan_aptos(name, cfg):
+    """Unique senders per module account over the latest ~1200 transactions."""
+    t0, users, txs = time.time(), {}, {}
+    base = cfg["rpc"][0]
+    latest = int(requests.get(base, timeout=20).json()["ledger_version"])
+    for k in range(12):
+        if time.time() - t0 > PER_NET_BUDGET_S:
+            break
+        start = max(0, latest - (k + 1) * 100)
+        for tx in requests.get(f"{base}/transactions", params={"start": start, "limit": 100}, timeout=30).json():
+            if tx.get("type") != "user_transaction":
+                continue
+            fn = ((tx.get("payload") or {}).get("function") or "")
+            mod = fn.split("::")[0]
+            if not mod or mod in ("0x1", "0x3", "0x4") or len(mod) < 6:
+                continue
+            users.setdefault(mod, set()).add(tx.get("sender"))
+            txs[mod] = txs.get(mod, 0) + 1
+    return _rank(name, cfg, users, txs, t0)
+
+
+def scan_solana(name, cfg):
+    """Unique fee payers per program over recent sampled slots."""
+    t0, users, txs = time.time(), {}, {}
+    slot = _rpc1(cfg["rpc"], "getSlot", [])
+    for i in range(40):
+        if time.time() - t0 > PER_NET_BUDGET_S:
+            break
+        try:
+            blk = _rpc1(cfg["rpc"], "getBlock", [slot - i * 25, {"encoding": "json", "transactionDetails": "full",
+                                                                 "rewards": False, "maxSupportedTransactionVersion": 0}])
+        except RuntimeError:
+            continue   # skipped slot
+        for tx in (blk or {}).get("transactions", []):
+            msg = tx["transaction"]["message"]
+            keys = msg.get("accountKeys", [])
+            if not keys:
+                continue
+            payer = keys[0]
+            for ix in msg.get("instructions", []):
+                idx = ix.get("programIdIndex")
+                if idx is None or idx >= len(keys) or keys[idx] in SOL_SKIP:
+                    continue
+                users.setdefault(keys[idx], set()).add(payer)
+                txs[keys[idx]] = txs.get(keys[idx], 0) + 1
+    return _rank(name, cfg, users, txs, t0)
 
 
 def _post(urls, payload):
@@ -94,7 +204,8 @@ def hot_contracts():
     found, status = [], {}
     for name, cfg in load_cfg().items():
         try:
-            c = scan_net(name, cfg)
+            kind = cfg.get("type", "evm")
+            c = {"sui": scan_sui, "aptos": scan_aptos, "solana": scan_solana}.get(kind, scan_net)(name, cfg)
             found += c
             status[name] = len(c)
         except Exception as e:

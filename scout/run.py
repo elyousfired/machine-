@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "shortlist"
 MAX_DEEP_CHECKS = 80      # tokens that get info+security calls per run (rate limits)
 MAX_OUTCOME_CHECKS = 40
-SCAN_BUDGET_S = 11 * 60    # stop scanning networks after 18 min so deep checks + commit always happen
+SCAN_BUDGET_S = 9 * 60    # stop scanning networks after 9 min so deep checks + commit always happen
 
 
 def main():
