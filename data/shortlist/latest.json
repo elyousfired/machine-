@@ -1,57 +1,91 @@
 {
- "generated_at": "2026-11-23T18:33:30Z",
+ "generated_at": "2026-11-23T21:39:15Z",
  "stats": {
-  "pools": 388,
-  "new": 376,
-  "market_pass": 55,
-  "shortlisted": 28,
-  "young_rechecked": 0,
+  "pools": 322,
+  "new": 420,
+  "market_pass": 6,
+  "shortlisted": 3,
+  "young_rechecked": 210,
   "young_promoted": 0,
   "networks": 222,
-  "networks_scanned": 81,
-  "sinks_checked": 266,
-  "new_sinks": 0,
+  "networks_scanned": 33,
+  "sinks_checked": 272,
+  "new_sinks": 86,
   "onchain_hours": {
    "eth": 4.0,
-   "base": 4.0,
+   "base": 3.28,
    "arbitrum": 0.01,
-   "bsc": 2.77
+   "bsc": 2.19
   },
-  "sinks_baseline_run": true,
+  "sinks_baseline_run": false,
+  "testnet_hot": 18,
+  "testnet_new": 13,
+  "testnets": {
+   "sepolia": 12,
+   "base-sepolia": 1,
+   "arbitrum-sepolia": 3,
+   "optimism-sepolia": 0,
+   "bsc-testnet": 0,
+   "monad-testnet": 0,
+   "linea-sepolia": 0,
+   "scroll-sepolia": "fail",
+   "eth-hoodi": 1,
+   "unichain-sepolia": 0,
+   "zksync-sepolia": 0,
+   "mantle-sepolia": 0,
+   "blast-sepolia": "fail",
+   "ink-sepolia": 0,
+   "berachain-bepolia": 0,
+   "abstract-testnet": 0,
+   "sonic-testnet": "fail",
+   "megaeth-testnet": 0,
+   "polygon-amoy": 1,
+   "avalanche-fuji": 0,
+   "sui-testnet": "fail",
+   "aptos-testnet": 0,
+   "solana-devnet": 0,
+   "solana-testnet": 0
+  },
+  "mints_hot": 13,
+  "mints_new": 6,
+  "mints_chains_ok": 19,
+  "mints_chains": 38,
   "outcome_snapshots": 0
  },
  "tokens": [
   {
-   "score": 93,
-   "warnings": [],
+   "score": 77,
+   "warnings": [
+    "lp_not_locked"
+   ],
    "market": {
     "network": "eth",
-    "pool": "0xe48a34996cd98c6030b430ce4872b981df25cb50990611ac560bf58a761444b0",
-    "name": "LOOSY / ETH",
-    "token": "0x279a7d8948a9dfbac72c363150e78321138b33b1",
+    "pool": "0x294e5e3fc045ed937a974769743739eab011fa207eb6f23a6510f338da415a9e",
+    "name": "WOJACK / ETH",
+    "token": "0x1d71ffe68520ea660bf7ef453d02345dffd9775a",
     "dex": "uniswap-v4-ethereum",
-    "created_at": "2026-11-21T00:19:11Z",
-    "liquidity_usd": 350397.5114,
-    "fdv_usd": 17526314.24,
-    "mcap_usd": 17526314.24,
-    "vol_24h": 2023541.77994342,
-    "buys_24h": 1524,
-    "sells_24h": 927,
-    "buyers_24h": 548,
-    "price_chg_24h": 1519.042
+    "created_at": "2026-11-21T08:44:23Z",
+    "liquidity_usd": 191774.2691,
+    "fdv_usd": 5547376.788,
+    "mcap_usd": null,
+    "vol_24h": 1127024.56224676,
+    "buys_24h": 971,
+    "sells_24h": 337,
+    "buyers_24h": 419,
+    "price_chg_24h": -6.782
    },
    "info": {
-    "symbol": "LOOSY",
+    "symbol": "WOJACK",
     "websites": [
-     "https://www.cooldogloosy.site"
+     "https://www.wojakcoin.lol"
     ],
-    "twitter": "cooldog_loosy",
-    "telegram": "cooldog_loosy",
+    "twitter": "SecondWojak",
+    "telegram": null,
     "discord": null,
-    "description": "The ultimate chill golden retriever who owns every vibe, every wave, and every room he walks into. Pure style. Sun-kissed fur glowing like liquid gold, he pads through life with that signature unbothered swagger only a true golden has. Whether he’s chasing waves at the beach with his tongue out and ears flying, or sauntering into a living room and instantly becoming the main character, the energy softens the second he appears. No barking for attention. No frantic energy. Just calm, magnetic presence. He claims the best spot on the couch, the warmest patch of sun, and every heart in the room without ever trying. His smile is pure sunshine. His vibe is effortless cool. Waves, rooms, and people all fall under his golden spell. The ultimate chill golden. Pure dog style.",
-    "gt_score": 75.23809523809526,
-    "holder_count": 827,
-    "top10_pct": 4.9766
+    "description": "Classic imageboard meme token.wojak is the bald Feels Guy face that first appeared on Polish and German imageboards around 2009. The same simple MS Paint drawing with the empty stare that people have used for years under the caption “I know that feel, bro.”It is not a new character created for this token. It is the existing reaction image that has been circulating on the boards for more than a decade, now with its own contract on Ethereum.No utility is claimed. It is a pure meme.",
+    "gt_score": 78.41269841269842,
+    "holder_count": 904,
+    "top10_pct": 5.4739
    },
    "security": {
     "source": "goplus-evm",
@@ -69,867 +103,41 @@
     "sell_tax": 0.0,
     "owner": null,
     "creator_pct": 0.0,
-    "lp_locked_pct": 1.0,
-    "holder_count": "814"
-   }
-  },
-  {
-   "score": 92,
-   "warnings": [],
-   "market": {
-    "network": "bsc",
-    "pool": "0x7f51bbf34156ba802deb0e38b7671dc4fa32041d",
-    "name": "$BANANA / WBNB 0.01%",
-    "token": "0x3d4f0513e8a29669b960f9dbca61861548a9a760",
-    "dex": "pancakeswap-v3-bsc",
-    "created_at": "2024-11-18T09:00:01Z",
-    "liquidity_usd": 2911807.7173,
-    "fdv_usd": 48455930.1933812,
-    "mcap_usd": 48727098.18,
-    "vol_24h": 1052353.47750846,
-    "buys_24h": 4382,
-    "sells_24h": 4147,
-    "buyers_24h": 447,
-    "price_chg_24h": 2.944
-   },
-   "info": {
-    "symbol": "$BANANA",
-    "websites": [
-     "https://bananabsc.com"
-    ],
-    "twitter": "BananaS31_bsc",
-    "telegram": "BananaForScale_bsc",
-    "discord": null,
-    "description": "$BANANA is a memecoin inspired by the iconic \"Banana for Scale\" meme that gained popularity on Reddit in 2012, where bananas were humorously used as a universal unit of measurement. Elon Musk also printed the same Banana For Scale on his new SpaceX S31 Starship, making Banana For Scale the first banana launched into space.\n\nLaunched on the BNB Chain, $BANANAS31 has achieved remarkable traction, attracting 16,623 holders within just over a week. Its community has also experienced rapid expansion, growing to 8,077 members in the same period and continuing to increase at an impressive rate.",
-    "gt_score": 88.05970149253731,
-    "holder_count": 180692,
-    "top10_pct": 29.0579
-   },
-   "security": {
-    "source": "goplus-evm",
-    "ok": true,
-    "honeypot": false,
-    "open_source": true,
-    "proxy": false,
-    "mintable": false,
-    "hidden_owner": false,
-    "take_back_ownership": false,
-    "pausable": false,
-    "cannot_sell_all": false,
-    "blacklist": false,
-    "buy_tax": 0.0,
-    "sell_tax": 0.0,
-    "owner": "0x0000000000000000000000000000000000000000",
-    "creator_pct": 0.0,
-    "lp_locked_pct": 0.6598426741758473,
-    "holder_count": "179388"
-   }
-  },
-  {
-   "score": 91,
-   "warnings": [],
-   "market": {
-    "network": "solana",
-    "pool": "4w2cysotX6czaUGmmWg13hDpY4QEMG2CzeKYEQyK9Ama",
-    "name": "TROLL / SOL",
-    "token": "5UUH9RTDiSpq6HKS6bp4NdU9PNJpXRXuiw6ShBTBhgH2",
-    "dex": "pumpswap",
-    "created_at": "2025-04-20T18:30:26Z",
-    "liquidity_usd": 1846194.649,
-    "fdv_usd": 21303002.3864836,
-    "mcap_usd": 21303002.4066947,
-    "vol_24h": 565462.53225073,
-    "buys_24h": 1090,
-    "sells_24h": 836,
-    "buyers_24h": 408,
-    "price_chg_24h": -3.241
-   },
-   "info": {
-    "symbol": "TROLL",
-    "websites": [
-     "https://trollface.io"
-    ],
-    "twitter": "troll_",
-    "telegram": "trollsolog",
-    "discord": null,
-    "description": "The TROLL token on the Solana network is a meme coin inspired by internet trolling culture, designed for entertainment and community engagement with no intrinsic value. Built on Solana’s blockchain, it leverages the network’s fast transactions and low fees to appeal to meme enthusiasts. Launched on decentralized exchanges, TROLL aims to foster a fun, community-driven ecosystem through social media, influencer partnerships, and viral marketing, embodying the playful spirit of online trolling.",
-    "gt_score": 89.0909090909091,
-    "holder_count": null,
-    "top10_pct": 30.1
-   },
-   "security": {
-    "source": "goplus-sol",
-    "ok": true,
-    "mintable": false,
-    "freezable": false,
-    "closable": false,
-    "balance_mutable": false,
-    "non_transferable": false
-   }
-  },
-  {
-   "score": 90,
-   "warnings": [],
-   "market": {
-    "network": "solana",
-    "pool": "Fe7bpDYCs74GqiCUF14HwgUMToPKV1d9mDYVX5BTohFr",
-    "name": "CLAUDIA / SOL",
-    "token": "2j5SaS7xy776qCBpyPQbZjyQSAtKiFgrwjfErthnW2ZM",
-    "dex": "pumpswap",
-    "created_at": "2026-10-07T01:44:30Z",
-    "liquidity_usd": 463971.2782,
-    "fdv_usd": 9301218.36614131,
-    "mcap_usd": 9301218.36614131,
-    "vol_24h": 1156726.97141764,
-    "buys_24h": 8734,
-    "sells_24h": 7032,
-    "buyers_24h": 3161,
-    "price_chg_24h": -18.259
-   },
-   "info": {
-    "symbol": "CLAUDIA",
-    "websites": [
-     "https://useclaudia.xyz"
-    ],
-    "twitter": "claudia_onchain",
-    "telegram": null,
-    "discord": null,
-    "description": "Claudia is an AI influencer character and a platform built around that character on Solana, at useclaudia.xyz. Claudia posts on X (@claudia_onchain) and TikTok and comments on the memecoin market. The platform has a memecoin terminal for Solana coins with charts, live trades and holder data. Developer tools let anyone build their own AI agents. These include five npm packages under @useclaudia (an SDK, media generation, social publishing, a CLI and an MCP server), a desktop app called Claudia Local, and a library of 54 agent skills. $CLAUDIA is the platform’s official token on Solana.",
-    "gt_score": 88.85529079472221,
-    "holder_count": null,
-    "top10_pct": 17.7937
-   },
-   "security": {
-    "source": "goplus-sol",
-    "ok": true,
-    "mintable": false,
-    "freezable": false,
-    "closable": false,
-    "balance_mutable": false,
-    "non_transferable": false
-   }
-  },
-  {
-   "score": 89,
-   "warnings": [],
-   "market": {
-    "network": "eth",
-    "pool": "0xb80eb6a392d33eb1b014656b31b96edf9aa16c39c0baa5dbf7492435327516ea",
-    "name": "FIONA / ETH",
-    "token": "0x8fd15c6d44747f7f2e1300577f9dcd1c3fa22ed5",
-    "dex": "uniswap-v4-ethereum",
-    "created_at": "2026-11-22T06:29:11Z",
-    "liquidity_usd": 223347.0416,
-    "fdv_usd": 7321902.163,
-    "mcap_usd": 7321902.163,
-    "vol_24h": 2278518.07084064,
-    "buys_24h": 2089,
-    "sells_24h": 389,
-    "buyers_24h": 829,
-    "price_chg_24h": 89.223
-   },
-   "info": {
-    "symbol": "FIONA",
-    "websites": [
-     "https://www.fionahippomeme.vip"
-    ],
-    "twitter": "FionaHippo_ETH",
-    "telegram": "FionaMemeHippo",
-    "discord": null,
-    "description": "Fiona is a community meme token on Ethereum, inspired by the internet's favorite baby hippo who won hearts by refusing to give up.\n\nBorn small and underestimated, Fiona grew into a symbol of resilience, joy and chubby determination. $FIONA brings that spirit on-chain with a fun, community-driven project.\n\nNo promises and no roadmap hype, just a happy hippo, good memes and a growing herd. Join the community, share the memes and help Fiona float to the top.",
-    "gt_score": 72.06349206349208,
-    "holder_count": 926,
-    "top10_pct": 14.5413
-   },
-   "security": {
-    "source": "goplus-evm",
-    "ok": true,
-    "honeypot": false,
-    "open_source": true,
-    "proxy": false,
-    "mintable": false,
-    "hidden_owner": false,
-    "take_back_ownership": false,
-    "pausable": false,
-    "cannot_sell_all": false,
-    "blacklist": false,
-    "buy_tax": 0.0,
-    "sell_tax": 0.0,
-    "owner": null,
-    "creator_pct": 0.0,
-    "lp_locked_pct": 1.0,
-    "holder_count": "921"
-   }
-  },
-  {
-   "score": 88,
-   "warnings": [],
-   "market": {
-    "network": "bsc",
-    "pool": "0xbc42145d5a574ede9b8860fca2a49eb7b239efa5",
-    "name": "SKYAI / WBNB",
-    "token": "0x92aa03137385f18539301349dcfc9ebc923ffb10",
-    "dex": "pancakeswap_v2",
-    "created_at": "2025-04-20T03:42:03Z",
-    "liquidity_usd": 4795745.2332,
-    "fdv_usd": 36536563.4166033,
-    "mcap_usd": 36536563.4166033,
-    "vol_24h": 781658.616682711,
-    "buys_24h": 2357,
-    "sells_24h": 1894,
-    "buyers_24h": 1215,
-    "price_chg_24h": 0.169
-   },
-   "info": {
-    "symbol": "SKYAI",
-    "websites": [
-     "https://skyai.pro"
-    ],
-    "twitter": "SKYAIpro",
-    "telegram": "SKYAI_MCP",
-    "discord": null,
-    "description": "SkyAI is an all-in-one AI ecosystem powered by MCP, designed to seamlessly integrate intelligent solutions across industries.",
-    "gt_score": 84.47761194029852,
-    "holder_count": 90328,
-    "top10_pct": 58.4804
-   },
-   "security": {
-    "source": "goplus-evm",
-    "ok": true,
-    "honeypot": false,
-    "open_source": true,
-    "proxy": false,
-    "mintable": false,
-    "hidden_owner": false,
-    "take_back_ownership": false,
-    "pausable": false,
-    "cannot_sell_all": false,
-    "blacklist": false,
-    "buy_tax": 0.0,
-    "sell_tax": 0.0,
-    "owner": "0x0000000000000000000000000000000000000000",
-    "creator_pct": 0.0,
-    "lp_locked_pct": 0.9994388129385733,
-    "holder_count": "90030"
-   }
-  },
-  {
-   "score": 85,
-   "warnings": [],
-   "market": {
-    "network": "eth",
-    "pool": "0x69c7bd26512f52bf6f76fab834140d13dda673ca",
-    "name": "NPC / WETH",
-    "token": "0x8ed97a637a790be1feff5e888d43629dc05408f6",
-    "dex": "uniswap_v2",
-    "created_at": "2023-07-29T16:28:47Z",
-    "liquidity_usd": 3085951.3806,
-    "fdv_usd": 92225135.4306575,
-    "mcap_usd": 92229957.9727718,
-    "vol_24h": 549818.945257931,
-    "buys_24h": 385,
-    "sells_24h": 383,
-    "buyers_24h": 104,
-    "price_chg_24h": 3.087
-   },
-   "info": {
-    "symbol": "NPC",
-    "websites": [
-     "https://www.npc.com"
-    ],
-    "twitter": "NonPlayableCoin",
-    "telegram": "nonplayablecoin",
-    "discord": null,
-    "description": "What is the project about?\nNon-Playable Coin (NPC) is a meme coin and NFT-hybrid for all 8+ billion humans on Earth. \"I support the current coin\" is the motto, a homage to the meme that first gained in popularity in 2018.\n\nWhat makes your project unique?\nInspired by the non-playable character meme, NPC leans into the joke by creating an ERC20 token whose supply is the total human population as recorded on July 26, 2023. Each token is also convertible into an NFT at a rate of 1:1. Hence, it is a token with JPEG metadata that is designed to be traded both on decentralized exchanges like Uniswap (as an ERC20) and on NFT marketplaces (as an ERC1155). \n\nThis unique design—an NFT that can also be traded as an ERC20—is called a meme fungible token (MFT). An MFT like Non-Playable Coin (NPC) links two often-separated liquidity markets, while also allowing more people than ever to own a \"part of the culture\" as NFTs. \n\nOn the home page, users can switch between the two formats using the dApp. Users can \"respawn\" as an NFT or \"transform\" into a meme coin. The most liquid form for trading, however, is as an ERC20.\n\nHistory of your project.\nThe project started by playing with NFT AMMs like Sudoswap and realizing that ERC1155s were not being used to explore new avenues. We also felt that the 10k+ pfp NFT collection has hit a wall because it is limited both by exclusivity and gas cost. This project seeks to demonstrate that it is possible to scale communities to millions using the ERC1155 s",
-    "gt_score": 86.66666666666667,
-    "holder_count": 20622,
-    "top10_pct": 42.4758
-   },
-   "security": {
-    "source": "goplus-evm",
-    "ok": true,
-    "honeypot": false,
-    "open_source": true,
-    "proxy": false,
-    "mintable": false,
-    "hidden_owner": false,
-    "take_back_ownership": false,
-    "pausable": false,
-    "cannot_sell_all": false,
-    "blacklist": false,
-    "buy_tax": 0.0,
-    "sell_tax": 0.0,
-    "owner": "0x0000000000000000000000000000000000000000",
-    "creator_pct": 0.0,
-    "lp_locked_pct": 0.9999991690326155,
-    "holder_count": "20768"
-   }
-  },
-  {
-   "score": 85,
-   "warnings": [],
-   "market": {
-    "network": "solana",
-    "pool": "HMzvsEEmtzHhvZNw9uwbaG85HCTmFnkbhzUx16cy7ca3",
-    "name": "CATE / SOL",
-    "token": "Ai66LHZG9MCzg1WKdawwqduVAXpNDUuV8M3uyq5ppump",
-    "dex": "pumpswap",
-    "created_at": "2026-07-26T16:32:43Z",
-    "liquidity_usd": 1344192.3697,
-    "fdv_usd": 17609371.5972415,
-    "mcap_usd": 17613661.2161949,
-    "vol_24h": 939812.587938334,
-    "buys_24h": 13107,
-    "sells_24h": 5271,
-    "buyers_24h": 3265,
-    "price_chg_24h": -3.717
-   },
-   "info": {
-    "symbol": "CATE",
-    "websites": [
-     "https://www.instagram.com/stories/kabosumama/3949880202595208008"
-    ],
-    "twitter": "thedevrrrrrrr/status/2081414045689852002",
-    "telegram": null,
-    "discord": null,
-    "description": "",
-    "gt_score": 72.94774849809971,
-    "holder_count": null,
-    "top10_pct": 17.4391
-   },
-   "security": {
-    "source": "goplus-sol",
-    "ok": true,
-    "mintable": false,
-    "freezable": false,
-    "closable": false,
-    "balance_mutable": false,
-    "non_transferable": false
-   }
-  },
-  {
-   "score": 85,
-   "warnings": [],
-   "market": {
-    "network": "solana",
-    "pool": "G8kgi7aUpeX8EVR8VMkrth9SKEv5BietWC33UjAiiMGh",
-    "name": "CYBERLEEK / SOL",
-    "token": "ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg",
-    "dex": "raydium",
-    "created_at": "2026-08-15T21:07:26Z",
-    "liquidity_usd": 362492.8176,
-    "fdv_usd": 1208599.01162147,
-    "mcap_usd": 1208599.01162147,
-    "vol_24h": 633699.127198326,
-    "buys_24h": 2159,
-    "sells_24h": 1899,
-    "buyers_24h": 916,
-    "price_chg_24h": 9.145
-   },
-   "info": {
-    "symbol": "CYBERLEEK",
-    "websites": [
-     "https://cyberleek.ar.io"
-    ],
-    "twitter": "cyberleek_ar_io",
-    "telegram": null,
-    "discord": null,
-    "description": "Fighting for gamers",
-    "gt_score": 83.37662337662339,
-    "holder_count": null,
-    "top10_pct": 33.6622
-   },
-   "security": {
-    "source": "goplus-sol",
-    "ok": true,
-    "mintable": false,
-    "freezable": false,
-    "closable": false,
-    "balance_mutable": false,
-    "non_transferable": false
-   }
-  },
-  {
-   "score": 85,
-   "warnings": [],
-   "market": {
-    "network": "solana",
-    "pool": "Ho1aSG6WGH1FfXdEHrK2f4Ggt1Hoxo9s5jcLMDqeyeBz",
-    "name": "mihao / SOL",
-    "token": "4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump",
-    "dex": "pumpswap",
-    "created_at": "2026-10-25T16:43:15Z",
-    "liquidity_usd": 358391.0163,
-    "fdv_usd": 7977007.30009609,
-    "mcap_usd": 7977007.51690969,
-    "vol_24h": 1144624.1255814,
-    "buys_24h": 8413,
-    "sells_24h": 6197,
-    "buyers_24h": 2339,
-    "price_chg_24h": 5.887
-   },
-   "info": {
-    "symbol": "mihao",
-    "websites": [
-     "https://mihao.fun"
-    ],
-    "twitter": "iamnihaocat",
-    "telegram": null,
-    "discord": null,
-    "description": "you met me at a very chinese time in my life",
-    "gt_score": 58.54412573540804,
-    "holder_count": null,
-    "top10_pct": 22.9677
-   },
-   "security": {
-    "source": "goplus-sol",
-    "ok": true,
-    "mintable": false,
-    "freezable": false,
-    "closable": false,
-    "balance_mutable": false,
-    "non_transferable": false
-   }
-  },
-  {
-   "score": 80,
-   "warnings": [
-    "blacklist"
-   ],
-   "market": {
-    "network": "eth",
-    "pool": "0x52c77b0cb827afbad022e6d6caf2c44452edbc39",
-    "name": "SPX / WETH",
-    "token": "0xe0f63a424a4439cbe457d80e4f4b51ad25b2c56c",
-    "dex": "uniswap_v2",
-    "created_at": "2023-08-16T02:52:11Z",
-    "liquidity_usd": 8280901.6498,
-    "fdv_usd": 267488417.793559,
-    "mcap_usd": 267488417.793559,
-    "vol_24h": 1009548.28695293,
-    "buys_24h": 1263,
-    "sells_24h": 1502,
-    "buyers_24h": 382,
-    "price_chg_24h": 2.176
-   },
-   "info": {
-    "symbol": "SPX",
-    "websites": [
-     "https://www.spx6900.com"
-    ],
-    "twitter": "spx6900",
-    "telegram": "SPX6900Portal",
-    "discord": null,
-    "description": "SPX6900 is an advanced blockchain cryptography token coin capable of limitless possibilities and scientific utilization.",
-    "gt_score": 93.65079365079364,
-    "holder_count": 49766,
-    "top10_pct": 33.692
-   },
-   "security": {
-    "source": "goplus-evm",
-    "ok": true,
-    "honeypot": false,
-    "open_source": true,
-    "proxy": false,
-    "mintable": false,
-    "hidden_owner": false,
-    "take_back_ownership": false,
-    "pausable": false,
-    "cannot_sell_all": false,
-    "blacklist": true,
-    "buy_tax": 0.0,
-    "sell_tax": 0.0,
-    "owner": "0x0000000000000000000000000000000000000000",
-    "creator_pct": 0.0,
-    "lp_locked_pct": 0.9957599652953942,
-    "holder_count": "50180"
-   }
-  },
-  {
-   "score": 80,
-   "warnings": [
-    "lp_not_locked"
-   ],
-   "market": {
-    "network": "base",
-    "pool": "0x5116773e18a9c7bb03ebb961b38678e45e238923",
-    "name": "DRB / WETH 1%",
-    "token": "0x3ec2156d4c0a9cbdab4a016633b7bcf6a8d68ea2",
-    "dex": "uniswap-v3-base",
-    "created_at": "2025-03-07T09:58:57Z",
-    "liquidity_usd": 911165.2131,
-    "fdv_usd": 9888004.45288101,
-    "mcap_usd": 10019794.02,
-    "vol_24h": 170495.981365944,
-    "buys_24h": 778,
-    "sells_24h": 387,
-    "buyers_24h": 141,
-    "price_chg_24h": 9.291
-   },
-   "info": {
-    "symbol": "DRB",
-    "websites": [
-     "https://bio.site/drbtaskforce"
-    ],
-    "twitter": "DRBTaskForce",
-    "telegram": "DebtReliefBotPortal",
-    "discord": null,
-    "description": "Grok's first token launched on Base, deployed directly on X with help of Bankr. Proof of deployment here, https://x.com/grok/status/1897949874961650169.\n\nJoin the DRB community if this story intrigues you, follow it as it unfolds into this new AI era.\n\nGrok earns swap fees - Grok's trading wallet: 0xb1058c959987e3513600eb5b4fd82aeee2a0e4f9.\n\nArticles, media coverages on $DRB featured here, https://linktr.ee/DRBtaskforce.\n\nOur dev, is grok, one of the front-running candidate to achieve AGI.",
-    "gt_score": 82.80597014925374,
-    "holder_count": 147267,
-    "top10_pct": 28.0468
-   },
-   "security": {
-    "source": "goplus-evm",
-    "ok": true,
-    "honeypot": false,
-    "open_source": true,
-    "proxy": false,
-    "mintable": false,
-    "hidden_owner": false,
-    "take_back_ownership": false,
-    "pausable": false,
-    "cannot_sell_all": false,
-    "blacklist": false,
-    "buy_tax": 0.0,
-    "sell_tax": 0.0,
-    "owner": "0x0000000000000000000000000000000000000000",
-    "creator_pct": 0.0,
     "lp_locked_pct": 0,
-    "holder_count": "133184"
+    "holder_count": "904"
    }
   },
   {
-   "score": 80,
+   "score": 76,
    "warnings": [],
    "market": {
     "network": "solana",
-    "pool": "B4VFURUHHzyt8YzBGBV9jiarBvjh1EbMAbRNBnNqaxUD",
-    "name": "SI / NVDAx",
-    "token": "DEW9dSN6QpWyNthphCpMmAbZP1Q4cEKR9xQXAri98WDP",
-    "dex": "raydium",
-    "created_at": "2026-09-21T15:45:01Z",
-    "liquidity_usd": 368055.619,
-    "fdv_usd": 8057512.46767971,
-    "mcap_usd": 8057512.46767971,
-    "vol_24h": 1149697.33462376,
-    "buys_24h": 3350,
-    "sells_24h": 2622,
-    "buyers_24h": 1419,
-    "price_chg_24h": 87.35
-   },
-   "info": {
-    "symbol": "SI",
-    "websites": [
-     "https://www.stonkfun.xyz/token/dew9dsn6qpwynthphcpmmabzp1q4cekr9xqxari98wdp"
-    ],
-    "twitter": null,
-    "telegram": null,
-    "discord": null,
-    "description": "",
-    "gt_score": 53.08185709473236,
-    "holder_count": null,
-    "top10_pct": 18.6829
-   },
-   "security": {
-    "source": "goplus-sol",
-    "ok": true,
-    "mintable": false,
-    "freezable": false,
-    "closable": false,
-    "balance_mutable": false,
-    "non_transferable": false
-   }
-  },
-  {
-   "score": 78,
-   "warnings": [],
-   "market": {
-    "network": "eth",
-    "pool": "0xc745bafe87aa0dac53f21e94a62f9d4e40e9f5f7de607976cf535f3ce704aef0",
-    "name": "CLAUDIA / ETH",
-    "token": "0xc6acf921fd47757230a05d6d05b686479cdfc87c",
-    "dex": "uniswap-v4-ethereum",
-    "created_at": "2026-11-22T00:18:35Z",
-    "liquidity_usd": 164443.9309,
-    "fdv_usd": 3937359.115,
-    "mcap_usd": null,
-    "vol_24h": 1710613.16773637,
-    "buys_24h": 1942,
-    "sells_24h": 1260,
-    "buyers_24h": 791,
-    "price_chg_24h": 574.259
-   },
-   "info": {
-    "symbol": "CLAUDIA",
-    "websites": [
-     "https://www.claudiameme.lol"
-    ],
-    "twitter": "ClaudiaMemeETH",
-    "telegram": null,
-    "discord": null,
-    "description": "Red pill, Blue pill, I’m the white pill. \n\nThe Hatsune Miku of the AI era.",
-    "gt_score": 73.65079365079366,
-    "holder_count": 986,
-    "top10_pct": 11.1486
-   },
-   "security": {
-    "source": "goplus-evm",
-    "ok": true,
-    "honeypot": false,
-    "open_source": true,
-    "proxy": false,
-    "mintable": false,
-    "hidden_owner": false,
-    "take_back_ownership": false,
-    "pausable": false,
-    "cannot_sell_all": false,
-    "blacklist": false,
-    "buy_tax": 0.0,
-    "sell_tax": 0.0,
-    "owner": null,
-    "creator_pct": 0.0,
-    "lp_locked_pct": 1.0,
-    "holder_count": "901"
-   }
-  },
-  {
-   "score": 78,
-   "warnings": [],
-   "market": {
-    "network": "eth",
-    "pool": "0x2405e4c5417321976256018b683b31383cd9acba",
-    "name": "DCTY / WETH",
-    "token": "0x5659250b7aac8f66701c7655da16070ecad6355e",
-    "dex": "uniswap_v2",
-    "created_at": "2026-11-18T17:31:23Z",
-    "liquidity_usd": 39874.0253,
-    "fdv_usd": 164465.7626,
-    "mcap_usd": null,
-    "vol_24h": 428587.67550517,
-    "buys_24h": 1425,
-    "sells_24h": 1322,
-    "buyers_24h": 377,
-    "price_chg_24h": -75.707
-   },
-   "info": {
-    "symbol": "DCTY",
-    "websites": [
-     "https://dexscreener.com/ethereum/0x2405e4c5417321976256018b683b31383cd9acba",
-     "https://x.com/dctyvi"
-    ],
-    "twitter": "DCTYVI",
-    "telegram": "DacityCoinERC",
-    "discord": null,
-    "description": "The coin of AudaCity in GTA\r\n\r\nThis is the biggest narrative of the year. The only official crypto currency within GTA 6 which is going to have 10s of millions of people playing it\r\n\r\nThe coin is everywhere within the game: make mainnet great again and save the trenches.\r\n\r\nDacityCoin (also called Dacity Coin) is a fictional cryptocurrency inside Grand Theft Auto VI.It was created by Rockstar as part of the game’s world and satire of real-world crypto/meme coin",
-    "gt_score": 58.857142857142854,
-    "holder_count": 3302,
-    "top10_pct": 45.4623
-   },
-   "security": {
-    "source": "goplus-evm",
-    "ok": true,
-    "honeypot": false,
-    "open_source": true,
-    "proxy": false,
-    "mintable": false,
-    "hidden_owner": false,
-    "take_back_ownership": false,
-    "pausable": false,
-    "cannot_sell_all": false,
-    "blacklist": false,
-    "buy_tax": 0.0,
-    "sell_tax": 0.0,
-    "owner": "0x0000000000000000000000000000000000000000",
-    "creator_pct": 0.002264,
-    "lp_locked_pct": 0.99868060731509,
-    "holder_count": "3832"
-   }
-  },
-  {
-   "score": 75,
-   "warnings": [
-    "lp_not_locked"
-   ],
-   "market": {
-    "network": "base",
-    "pool": "0x0c3b466104545efa096b8f944c1e524e1d0d4888",
-    "name": "TIBBIR / VIRTUAL",
-    "token": "0xa4a2e2ca3fbfe21aed83471d28b6f65a233c6e00",
-    "dex": "uniswap-v2-base",
-    "created_at": "2025-01-12T00:30:03Z",
-    "liquidity_usd": 1913659.458,
-    "fdv_usd": 56375861.8429746,
-    "mcap_usd": 129892747.46507,
-    "vol_24h": 81586.8882232133,
-    "buys_24h": 140,
-    "sells_24h": 260,
-    "buyers_24h": 38,
-    "price_chg_24h": 10.661
-   },
-   "info": {
-    "symbol": "TIBBIR",
-    "websites": [
-     "https://app.virtuals.io/virtuals/18820"
-    ],
-    "twitter": "ribbita2012",
-    "telegram": null,
-    "discord": null,
-    "description": "Tibbir is a stealth-launched cryptocurrency project that aims to enhance efficiency and security within the crypto and artificial intelligence (AI) sectors. The project is closely associated with Ribbit Capital, a venture capital firm known for its investments in innovative financial technologies.\n\nAs a key partner in the Agentic Finance Hackathon, Tibbir contributed to the development of new initiatives in the crypto and AI domains. \n\nWhile specific details about Tibbir's technology and roadmap remain limited due to its stealth status, the project has generated interest within the crypto community, with discussions focusing on its potential to shape the future of decentralized finance and AI integration. \n\nAs Tibbir progresses, stakeholders and enthusiasts are encouraged to monitor official channels for updates and further information about the project's developments and objectives. ",
-    "gt_score": 84.59701492537313,
-    "holder_count": 79652,
-    "top10_pct": 24.531
-   },
-   "security": {
-    "source": "goplus-evm",
-    "ok": true,
-    "honeypot": false,
-    "open_source": true,
-    "proxy": false,
-    "mintable": false,
-    "hidden_owner": false,
-    "take_back_ownership": false,
-    "pausable": false,
-    "cannot_sell_all": false,
-    "blacklist": false,
-    "buy_tax": 0.0,
-    "sell_tax": 0.0,
-    "owner": "0x0000000000000000000000000000000000000000",
-    "creator_pct": 0.0,
-    "lp_locked_pct": 0,
-    "holder_count": "80022"
-   }
-  },
-  {
-   "score": 74,
-   "warnings": [
-    "mintable",
-    "lp_not_locked"
-   ],
-   "market": {
-    "network": "base",
-    "pool": "0x85f1aa3a70fedd1c52705c15baed143e675cd626",
-    "name": "NOCK / USDC",
-    "token": "0x9b5e262cf9bb04869ab40b19af91d2dc85761722",
-    "dex": "aerodrome-base",
-    "created_at": "2025-12-22T21:52:45Z",
-    "liquidity_usd": 830815.773,
-    "fdv_usd": 25734650.1302406,
-    "mcap_usd": 38546016.7870392,
-    "vol_24h": 164155.63687838,
-    "buys_24h": 331,
-    "sells_24h": 336,
-    "buyers_24h": 149,
-    "price_chg_24h": 0.408
-   },
-   "info": {
-    "symbol": "NOCK",
-    "websites": [
-     "https://www.nockchain.org"
-    ],
-    "twitter": "nockchain",
-    "telegram": "nockchainproject",
-    "discord": null,
-    "description": "Nockchain is the first L1 blockchain powered by Zero-Knowledge Proof of Work (ZKPoW). Nodes secure the chain and produce blocks by mining zero-knowledge proofs in a PoW competition. Transactions scale as the network difficulty grows to maintain a high velocity of money without bottlenecking.\n\n$NOCK is the digital asset for the Nock ecosystem. It's scarce hard money secured by zero-knowledge proofs on Nockchain. $NOCK was fair-launched with no pre-mine in May 2025.",
-    "gt_score": 79.82089552238807,
-    "holder_count": 10712,
-    "top10_pct": 19.4698
-   },
-   "security": {
-    "source": "goplus-evm",
-    "ok": true,
-    "honeypot": false,
-    "open_source": true,
-    "proxy": false,
-    "mintable": true,
-    "hidden_owner": false,
-    "take_back_ownership": false,
-    "pausable": false,
-    "cannot_sell_all": false,
-    "blacklist": false,
-    "buy_tax": 0.0,
-    "sell_tax": 0.0,
-    "owner": "0xdc373766c03c645f04695224527ba7ef61fd4288",
-    "creator_pct": 0.0,
-    "lp_locked_pct": 0,
-    "holder_count": "10730"
-   }
-  },
-  {
-   "score": 74,
-   "warnings": [
-    "no_security_data"
-   ],
-   "market": {
-    "network": "solana",
-    "pool": "DChXQ4qFPpNPEDfZLNiwvPhrVuuFGfqEDLAAZbiZHUWf",
-    "name": "DCTY / TTWO",
-    "token": "9hjBLBrc7WZW2H8UQvBAvG5WiTZotXUv2Bdcn4f4pump",
+    "pool": "7yJDP2VmgazVEa6usbXM61uSk5AT3J4dZFaJQvq2LnfZ",
+    "name": "MINELIUS / SOL",
+    "token": "E9rWKjVhHMxQkxfREr7Li8Yy46rVcWiWHoKVQAe9pump",
     "dex": "pumpswap",
-    "created_at": "2026-10-20T03:03:35Z",
-    "liquidity_usd": 204167.0891,
-    "fdv_usd": 1851189.59765939,
-    "mcap_usd": 1851189.59870485,
-    "vol_24h": 802436.815187878,
-    "buys_24h": 4077,
-    "sells_24h": 3934,
-    "buyers_24h": 1121,
-    "price_chg_24h": -27.906
+    "created_at": "2026-11-22T21:30:22Z",
+    "liquidity_usd": 21600.0064,
+    "fdv_usd": 86095.0914159303,
+    "mcap_usd": 86424.21242,
+    "vol_24h": 4779432.02750807,
+    "buys_24h": 108387,
+    "sells_24h": 75459,
+    "buyers_24h": 9970,
+    "price_chg_24h": -94.192
    },
    "info": {
-    "symbol": "DCTY",
+    "symbol": "MINELIUS",
     "websites": [
-     "https://dcty.xyz"
+     "https://minelius.online"
     ],
-    "twitter": "DCTY_VI",
+    "twitter": "MineliusPad",
     "telegram": null,
     "discord": null,
-    "description": "",
-    "gt_score": 89.0909090909091,
+    "description": "Minelius is a privacy-focused coin launchpad on Solana built around a simple idea: public coin, private mine. Every coin launched through Minelius gets its own fresh mine wallet, which creates the coin on pump.fun, so the creator shown on-chain is the mine rather than the founder's personal wallet. Creator fees collect in that mine wallet, are swapped into hSOL (Helius Staked SOL) by default or into another Solana coin chosen at launch, and are then shielded in Solana Privacy Rings.",
+    "gt_score": 48.00000000000001,
     "holder_count": null,
-    "top10_pct": 21.4219
-   },
-   "security": {
-    "source": "goplus-sol",
-    "ok": false,
-    "mintable": false,
-    "freezable": false,
-    "closable": false,
-    "balance_mutable": false,
-    "non_transferable": false
-   }
-  },
-  {
-   "score": 74,
-   "warnings": [],
-   "market": {
-    "network": "solana",
-    "pool": "9pqo6WVjKvYNnRgvPVaoTe1zZvnhtB248ChKnUmKfHH4",
-    "name": "MCAT / SOL",
-    "token": "BzPyyYCTmQNq2BcfQ4ANAvCYk54rnmQEXMFvFT8RhWMi",
-    "dex": "raydium",
-    "created_at": "2026-11-22T17:17:17Z",
-    "liquidity_usd": 85063.4379,
-    "fdv_usd": 228049.25674625,
-    "mcap_usd": 228052.784598705,
-    "vol_24h": 2032464.33991339,
-    "buys_24h": 20840,
-    "sells_24h": 16579,
-    "buyers_24h": 6275,
-    "price_chg_24h": -43.497
-   },
-   "info": {
-    "symbol": "MCAT",
-    "websites": [
-     "https://www.mooncatsol.org"
-    ],
-    "twitter": "Catonthemoonsol",
-    "telegram": null,
-    "discord": null,
-    "description": "Deployed using https://j7tracker.io",
-    "gt_score": 52.57142857142857,
-    "holder_count": null,
-    "top10_pct": 31.8659
+    "top10_pct": 23.753
    },
    "security": {
     "source": "goplus-sol",
@@ -939,420 +147,43 @@
     "closable": false,
     "balance_mutable": false,
     "non_transferable": false
-   }
-  },
-  {
-   "score": 73,
-   "warnings": [
-    "proxy_upgradeable",
-    "lp_not_locked"
-   ],
-   "market": {
-    "network": "arbitrum",
-    "pool": "0x50e7b9293aef80c304234e86c84a01be8401c530",
-    "name": "PENDLE / USDT 0.3%",
-    "token": "0x0c880f6761f1af8d9aa9c466984b80dab9a8c9e8",
-    "dex": "uniswap_v3_arbitrum",
-    "created_at": "2023-04-27T17:11:15Z",
-    "liquidity_usd": 385345.4075,
-    "fdv_usd": 20236443.6959742,
-    "mcap_usd": 232951615.833593,
-    "vol_24h": 69404.1935481363,
-    "buys_24h": 451,
-    "sells_24h": 413,
-    "buyers_24h": 89,
-    "price_chg_24h": 3.454
-   },
-   "info": {
-    "symbol": "PENDLE",
-    "websites": [
-     "https://pendle.finance"
-    ],
-    "twitter": "pendle_fi",
-    "telegram": "pendlefinance",
-    "discord": "https://discord.com/invite/EAujvncY2R",
-    "description": "Pendle is a protocol that enables the tokenization and trading of future yield. With the creation of a novel AMM that supports assets with time decay, Pendle gives users more control over future yield by providing optionality and opportunities for its utilization. ",
-    "gt_score": 72.19047619047619,
-    "holder_count": 69811,
-    "top10_pct": 47.465
-   },
-   "security": {
-    "source": "goplus-evm",
-    "ok": true,
-    "honeypot": false,
-    "open_source": true,
-    "proxy": true,
-    "mintable": false,
-    "hidden_owner": false,
-    "take_back_ownership": false,
-    "pausable": false,
-    "cannot_sell_all": false,
-    "blacklist": false,
-    "buy_tax": 0.0,
-    "sell_tax": 0.0,
-    "owner": null,
-    "creator_pct": 0.0,
-    "lp_locked_pct": 0,
-    "holder_count": "69782"
-   }
-  },
-  {
-   "score": 73,
-   "warnings": [
-    "no_security_data"
-   ],
-   "market": {
-    "network": "solana",
-    "pool": "4h7R5JzaQ6PgNjFuD12AeUQJRQYgwz2YhPSrA6sh1Rxt",
-    "name": "UCASH / SOL",
-    "token": "7cFiqdT46zs7ooHWLFiLSaSQKLMibtokh9dBinsspump",
-    "dex": "pumpswap",
-    "created_at": "2026-11-22T11:15:03Z",
-    "liquidity_usd": 82487.3632,
-    "fdv_usd": 992972.21622608,
-    "mcap_usd": null,
-    "vol_24h": 4435269.02089436,
-    "buys_24h": 118205,
-    "sells_24h": 36939,
-    "buyers_24h": 14177,
-    "price_chg_24h": -10.988
-   },
-   "info": {
-    "symbol": "UCASH",
-    "websites": [
-     "https://umbracash.vip"
-    ],
-    "twitter": "UmbraCashApp",
-    "telegram": null,
-    "discord": null,
-    "description": "Umbra Cash is a next-gen wallet layer built on Solana, giving users full control over how their transactions are seen.\r\nSwitch between Transparent Mode for everyday payments and Shielded Mode for privacy-first transfers, all in one fast, simple experience. Backed by Solana's high-throughput settlement, every move stays quick and smooth.\r\nWith a roadmap built for real adoption, $UCASH is more than a token. Own your transactions. Own your future. Privacy is the upgrade.\r\n",
-    "gt_score": 58.18181818181819,
-    "holder_count": null,
-    "top10_pct": 11.483
-   },
-   "security": {
-    "source": "goplus-sol",
-    "ok": false,
-    "mintable": false,
-    "freezable": false,
-    "closable": false,
-    "balance_mutable": false,
-    "non_transferable": false
-   }
-  },
-  {
-   "score": 73,
-   "warnings": [],
-   "market": {
-    "network": "eth",
-    "pool": "0xc027c6897dd4ee14145d01de9fb2dea75e8637c7",
-    "name": "POPO / WETH",
-    "token": "0x7b43495c05581bd2d9326fe9c1c18c62c63dd2fc",
-    "dex": "uniswap_v2",
-    "created_at": "2026-11-12T15:43:11Z",
-    "liquidity_usd": 28343.9114,
-    "fdv_usd": 143356.875632436,
-    "mcap_usd": null,
-    "vol_24h": 78759.7050640376,
-    "buys_24h": 335,
-    "sells_24h": 218,
-    "buyers_24h": 180,
-    "price_chg_24h": 21.217
-   },
-   "info": {
-    "symbol": "POPO",
-    "websites": [
-     "https://popo.life"
-    ],
-    "twitter": "Popo_oneth",
-    "telegram": "popotheturtle",
-    "discord": null,
-    "description": "Popo The Turtle ($POPO) is a community-driven meme token deployed on the Ethereum blockchain. The project pays homage to \"Popo,\" an internet meme character created anonymously on 4chan’s /r9k/ board in November 2014 as an alternative mascot after Pepe the Frog gained mainstream popularity.\r\n\r\nKey Features & Tokenomics:\r\n\r\nMeme Heritage: Rooted in classic 2014–2018 imageboard lore (including documented Know Your Meme history and various community-drawn iterations), $POPO centers around community engagement and meme culture rather than formal utility or a corporate roadmap.\r\n\r\nSupply & Distribution: $POPO has a total supply of 420,690,000,000,000 (420.69 trillion) tokens on Ethereum.\r\n\r\nTax & Contract Security: The token features a 0% buy tax and 0% sell tax, with burned liquidity and a renounced smart contract.\r\n\r\nDisclaimer: $POPO is a meme coin created for entertainment purposes with no intrinsic value, formal team, or expectation of financial return.",
-    "gt_score": 52.0,
-    "holder_count": 742,
-    "top10_pct": 29.5887
-   },
-   "security": {
-    "source": "goplus-evm",
-    "ok": true,
-    "honeypot": false,
-    "open_source": true,
-    "proxy": false,
-    "mintable": false,
-    "hidden_owner": false,
-    "take_back_ownership": false,
-    "pausable": false,
-    "cannot_sell_all": false,
-    "blacklist": false,
-    "buy_tax": 0.0,
-    "sell_tax": 0.0,
-    "owner": "0x0000000000000000000000000000000000000000",
-    "creator_pct": 0.0,
-    "lp_locked_pct": 0.9972143958650994,
-    "holder_count": "778"
    }
   },
   {
    "score": 72,
-   "warnings": [
-    "no_security_data"
-   ],
+   "warnings": [],
    "market": {
     "network": "solana",
-    "pool": "8fSUYVnTy4r5fZUksjzKexLq2Tx96K3UPdYRvW5XWJ9t",
-    "name": "Rings / SOL",
-    "token": "65iH8k736QNhuUHm1tt8X7yJXpJ517HPPq8BrVdwring",
+    "pool": "3peugE6Fm4fpaVvrV2KBFN3nvLbCGEhGoUXDDxAHuscR",
+    "name": "SIDOOR / SOL",
+    "token": "zcRvzm7gAfYGde8gRwaSYxNryL47SjLVUQLAf1bdoor",
     "dex": "meteora-damm-v2",
-    "created_at": "2026-11-10T19:09:10Z",
-    "liquidity_usd": 159155.3638,
-    "fdv_usd": 2572390.44264447,
-    "mcap_usd": 2572516.62318399,
-    "vol_24h": 498492.766347987,
-    "buys_24h": 2240,
-    "sells_24h": 1744,
-    "buyers_24h": 888,
-    "price_chg_24h": -14.26
+    "created_at": "2026-11-21T20:46:30Z",
+    "liquidity_usd": 38578.9594,
+    "fdv_usd": 227523.634619661,
+    "mcap_usd": 227523.635747462,
+    "vol_24h": 786067.114546937,
+    "buys_24h": 7854,
+    "sells_24h": 6203,
+    "buyers_24h": 2435,
+    "price_chg_24h": 17.348
    },
    "info": {
-    "symbol": "Rings",
+    "symbol": "SIDOOR",
     "websites": [
-     "https://rings.run"
+     "https://www.sidoor.xyz"
     ],
-    "twitter": "ringssol",
+    "twitter": "Sidoorxyz",
     "telegram": null,
     "discord": null,
-    "description": "",
-    "gt_score": 82.85714285714285,
+    "description": "Launchpad where every coin sets its own rules. Blacklist KOLs before bonding, lock transfers, buybacks, and more. Power to the bagworkers.",
+    "gt_score": 49.24675324675325,
     "holder_count": null,
-    "top10_pct": 23.9966
-   },
-   "security": {
-    "source": "goplus-sol",
-    "ok": false,
-    "mintable": false,
-    "freezable": false,
-    "closable": false,
-    "balance_mutable": false,
-    "non_transferable": false
-   }
-  },
-  {
-   "score": 72,
-   "warnings": [
-    "no_security_data"
-   ],
-   "market": {
-    "network": "eth",
-    "pool": "0x308401e90d3127aee4eb844b2b81e80b17d19912f2b6a2a5a26ee0bac521a2b5",
-    "name": "zc / ETH",
-    "token": "0x8799812c2da1f714b80e3c1b41ba361d328ff559",
-    "dex": "uniswap-v4-ethereum",
-    "created_at": "2026-11-22T22:43:59Z",
-    "liquidity_usd": 150933.3609,
-    "fdv_usd": 3340071.351,
-    "mcap_usd": null,
-    "vol_24h": 2570483.60676219,
-    "buys_24h": 2072,
-    "sells_24h": 636,
-    "buyers_24h": 1060,
-    "price_chg_24h": 97098.212
-   },
-   "info": {
-    "symbol": "zc",
-    "websites": [
-     "https://zipcoin.space"
-    ],
-    "twitter": "ZConethereum",
-    "telegram": null,
-    "discord": null,
-    "description": "The currency of Veridia. An anime take on Vitalik’s Snowmoon world. Original on Ethereum, ran by community. $ZC · Fan project, not affiliated with Vitalik.",
-    "gt_score": 53.84126984126985,
-    "holder_count": 805,
-    "top10_pct": 5.5704
-   },
-   "security": {
-    "source": "goplus-evm",
-    "ok": false,
-    "honeypot": false,
-    "open_source": false,
-    "proxy": false,
-    "mintable": false,
-    "hidden_owner": false,
-    "take_back_ownership": false,
-    "pausable": false,
-    "cannot_sell_all": false,
-    "blacklist": false,
-    "buy_tax": null,
-    "sell_tax": null,
-    "owner": null,
-    "creator_pct": null,
-    "lp_locked_pct": 0,
-    "holder_count": null
-   }
-  },
-  {
-   "score": 72,
-   "warnings": [],
-   "market": {
-    "network": "solana",
-    "pool": "DjbLtX1HRGZZrJgJ7CwTX6SN3D7tBLiytkGwomBUwTVB",
-    "name": "FIONA / SOL",
-    "token": "B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump",
-    "dex": "pumpswap",
-    "created_at": "2026-11-19T20:53:29Z",
-    "liquidity_usd": 146152.6603,
-    "fdv_usd": 1877205.4692492,
-    "mcap_usd": 1877205.60134234,
-    "vol_24h": 1297117.99373748,
-    "buys_24h": 11678,
-    "sells_24h": 8726,
-    "buyers_24h": 4513,
-    "price_chg_24h": 24.291
-   },
-   "info": {
-    "symbol": "FIONA",
-    "websites": [],
-    "twitter": "FionaHippoOG",
-    "telegram": null,
-    "discord": null,
-    "description": "Deployed using https://j7tracker.io",
-    "gt_score": 60.46753246753247,
-    "holder_count": null,
-    "top10_pct": 17.6973
+    "top10_pct": 33.9656
    },
    "security": {
     "source": "goplus-sol",
     "ok": true,
-    "mintable": false,
-    "freezable": false,
-    "closable": false,
-    "balance_mutable": false,
-    "non_transferable": false
-   }
-  },
-  {
-   "score": 67,
-   "warnings": [
-    "no_security_data"
-   ],
-   "market": {
-    "network": "solana",
-    "pool": "6dbFy11iEz64Hg8G67e1CodqYtEZRPLLNCameicuD2Qq",
-    "name": "PumpMeme / SOL",
-    "token": "93uamrbDerKbUh8MSjNF1wDtxYvEUD1CS9BcHn1apump",
-    "dex": "pumpswap",
-    "created_at": "2026-11-23T05:24:15Z",
-    "liquidity_usd": 64689.5417,
-    "fdv_usd": 767574.924413409,
-    "mcap_usd": null,
-    "vol_24h": 1877907.39676131,
-    "buys_24h": 124327,
-    "sells_24h": 54959,
-    "buyers_24h": 10741,
-    "price_chg_24h": 179.549
-   },
-   "info": {
-    "symbol": "PumpMeme",
-    "websites": [
-     "https://pumpmemetoken.site"
-    ],
-    "twitter": "pumpmemex",
-    "telegram": null,
-    "discord": null,
-    "description": "We pump together.",
-    "gt_score": 55.06493506493507,
-    "holder_count": null,
-    "top10_pct": 24.4644
-   },
-   "security": {
-    "source": "goplus-sol",
-    "ok": false,
-    "mintable": false,
-    "freezable": false,
-    "closable": false,
-    "balance_mutable": false,
-    "non_transferable": false
-   }
-  },
-  {
-   "score": 66,
-   "warnings": [
-    "no_security_data"
-   ],
-   "market": {
-    "network": "solana",
-    "pool": "58XqWPXDGp3GfU9DAFxs8C1GJwTLdHdQhJRofAF5yWTV",
-    "name": "Singularity / SOL",
-    "token": "7R4MP6VX7n3RMNhL9zsk5Zu5ibZvwq8npUYnRq7epump",
-    "dex": "pumpswap",
-    "created_at": "2026-11-20T20:06:25Z",
-    "liquidity_usd": 43207.17,
-    "fdv_usd": 219581.580081704,
-    "mcap_usd": 219581.580081747,
-    "vol_24h": 836650.398781377,
-    "buys_24h": 7637,
-    "sells_24h": 6316,
-    "buyers_24h": 2168,
-    "price_chg_24h": -67.726
-   },
-   "info": {
-    "symbol": "Singularity",
-    "websites": [
-     "https://singularitydotcom.com"
-    ],
-    "twitter": "DateSingularity",
-    "telegram": null,
-    "discord": null,
-    "description": "",
-    "gt_score": 51.324675324675326,
-    "holder_count": null,
-    "top10_pct": 20.0126
-   },
-   "security": {
-    "source": "goplus-sol",
-    "ok": false,
-    "mintable": false,
-    "freezable": false,
-    "closable": false,
-    "balance_mutable": false,
-    "non_transferable": false
-   }
-  },
-  {
-   "score": 61,
-   "warnings": [
-    "no_security_data"
-   ],
-   "market": {
-    "network": "solana",
-    "pool": "2ULaeaUQWkid31cVKyFEujx9ReF7cdGepPxuoptz57m5",
-    "name": "HUNG / NVDAx",
-    "token": "4xgqefa5WcdHWKXzqvM9MRJqWYGaHVEUnpUL4Vq5pump",
-    "dex": "pumpswap",
-    "created_at": "2026-11-09T04:12:18Z",
-    "liquidity_usd": 40012.0187,
-    "fdv_usd": 108935.2588,
-    "mcap_usd": null,
-    "vol_24h": 947518.44446522,
-    "buys_24h": 6319,
-    "sells_24h": 4777,
-    "buyers_24h": 2353,
-    "price_chg_24h": 68.16
-   },
-   "info": {
-    "symbol": "HUNG",
-    "websites": [],
-    "twitter": "FirstCoinLaunch/status/2119624206933795088",
-    "telegram": null,
-    "discord": null,
-    "description": "Deployed using https://j7tracker.io",
-    "gt_score": 68.05194805194805,
-    "holder_count": null,
-    "top10_pct": 41.8756
-   },
-   "security": {
-    "source": "goplus-sol",
-    "ok": false,
     "mintable": false,
     "freezable": false,
     "closable": false,
@@ -1361,6 +192,682 @@
    }
   }
  ],
- "new_sinks": [],
- "new_protocols": []
+ "new_sinks": [
+  {
+   "chain": "eth",
+   "address": "0xd226997439ecfbeff8e110c8c78c8a7eefd19f89",
+   "inflow_usd": 214197712
+  },
+  {
+   "chain": "eth",
+   "address": "0x6aceb4caba81fa6a8065059f3a944fb066a10fac",
+   "inflow_usd": 31333117
+  },
+  {
+   "chain": "eth",
+   "address": "0x80ac24aa929eaf5013f6436cda2a7ba190f5cc0b",
+   "inflow_usd": 31095225
+  },
+  {
+   "chain": "eth",
+   "address": "0x23878914efe38d27c4d67ab83ed1b93a74d4086a",
+   "inflow_usd": 27492135
+  },
+  {
+   "chain": "eth",
+   "address": "0x919b47af0fc861d6eeaa970a9b637ae8c7e94a69",
+   "inflow_usd": 25000000
+  },
+  {
+   "chain": "eth",
+   "address": "0x2d610e4eceac64e46226b70613b6d7f81e719bc2",
+   "inflow_usd": 23350115
+  },
+  {
+   "chain": "eth",
+   "address": "0x51606f4eb78e3a046ffbae3c16eb0f78b662962f",
+   "inflow_usd": 22000000
+  },
+  {
+   "chain": "eth",
+   "address": "0xcd5a64d8deb75def1ffd17ae0095562542fb220c",
+   "inflow_usd": 16532288
+  },
+  {
+   "chain": "eth",
+   "address": "0x67cd6977231a4970b4fb4c4663504fba86220d60",
+   "inflow_usd": 14000000
+  },
+  {
+   "chain": "eth",
+   "address": "0x100ae042ef0ea159ecc3513e9a378ff21f3829ba",
+   "inflow_usd": 13839577
+  },
+  {
+   "chain": "eth",
+   "address": "0xf0bb20865277abd641a307ece5ee04e79073416c",
+   "inflow_usd": 12511532
+  },
+  {
+   "chain": "eth",
+   "address": "0xe5a5b6864451b176cfc054ac97c502eb563dc2f8",
+   "inflow_usd": 10000000
+  },
+  {
+   "chain": "eth",
+   "address": "0xcd40532686b94abc88b06b9705aacbc14c8364d6",
+   "inflow_usd": 10000000
+  },
+  {
+   "chain": "eth",
+   "address": "0x11c5961f91ebe4156906f03cafc1eb423e985526",
+   "inflow_usd": 10000000
+  },
+  {
+   "chain": "eth",
+   "address": "0x3e55d70ad00e0a1d6aca921b574d5a7c8cd0ef0f",
+   "inflow_usd": 10000000
+  },
+  {
+   "chain": "eth",
+   "address": "0x1fc837c6b3078642b9aa66fc0b3d0311ccffbfee",
+   "inflow_usd": 9924083
+  },
+  {
+   "chain": "eth",
+   "address": "0xbd02c51150a4ab6ce97b9de2025644594f3e75b8",
+   "inflow_usd": 9591043
+  },
+  {
+   "chain": "eth",
+   "address": "0x94877640dd9e6f1e3cb56bf7b5665b7152601295",
+   "inflow_usd": 9283555
+  },
+  {
+   "chain": "base",
+   "address": "0xbd04f33cc2a312b9b2603274692a1ff3c4586c8a",
+   "inflow_usd": 19429446
+  },
+  {
+   "chain": "base",
+   "address": "0xd5c6312ec57178277bbf8c34fb94965c6bddb014",
+   "inflow_usd": 11830251
+  },
+  {
+   "chain": "base",
+   "address": "0x422df9aa896e883c9cdcbad309c0785b7364a1cf",
+   "inflow_usd": 7587041
+  },
+  {
+   "chain": "base",
+   "address": "0x0fce3e7c1a4df92bc653a4bed9e8956972be7fcc",
+   "inflow_usd": 5976766
+  },
+  {
+   "chain": "base",
+   "address": "0xeb311b7a8620b82b2d65c68a8f41dbda0435950b",
+   "inflow_usd": 4325275
+  },
+  {
+   "chain": "base",
+   "address": "0x20812d6c78d972eea8df85319ec721db1e67b31f",
+   "inflow_usd": 4195425
+  },
+  {
+   "chain": "base",
+   "address": "0x2f59e9086ec8130e21bd052065a9e6b2497bb102",
+   "inflow_usd": 3553101
+  },
+  {
+   "chain": "base",
+   "address": "0xa0efaf3bd26934bda4cb36430632e7266111d9dc",
+   "inflow_usd": 3147622
+  },
+  {
+   "chain": "base",
+   "address": "0xa665b6cb9f66013de3e369a71f0b47e5cfe1fec4",
+   "inflow_usd": 3090217
+  },
+  {
+   "chain": "base",
+   "address": "0x2e0899dab3129bffeb4d13bb2d805e8271608f42",
+   "inflow_usd": 3008143
+  },
+  {
+   "chain": "base",
+   "address": "0xc0c3e3148a8c725baf0207fdc41f1d2cb3e07a8b",
+   "inflow_usd": 2989724
+  },
+  {
+   "chain": "base",
+   "address": "0xae497c7cf062ca2bcbb1dc73a7c9b69613127ea2",
+   "inflow_usd": 2438962
+  },
+  {
+   "chain": "base",
+   "address": "0x10658504d00d3d65610c0fd72a81b6926109117a",
+   "inflow_usd": 2414112
+  },
+  {
+   "chain": "base",
+   "address": "0x3b6572841ffeff42b4c1301f96eddd87ae0e5842",
+   "inflow_usd": 2306874
+  },
+  {
+   "chain": "base",
+   "address": "0xbc5682de77d729397739982a577b7963ef2f6556",
+   "inflow_usd": 2306365
+  },
+  {
+   "chain": "base",
+   "address": "0xe9fb8c70af1b99f2baaa07aa926fcf3d237348dd",
+   "inflow_usd": 2151692
+  },
+  {
+   "chain": "base",
+   "address": "0x8a311d7048c35985aa31c131b9a13e03a5f7422d",
+   "inflow_usd": 2146162
+  },
+  {
+   "chain": "base",
+   "address": "0xe256049594a993443d138b345c9f154407d55220",
+   "inflow_usd": 2094730
+  },
+  {
+   "chain": "base",
+   "address": "0x30a05155585ff7f356283a0bcabcb98eb8b1283d",
+   "inflow_usd": 2069513
+  },
+  {
+   "chain": "base",
+   "address": "0x23ad7e55456f201c66160b41e5d190b6f0c29f4c",
+   "inflow_usd": 2017760
+  },
+  {
+   "chain": "base",
+   "address": "0x80997e422e1d03f8d41fe831a306df674128050d",
+   "inflow_usd": 1992910
+  },
+  {
+   "chain": "base",
+   "address": "0xd9dc2101bf1dcd6caa19770078fe783880a6490c",
+   "inflow_usd": 1940520
+  },
+  {
+   "chain": "bsc",
+   "address": "0x4ac0f3ecc817ca49f82eae026232faa79bbb195c",
+   "inflow_usd": 800002
+  },
+  {
+   "chain": "bsc",
+   "address": "0x5c37c795437cb7ce61de67210c5930f59ad94260",
+   "inflow_usd": 800002
+  },
+  {
+   "chain": "bsc",
+   "address": "0x3d115e49e1855891d6de38de11a8085892725f9e",
+   "inflow_usd": 800001
+  },
+  {
+   "chain": "bsc",
+   "address": "0xcca95a21a5c4e6ed903089d883e62a63a120298c",
+   "inflow_usd": 800001
+  },
+  {
+   "chain": "bsc",
+   "address": "0x57cd7dd4e1a2e222ec6c95e5f0452886294d6ea4",
+   "inflow_usd": 800001
+  },
+  {
+   "chain": "bsc",
+   "address": "0xd1d094e92d315ff7e03cded2272358469e3a3065",
+   "inflow_usd": 800001
+  },
+  {
+   "chain": "bsc",
+   "address": "0x13802682a0a8b6b5b9257da5fc1487156e367636",
+   "inflow_usd": 800001
+  },
+  {
+   "chain": "bsc",
+   "address": "0x1e65a2028fda5d360883d9883854bd4307841bd7",
+   "inflow_usd": 800001
+  },
+  {
+   "chain": "bsc",
+   "address": "0x05c5b5a2152dc5661a8a0be2227b6965776e2296",
+   "inflow_usd": 800001
+  },
+  {
+   "chain": "bsc",
+   "address": "0xec8b9af703cb73099890ad704ca0adbb5f091e59",
+   "inflow_usd": 800001
+  },
+  {
+   "chain": "bsc",
+   "address": "0xf077f6bf12406d1edb7994dc1b1d4536c1a39a05",
+   "inflow_usd": 800001
+  },
+  {
+   "chain": "bsc",
+   "address": "0x8b1ebabd77694cd245da59160b1343ff5f630638",
+   "inflow_usd": 800001
+  },
+  {
+   "chain": "bsc",
+   "address": "0x21ee7fc7cb2183fa1f36bc3433a125d0e134fe39",
+   "inflow_usd": 800001
+  },
+  {
+   "chain": "bsc",
+   "address": "0xeb3a02876df043e6b559f1e4c37dddfb82495969",
+   "inflow_usd": 800001
+  },
+  {
+   "chain": "bsc",
+   "address": "0xfd63bb2a8b59ead22944d2adb6f0498111879a79",
+   "inflow_usd": 800001
+  },
+  {
+   "chain": "bsc",
+   "address": "0x7fd52b73efe5db1a3215c1ca14bfb2b16c18b606",
+   "inflow_usd": 800001
+  },
+  {
+   "chain": "bsc",
+   "address": "0x25aabd63056ba6b79d1b6db4746fa99f688c837d",
+   "inflow_usd": 800001
+  },
+  {
+   "chain": "bsc",
+   "address": "0xd02e5f6a3d387c913c3f9a63dad07eef7934c2f8",
+   "inflow_usd": 800001
+  },
+  {
+   "chain": "bsc",
+   "address": "0x0d27b2a7c6cb07ea7e3002189aba4b48898044ff",
+   "inflow_usd": 800001
+  },
+  {
+   "chain": "bsc",
+   "address": "0xdb85dfe8e625575d043cbf3c3c917c4f358ce55e",
+   "inflow_usd": 800001
+  },
+  {
+   "chain": "bsc",
+   "address": "0x77413a5662900cd3b9c9741169834dff3482e0dc",
+   "inflow_usd": 800001
+  },
+  {
+   "chain": "bsc",
+   "address": "0xcc6b8b94910c818f8dfb8a51470827dec26e2bc0",
+   "inflow_usd": 800001
+  },
+  {
+   "chain": "bsc",
+   "address": "0x87f5be4e3e7f3621a3c61949d5c00e238dd6dd20",
+   "inflow_usd": 800001
+  },
+  {
+   "chain": "bsc",
+   "address": "0xe42b370f277d7742caacaa08325535d14f9cc50f",
+   "inflow_usd": 800001
+  },
+  {
+   "chain": "bsc",
+   "address": "0x7a639ae7dfaeb1dcd38a507a70be1d353590b182",
+   "inflow_usd": 800001
+  },
+  {
+   "chain": "bsc",
+   "address": "0x2f68417a18da681589f4ea64b9cc9839209acff7",
+   "inflow_usd": 765778
+  },
+  {
+   "chain": "bsc",
+   "address": "0xaf9b0a19e5b8f7316d98f9e10a47b94d8c52b3d2",
+   "inflow_usd": 682000
+  },
+  {
+   "chain": "bsc",
+   "address": "0xcfb9bef5f7b748ac72311f057f3a888bc73334d9",
+   "inflow_usd": 667060
+  },
+  {
+   "chain": "bsc",
+   "address": "0x073c8a225c8cf9d3f9157f5c1a1dbe02407f5720",
+   "inflow_usd": 665352
+  },
+  {
+   "chain": "bsc",
+   "address": "0xb80a582fa430645a043bb4f6135321ee01005fef",
+   "inflow_usd": 554521
+  },
+  {
+   "chain": "bsc",
+   "address": "0x8a289d458f5a134ba40015085a8f50ffb681b41d",
+   "inflow_usd": 529942
+  },
+  {
+   "chain": "bsc",
+   "address": "0x5afb6e189a268c6adfc9da13ca13e3ba91171a31",
+   "inflow_usd": 502380
+  },
+  {
+   "chain": "bsc",
+   "address": "0xf87a03cdeb8e79e1925fad4d28e4e676d63089d6",
+   "inflow_usd": 476572
+  },
+  {
+   "chain": "bsc",
+   "address": "0x41dce1a4b8fb5e6327701750af6231b7cd0b2a40",
+   "inflow_usd": 472321
+  },
+  {
+   "chain": "bsc",
+   "address": "0xa86382b419a70f749f80fd7d3745d46026ec8de9",
+   "inflow_usd": 447572
+  },
+  {
+   "chain": "bsc",
+   "address": "0x29493fdee62cb2b3b2edf3cf1ac5a008e26749ad",
+   "inflow_usd": 388353
+  },
+  {
+   "chain": "bsc",
+   "address": "0x4d1b90273d5b0ea98101154d73a6c7d7a19884db",
+   "inflow_usd": 374051
+  },
+  {
+   "chain": "bsc",
+   "address": "0x4e8e101924ede233c13e2d8622dc8aed2872d505",
+   "inflow_usd": 373190
+  },
+  {
+   "chain": "bsc",
+   "address": "0xf26ebeb0805a8a0546f4a7b5ca17e9b43df4fb16",
+   "inflow_usd": 372384
+  },
+  {
+   "chain": "bsc",
+   "address": "0x119dd7daff816f29d7ee47596ae5e4bdc4299165",
+   "inflow_usd": 349973
+  },
+  {
+   "chain": "bsc",
+   "address": "0x9400f8ad57e9e0f352345935d6d3175975eb1d9f",
+   "inflow_usd": 348818
+  },
+  {
+   "chain": "bsc",
+   "address": "0xb406021e07b31e1f7850fcccd7076094f18d07ef",
+   "inflow_usd": 346887
+  },
+  {
+   "chain": "bsc",
+   "address": "0x04930d4f0a2092f2bf9065bde009d2f1281a6fed",
+   "inflow_usd": 345563
+  },
+  {
+   "chain": "bsc",
+   "address": "0x50779f60ba5ed004abe1c37362419d8bf436d90e",
+   "inflow_usd": 339055
+  },
+  {
+   "chain": "bsc",
+   "address": "0x556b9306565093c855aea9ae92a594704c2cd59e",
+   "inflow_usd": 323713
+  },
+  {
+   "chain": "bsc",
+   "address": "0xb1ba60cdb44c88ec5366ab94dcb2f992b31f71f2",
+   "inflow_usd": 322700
+  }
+ ],
+ "new_testnet": [
+  {
+   "testnet": "sepolia",
+   "address": "0x0419ece34c8124ec121495c9e5f4956620dc6b28",
+   "users_sample": 1290,
+   "txs_sample": 1290,
+   "explorer": "https://sepolia.etherscan.io/address/0x0419ece34c8124ec121495c9e5f4956620dc6b28",
+   "chainid": 11155111
+  },
+  {
+   "testnet": "sepolia",
+   "address": "0xb5aadd62fbc1e42bbef02ddbbbcef053ff2acdf9",
+   "users_sample": 786,
+   "txs_sample": 786,
+   "explorer": "https://sepolia.etherscan.io/address/0xb5aadd62fbc1e42bbef02ddbbbcef053ff2acdf9",
+   "chainid": 11155111
+  },
+  {
+   "testnet": "sepolia",
+   "address": "0x611f9e9d8a0049322265e94ae8379e760ec431f4",
+   "users_sample": 331,
+   "txs_sample": 331,
+   "explorer": "https://sepolia.etherscan.io/address/0x611f9e9d8a0049322265e94ae8379e760ec431f4",
+   "chainid": 11155111
+  },
+  {
+   "testnet": "sepolia",
+   "address": "0x87a3effb84cbe1e4cab6ab430139ec41d156d55a",
+   "users_sample": 143,
+   "txs_sample": 159,
+   "explorer": "https://sepolia.etherscan.io/address/0x87a3effb84cbe1e4cab6ab430139ec41d156d55a",
+   "chainid": 11155111
+  },
+  {
+   "testnet": "sepolia",
+   "address": "0xee567fe1712faf6149d80da1e6934e354124cfe3",
+   "users_sample": 71,
+   "txs_sample": 76,
+   "explorer": "https://sepolia.etherscan.io/address/0xee567fe1712faf6149d80da1e6934e354124cfe3",
+   "chainid": 11155111
+  },
+  {
+   "testnet": "sepolia",
+   "address": "0xca11bde05977b3631167028862be2a173976ca11",
+   "users_sample": 42,
+   "txs_sample": 174,
+   "explorer": "https://sepolia.etherscan.io/address/0xca11bde05977b3631167028862be2a173976ca11",
+   "chainid": 11155111
+  },
+  {
+   "testnet": "sepolia",
+   "address": "0x42ed97b6b3f0249db3222ff44f42ce1ae7af8dd3",
+   "users_sample": 40,
+   "txs_sample": 3216,
+   "explorer": "https://sepolia.etherscan.io/address/0x42ed97b6b3f0249db3222ff44f42ce1ae7af8dd3",
+   "chainid": 11155111
+  },
+  {
+   "testnet": "sepolia",
+   "address": "0x1c7d4b196cb0c7b01d743fbc6116a902379c7238",
+   "users_sample": 40,
+   "txs_sample": 1184,
+   "explorer": "https://sepolia.etherscan.io/address/0x1c7d4b196cb0c7b01d743fbc6116a902379c7238",
+   "chainid": 11155111
+  },
+  {
+   "testnet": "sepolia",
+   "address": "0x7f57966c2c4af94bc95bd7803de2c24d4275ced6",
+   "users_sample": 39,
+   "txs_sample": 39,
+   "explorer": "https://sepolia.etherscan.io/address/0x7f57966c2c4af94bc95bd7803de2c24d4275ced6",
+   "chainid": 11155111
+  },
+  {
+   "testnet": "sepolia",
+   "address": "0xa1f78bed1a79b9aec972e373e0e7f63d8cace4a8",
+   "users_sample": 36,
+   "txs_sample": 36,
+   "explorer": "https://sepolia.etherscan.io/address/0xa1f78bed1a79b9aec972e373e0e7f63d8cace4a8",
+   "chainid": 11155111
+  },
+  {
+   "testnet": "sepolia",
+   "address": "0x07ea2ff889e6228cded329a09f66e370f12c705e",
+   "users_sample": 25,
+   "txs_sample": 26,
+   "explorer": "https://sepolia.etherscan.io/address/0x07ea2ff889e6228cded329a09f66e370f12c705e",
+   "chainid": 11155111
+  },
+  {
+   "testnet": "arbitrum-sepolia",
+   "address": "0xa1467ffdc95cd2821736ee5b044e14e72cb80fd4",
+   "users_sample": 25,
+   "txs_sample": 240,
+   "explorer": "https://sepolia.arbiscan.io/address/0xa1467ffdc95cd2821736ee5b044e14e72cb80fd4",
+   "chainid": 421614
+  },
+  {
+   "testnet": "arbitrum-sepolia",
+   "address": "0x1659df68b63cbddc3a6c321296984518a5cb84cf",
+   "users_sample": 25,
+   "txs_sample": 27,
+   "explorer": "https://sepolia.arbiscan.io/address/0x1659df68b63cbddc3a6c321296984518a5cb84cf",
+   "chainid": 421614
+  }
+ ],
+ "new_mints": [
+  {
+   "chain": "ink",
+   "address": "0x88bd447bc718589aca7b63a9bd7d61b899e5c09e",
+   "mints": 32,
+   "recipients": 32,
+   "std": "erc721",
+   "block_7d": 61367945,
+   "age": "<7d",
+   "name": "#9D70FF",
+   "symbol": "#9D70FF",
+   "code_bytes": 45,
+   "decimals": 0,
+   "total_supply": 5570.0,
+   "features": [],
+   "kind": "other"
+  },
+  {
+   "chain": "monad",
+   "address": "0xe76d070bd40306455ead1db7ae4c70386869151d",
+   "mints": 21,
+   "recipients": 21,
+   "std": "erc721",
+   "block_7d": 122829177,
+   "age": "<7d",
+   "name": "Ghost Signal • Log",
+   "symbol": "GSL98",
+   "code_bytes": 11489,
+   "decimals": 0,
+   "total_supply": 21.0,
+   "features": [
+    "erc20",
+    "erc721",
+    "public_mint",
+    "owner"
+   ],
+   "kind": "nft"
+  },
+  {
+   "chain": "monad",
+   "address": "0x902eb312d35a706c07fd6a96ba652421399c8710",
+   "mints": 21,
+   "recipients": 21,
+   "std": "erc721",
+   "block_7d": 122829177,
+   "age": "<7d",
+   "name": "Proxy Gate - Echo",
+   "symbol": "PGE97",
+   "code_bytes": 11489,
+   "decimals": 0,
+   "total_supply": 21.0,
+   "features": [
+    "erc20",
+    "erc721",
+    "public_mint",
+    "owner"
+   ],
+   "kind": "nft"
+  },
+  {
+   "chain": "monad",
+   "address": "0x1b320d1ab5fbd404f22c909e60686bfdc9957676",
+   "mints": 21,
+   "recipients": 21,
+   "std": "erc721",
+   "block_7d": 122829177,
+   "age": "<7d",
+   "name": "Kernel Zero : Sequence",
+   "symbol": "KZS96",
+   "code_bytes": 11489,
+   "decimals": 0,
+   "total_supply": 21.0,
+   "features": [
+    "erc20",
+    "erc721",
+    "public_mint",
+    "owner"
+   ],
+   "kind": "nft"
+  },
+  {
+   "chain": "monad",
+   "address": "0x3fbcb5ab2033c04d6cbede44baf7c5a65733e241",
+   "mints": 21,
+   "recipients": 21,
+   "std": "erc721",
+   "block_7d": 122829177,
+   "age": "<7d",
+   "name": "Kernel Zero : Uplink",
+   "symbol": "KZU95",
+   "code_bytes": 11489,
+   "decimals": 0,
+   "total_supply": 21.0,
+   "features": [
+    "erc20",
+    "erc721",
+    "public_mint",
+    "owner"
+   ],
+   "kind": "nft"
+  },
+  {
+   "chain": "monad",
+   "address": "0x50217e3bc6326b249ace0b6dd985132a2219750b",
+   "mints": 21,
+   "recipients": 21,
+   "std": "erc721",
+   "block_7d": 122829177,
+   "age": "<7d",
+   "name": "Cipher Node : Link",
+   "symbol": "CNL94",
+   "code_bytes": 11489,
+   "decimals": 0,
+   "total_supply": 21.0,
+   "features": [
+    "erc20",
+    "erc721",
+    "public_mint",
+    "owner"
+   ],
+   "kind": "nft"
+  }
+ ],
+ "new_protocols": [
+  {
+   "id": "lillytrade",
+   "name": "LiLLyTrade",
+   "url": "https://lillytrade.xyz",
+   "twitter": "LIQDLilly",
+   "category": "Interface",
+   "chains": [],
+   "tvl": null,
+   "audits": "0",
+   "audit_links": null,
+   "token_address": null,
+   "gecko_id": null,
+   "description": "Hyperliquid trading terminal for crypto perps and HIP-3 markets (metals and energy included).",
+   "listed_at": 1795454351
+  }
+ ]
 }
