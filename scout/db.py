@@ -24,6 +24,9 @@ CREATE TABLE IF NOT EXISTS young (       -- pools that failed the market filter 
 CREATE TABLE IF NOT EXISTS sinks (       -- contracts receiving big stablecoin inflows (on-chain protocol discovery)
   key TEXT PRIMARY KEY, chain TEXT, address TEXT, first_seen TEXT, stage TEXT, inflow_usd REAL, last_inflow_usd REAL
 );
+CREATE TABLE IF NOT EXISTS testnet (     -- testnet contracts with many unique users (airdrop farming targets)
+  key TEXT PRIMARY KEY, testnet TEXT, address TEXT, first_seen TEXT, stage TEXT, users REAL, last_users REAL, data TEXT
+);
 CREATE TABLE IF NOT EXISTS protocols (
   id TEXT PRIMARY KEY, name TEXT, first_seen TEXT, category TEXT, chains TEXT,
   tvl REAL, url TEXT, twitter TEXT, audits TEXT, data TEXT
@@ -80,4 +83,17 @@ def save_sink(con, now, s, baseline):
         return False
     con.execute("INSERT INTO sinks VALUES (?,?,?,?,?,?,?)",
                 (key, s["chain"], s["address"], now, "baseline" if baseline else "new", s["inflow_usd"], s["inflow_usd"]))
+    return not baseline
+
+
+def save_testnet(con, now, c):
+    """New hot testnet contract -> True. The first scan of each testnet is a silent baseline."""
+    key = f'testnet:{c["testnet"]}:{c["address"]}'
+    if con.execute("SELECT 1 FROM testnet WHERE key=?", (key,)).fetchone():
+        con.execute("UPDATE testnet SET last_users=? WHERE key=?", (c["users_sample"], key))
+        return False
+    baseline = con.execute("SELECT COUNT(*) FROM testnet WHERE testnet=?", (c["testnet"],)).fetchone()[0] == 0
+    con.execute("INSERT INTO testnet VALUES (?,?,?,?,?,?,?,?)",
+                (key, c["testnet"], c["address"], now, "baseline" if baseline else "new",
+                 c["users_sample"], c["users_sample"], json.dumps(c)))
     return not baseline

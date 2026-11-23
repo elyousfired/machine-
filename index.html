@@ -80,6 +80,14 @@
     </table></div>
   </section>
 
+  <section class="card wide">
+    <h2>🧪 مشاريع ف Testnet (بزاف ديال الـ users جداد)</h2>
+    <div class="scroll"><table>
+      <thead><tr><th>Testnet</th><th>Contract</th><th>Users (sample)</th><th>Txs (sample)</th><th>Agent 2</th></tr></thead>
+      <tbody id="testnet"></tbody>
+    </table></div>
+  </section>
+
   <section class="card">
     <h2>🏗️ بروتوكولات جداد (DefiLlama — متعطل)</h2>
     <div class="scroll"><table>
@@ -153,7 +161,8 @@ async function load(){
   TOKENS = (latest?.tokens) || [];
   const pend = TOKENS.filter(t => !DONE[`${t.market.network}:${t.market.token}`]).length
     + (latest?.new_protocols||[]).filter(p => !DONE[`protocol:${p.id}`]).length
-    + (latest?.new_sinks||[]).filter(s => !DONE[`sink:${s.chain}:${s.address}`]).length;
+    + (latest?.new_sinks||[]).filter(s => !DONE[`sink:${s.chain}:${s.address}`]).length
+    + (latest?.new_testnet||[]).filter(c => !DONE[`testnet:${c.testnet}:${c.address}`]).length;
   const today = vals.filter(v => v.slice(0,10) === new Date().toISOString().slice(0,10)).length;
   document.getElementById("a2status").innerHTML = `${last ? `<span class="pill ok">آخر تحليل قبل ${ago(last)}</span>` : `<span class="pill">مازال ما حلل والو</span>`}<br>الـ run الجاي: ${inMin(nextAt(53))}`;
   document.getElementById("a2kpis").innerHTML = kpi(fmt(vals.length),"مشاريع تحللو (total)") + kpi(fmt(today),"تحللو اليوم") + kpi(fmt(pend),"كيتسناو (آخر scan)");
@@ -172,6 +181,12 @@ async function load(){
     <td class="num">$${fmt(s.inflow_usd)}</td>
     <td>${DONE[`sink:${s.chain}:${s.address}`] ? `<span class="pill ok">تحلل</span>` : `<span class="pill warn">كيتسنى</span>`}</td></tr>`).join("")
     || `<tr><td colspan="4" class="mut">${latest?.stats?.sinks_baseline_run ? "أول run: كيسجل الـ contracts المعروفين (baseline)، الجداد كيبانو من الـ run الجاي." : "والو جديد ف آخر scan."}</td></tr>`;
+
+  document.getElementById("testnet").innerHTML = (latest?.new_testnet||[]).map(c => `<tr><td>${esc(c.testnet)}</td>
+    <td><a href="${esc(c.explorer)}" target="_blank" rel="noopener" style="direction:ltr">${esc(c.address.slice(0,10))}…</a></td>
+    <td class="num">${c.users_sample}</td><td class="num">${c.txs_sample}</td>
+    <td>${DONE[`testnet:${c.testnet}:${c.address}`] ? `<span class="pill ok">تحلل</span>` : `<span class="pill warn">كيتسنى</span>`}</td></tr>`).join("")
+    || `<tr><td colspan="5" class="mut">والو جديد ف آخر scan (أول scan ديال كل testnet كيكون baseline).</td></tr>`;
 
   document.getElementById("runs").innerHTML = (runs||[]).slice().reverse().slice(0,60).map(r => `<tr>
     <td class="mut">${esc(r.at.slice(5,16).replace("T"," "))}</td><td class="num">${r.networks_scanned ?? r.networks}</td><td class="num">${fmt(r.pools)}</td>

@@ -8,13 +8,13 @@ import time
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
-from . import sources, filters, db, onchain
+from . import sources, filters, db, onchain, testnet
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "shortlist"
 MAX_DEEP_CHECKS = 80      # tokens that get info+security calls per run (rate limits)
 MAX_OUTCOME_CHECKS = 40
-SCAN_BUDGET_S = 13 * 60    # stop scanning networks after 18 min so deep checks + commit always happen
+SCAN_BUDGET_S = 11 * 60    # stop scanning networks after 18 min so deep checks + commit always happen
 
 
 def main():
@@ -112,7 +112,18 @@ def main():
     stats["onchain_hours"] = coverage
     stats["sinks_baseline_run"] = baseline
 
-    # 3b) DefiLlama kept as a secondary, delayed source
+    # 3b) testnets: contracts suddenly used by many wallets (airdrop farming)
+    tn_raw, tn_status = testnet.hot_contracts()
+    # a testnet's first scan is a baseline: insert all its rows before judging "new"
+    tn_new = []
+    for c in tn_raw:
+        if db.save_testnet(con, now, c):
+            tn_new.append(c)
+    stats["testnet_hot"] = len(tn_raw)
+    stats["testnet_new"] = len(tn_new)
+    stats["testnets"] = tn_status
+
+    # 3c) DefiLlama kept as a secondary, delayed source
     protocols = [pr for pr in sources.new_llama_protocols() if db.save_protocol(con, now, pr)]
 
     # 4) outcome tracking for past shortlisted tokens (feeds the learning base)
@@ -138,7 +149,7 @@ def main():
     con.commit()
     con.close()
 
-    report = {"generated_at": now, "stats": stats, "tokens": shortlist, "new_sinks": sinks, "new_protocols": protocols}
+    report = {"generated_at": now, "stats": stats, "tokens": shortlist, "new_sinks": sinks, "new_testnet": tn_new, "new_protocols": protocols}
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "latest.json").write_text(json.dumps(report, indent=1, ensure_ascii=False))
     (OUT / f'{now_dt.strftime("%Y-%m-%d_%H")}.json').write_text(json.dumps(report, ensure_ascii=False))
