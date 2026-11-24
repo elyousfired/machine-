@@ -13,7 +13,7 @@ from . import sources, filters, db, onchain, testnet, mints
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "shortlist"
 MAX_DEEP_CHECKS = 80      # tokens that get info+security calls per run (rate limits)
-MAX_OUTCOME_CHECKS = 40
+MAX_OUTCOME_CHECKS = 120
 SCAN_BUDGET_S = 8 * 60    # stop scanning networks after 8 min so deep checks + commit always happen
 
 
@@ -113,6 +113,8 @@ def main():
         old = (not known and not baseline and mints.younger_than_7d(onchain.CHAINS[s["chain"]]["rpc"], s) is False)
         if db.save_sink(con, now, s, baseline, old):
             sinks.append(s)
+    for s in raw_sinks:
+        db.hist(con, now, f'sink:{s["chain"]}:{s["address"]}', {"inflow_usd": s["inflow_usd"]})
     stats["sinks_checked"] = len(raw_sinks)
     stats["new_sinks"] = len(sinks)
     stats["onchain_hours"] = coverage
@@ -125,6 +127,8 @@ def main():
     for c in tn_raw:
         if db.save_testnet(con, now, c):
             tn_new.append(c)
+    for c in tn_raw:
+        db.hist(con, now, f'testnet:{c["testnet"]}:{c["address"]}', {"users": c["users_sample"], "txs": c["txs_sample"]})
     stats["testnet_hot"] = len(tn_raw)
     stats["testnet_new"] = len(tn_new)
     stats["testnets"] = tn_status
@@ -146,6 +150,8 @@ def main():
                 continue
             db.save_mint(con, now, c, "new")
             new_mints.append(c)
+    for c in raw_m:
+        db.hist(con, now, f'mint:{c["chain"]}:{c["address"]}', {"recipients": c["recipients"], "mints": c["mints"]})
     stats["mints_hot"] = len(raw_m)
     stats["mints_new"] = len(new_mints)
     stats["mints_chains_ok"] = sum(1 for v in m_cov.values() if v)
@@ -165,12 +171,13 @@ def main():
         age = now_dt - datetime.strptime(first, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
         last = con.execute("SELECT MAX(ts) FROM snapshots WHERE key=?", (key,)).fetchone()[0]
         last_age = now_dt - datetime.strptime(last, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc) if last else age
-        due = (age < timedelta(days=2) and last_age >= timedelta(hours=20)) or last_age >= timedelta(days=6)
+        due = age < timedelta(days=3) or last_age >= timedelta(hours=20)
         if not due:
             continue
         st = sources.pool_now(net, pool)
         if st:
             db.snapshot(con, now, key, st)
+            db.hist(con, now, key, st)
             outcomes += 1
     stats["outcome_snapshots"] = outcomes
 

@@ -30,6 +30,9 @@ CREATE TABLE IF NOT EXISTS testnet (     -- testnet contracts with many unique u
 CREATE TABLE IF NOT EXISTS mints (       -- contracts minting to many wallets (protocol deposits, NFT/badge campaigns)
   key TEXT PRIMARY KEY, chain TEXT, address TEXT, first_seen TEXT, stage TEXT, recipients REAL, last_recipients REAL, data TEXT
 );
+CREATE TABLE IF NOT EXISTS history (     -- time series for every tracked item (tokens, mints, sinks, testnet) -> outcome learning
+  key TEXT, ts TEXT, data TEXT, PRIMARY KEY (key, ts)
+);
 CREATE TABLE IF NOT EXISTS protocols (
   id TEXT PRIMARY KEY, name TEXT, first_seen TEXT, category TEXT, chains TEXT,
   tvl REAL, url TEXT, twitter TEXT, audits TEXT, data TEXT
@@ -117,3 +120,7 @@ def save_mint(con, now, c, stage):
     con.execute("INSERT OR IGNORE INTO mints VALUES (?,?,?,?,?,?,?,?)",
                 (f'mint:{c["chain"]}:{c["address"]}', c["chain"], c["address"], now, stage,
                  c["recipients"], c["recipients"], json.dumps(c)))
+
+
+def hist(con, now, key, data):
+    con.execute("INSERT OR REPLACE INTO history VALUES (?,?,?)", (key, now, json.dumps(data)))

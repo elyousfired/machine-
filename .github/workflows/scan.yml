@@ -1,8 +1,12 @@
 name: agent1-scan
 on:
   schedule:
-    - cron: "17 */4 * * *"   # every 4h
-  workflow_dispatch: {}
+    - cron: "17 * * * *"   # hourly tick: GitHub often drops scheduled runs, the guard below keeps real scans ~every 4h
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Scan even if the last scan is recent"
+        default: "true"
 permissions:
   contents: write
 concurrency:
@@ -14,15 +18,29 @@ jobs:
     timeout-minutes: 58
     steps:
       - uses: actions/checkout@v4
+      - name: Guard (skip if last scan < 3h40m ago)
+        id: guard
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then echo "go=1" >> $GITHUB_OUTPUT; exit 0; fi
+          last=$(python3 -c "import json;print(json.load(open('data/runs.json'))[-1]['at'])" 2>/dev/null || echo 1970-01-01T00:00:00Z)
+          age=$(( $(date -u +%s) - $(date -u -d "$last" +%s) ))
+          echo "last scan $last, age ${age}s"
+          if [ $age -ge 13200 ]; then echo "go=1" >> $GITHUB_OUTPUT; else echo "go=0" >> $GITHUB_OUTPUT; fi
       - uses: actions/setup-python@v5
+        if: steps.guard.outputs.go == '1'
         with:
           python-version: "3.12"
-      - run: pip install -r requirements.txt
-      - run: python -m scout.run
+      - if: steps.guard.outputs.go == '1'
+        run: pip install -r requirements.txt
+      - if: steps.guard.outputs.go == '1'
+        run: python -m scout.run
       - name: Commit results
+        if: steps.guard.outputs.go == '1'
         run: |
           git config user.name "agent1-bot"
           git config user.email "agent1-bot@users.noreply.github.com"
           git add data/
-          git diff --cached --quiet || git commit -m "scan $(date -u +%Y-%m-%dT%H:%MZ)"
-          git push
+          git diff --cached --quiet && exit 0
+          git commit -m "scan $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3; do git pull --rebase -X ours -q && git push && exit 0; sleep 5; done
+          exit 1
