@@ -1,13 +1,61 @@
 {
- "generated_at": "2026-11-24T19:26:57Z",
+ "generated_at": "2026-11-24T19:46:47Z",
  "coverage_pct": {
-  "eth": 0,
-  "base": 0,
-  "arbitrum": 0,
+  "eth": 4.0,
+  "base": 1.5,
+  "arbitrum": 2.0,
   "bsc": 0
  },
  "dexes_measured": 0,
  "top_fees": [],
  "fee_movers": [],
- "new_dexes": []
+ "new_dexes": [],
+ "flows_coverage_pct": {
+  "eth": 10.0,
+  "base": 0,
+  "arbitrum": 5.1,
+  "bsc": 0
+ },
+ "vaults_measured": 0,
+ "lending_measured": 2,
+ "top_vaults": [],
+ "vault_inflows": [],
+ "vault_movers": [],
+ "new_vaults": [],
+ "top_lending": [
+  {
+   "chain": "arbitrum",
+   "address": "0x794a61358d6845594f94dc1db02a252b5b4814ad",
+   "type": "aave",
+   "name": "Aave V3",
+   "markets": 3,
+   "users_sample": 32,
+   "supply_4h": 1703721,
+   "borrow_4h": 418097,
+   "repay_4h": 989857,
+   "borrows": 279440829,
+   "interest_4h": 5906,
+   "revenue_4h": 630,
+   "net_borrow_4h": -571760,
+   "key": "lend:arbitrum:0x794a61358d6845594f94dc1db02a252b5b4814ad"
+  },
+  {
+   "chain": "eth",
+   "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+   "type": "aave",
+   "name": "Aave V3",
+   "markets": 3,
+   "users_sample": 44,
+   "supply_4h": 68724052,
+   "borrow_4h": 12297782,
+   "repay_4h": 2268112,
+   "borrows": 0,
+   "interest_4h": 0,
+   "revenue_4h": 0,
+   "net_borrow_4h": 10029670,
+   "key": "lend:eth:0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2"
+  }
+ ],
+ "lending_movers": [],
+ "new_lending": []
 }
