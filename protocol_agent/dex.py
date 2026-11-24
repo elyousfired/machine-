@@ -40,6 +40,24 @@ FACTORY_NAMES = {
 }
 
 
+# publicnode refuses address-less getLogs, so the Protocol Agent uses its own RPC list (tested 2026-11-24)
+PA_RPC = {"eth": ["https://eth.drpc.org", "https://rpc.mevblocker.io", "https://ethereum-rpc.publicnode.com"],
+          "base": ["https://base.drpc.org", "https://1rpc.io/base", "https://mainnet.base.org"],
+          "arbitrum": ["https://arbitrum.drpc.org", "https://arb1.arbitrum.io/rpc"],
+          "bsc": ["https://bsc.drpc.org", "https://1rpc.io/bnb", "https://bsc-dataseed.bnbchain.org"]}
+MAX_CHUNK_BLOCKS = 45    # 1rpc caps getLogs at 50 blocks
+
+
+def get_logs(urls, frm, to, topics):
+    """try each RPC in turn (rate limits / address-less refusals differ per provider); None if all fail."""
+    for u in urls:
+        try:
+            return _one([u], "eth_getLogs", [{"fromBlock": hex(frm), "toBlock": hex(to), "topics": [topics]}])
+        except (ValueError, RuntimeError):
+            continue
+    return None
+
+
 def _post(urls, payload):
     for url in urls:
         try:
@@ -94,7 +112,7 @@ def _signed(h):
 
 
 def scan_chain(chain, cache, hours=4):
-    urls = onchain.CHAINS[chain]["rpc"]
+    urls = PA_RPC[chain]
     t0 = time.time()
     quotes = {a: (1.0, d) for a, d in onchain.CHAINS[chain]["tokens"].items()}
     quotes.update({a: (1.0, d) for a, d in EXTRA_STABLES.get(chain, {}).items()})
@@ -109,17 +127,15 @@ def scan_chain(chain, cache, hours=4):
     ts = {x["id"]: int(x["result"]["timestamp"], 16) for x in b}
     spb = max(0.05, (ts[0] - ts[1]) / (latest - probe))
     window = int(hours * 3600 / spb)
-    clen = max(1, int(CHUNK_SECONDS / spb))
+    clen = max(1, min(MAX_CHUNK_BLOCKS, int(CHUNK_SECONDS / spb)))
     starts = [latest - clen - int(i * (window - clen) / max(1, N_CHUNKS - 1)) for i in range(N_CHUNKS)]
 
     swaps, sampled_blocks = {}, 0     # pool -> list of (kind, data)
     for s in starts:
         if time.time() - t0 > PER_CHAIN_BUDGET_S:
             break
-        try:
-            logs = _one(urls, "eth_getLogs", [{"fromBlock": hex(s), "toBlock": hex(s + clen - 1),
-                                               "topics": [[V2, SOLIDLY, V3, PCS_V3]]}])
-        except (ValueError, RuntimeError):
+        logs = get_logs(urls, s, s + clen - 1, [V2, SOLIDLY, V3, PCS_V3])
+        if logs is None:
             continue
         sampled_blocks += clen
         for lg in logs:

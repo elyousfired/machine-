@@ -96,6 +96,31 @@
     </table></div>
   </section>
 
+  <section class="card wide">
+    <h2>⚡ Protocol Agent — الـ fees ديال الـ DEXes (live من البلوكات، 4 ساعات)</h2>
+    <div class="mut" id="pa_status"></div>
+    <div class="scroll"><table>
+      <thead><tr><th>Chain</th><th>DEX</th><th>Volume 4h</th><th>Fees 4h</th><th>تبدل</th><th>Pools</th><th></th></tr></thead>
+      <tbody id="pa_dex"></tbody>
+    </table></div>
+  </section>
+
+  <section class="card wide">
+    <h2>🏦 Lending — الـ borrows والـ revenue (Aave / Compound forks)</h2>
+    <div class="scroll"><table>
+      <thead><tr><th>Chain</th><th>Protocol</th><th>Borrows</th><th>تبدل</th><th>Interest 4h</th><th>Revenue 4h</th><th>Net borrow 4h</th><th>Users</th><th></th></tr></thead>
+      <tbody id="pa_lend"></tbody>
+    </table></div>
+  </section>
+
+  <section class="card wide">
+    <h2>🔐 Vaults ERC-4626 — الـ TVL والـ depositors</h2>
+    <div class="scroll"><table>
+      <thead><tr><th>Chain</th><th>Vault</th><th>TVL</th><th>تبدل</th><th>Net flow 4h</th><th>Depositors</th><th></th></tr></thead>
+      <tbody id="pa_vault"></tbody>
+    </table></div>
+  </section>
+
   <section class="card">
     <h2>🏗️ بروتوكولات جداد (DefiLlama — متعطل)</h2>
     <div class="scroll"><table>
@@ -145,6 +170,32 @@ function renderTokens(){
       <td>${DONE[key] ? `<span class="pill ok">تحلل</span>` : `<span class="pill warn">كيتسنى</span>`}</td>
       <td class="mut">${ago(m.created_at)}</td></tr>`;
   }).join("") || `<tr><td colspan="11" class="mut">مازال ما كاين والو — كيتسنى أول run ديال Agent 1.</td></tr>`;
+}
+
+async function loadPA(EXP){
+  const p = await j(RAW+"data/protocols/latest.json");
+  if(!p) return;
+  const lnk = (c,a,t) => `<a href="https://${EXP[c]||"etherscan.io"}/address/${esc(a)}" target="_blank" rel="noopener" style="direction:ltr">${esc(t||a.slice(0,10)+"…")}</a>`;
+  const chg = v => v==null ? "–" : `<span style="color:var(--${v>=0?"ok":"bad"})">${v>0?"+":""}${v}%</span>`;
+  const flag = (d, movers, news) => news.some(x=>x.key===d.key) ? `<span class="pill ok">جديد</span>` : movers.some(x=>x.key===d.key) ? `<span class="pill warn">كيطلع</span>` : "";
+  const cov = o => Object.entries(o||{}).map(([c,v])=>`${c} ${v}%`).join(" · ");
+  document.getElementById("pa_status").innerHTML = `آخر run قبل ${ago(p.generated_at)} · DEX coverage: ${cov(p.coverage_pct)} · flows coverage: ${cov(p.flows_coverage_pct)}`;
+  const dexes = [...(p.new_dexes||[]), ...(p.fee_movers||[]), ...(p.top_fees||[])].filter((d,i,a)=>a.findIndex(x=>x.key===d.key)===i);
+  document.getElementById("pa_dex").innerHTML = dexes.map(d => `<tr><td>${esc(d.chain)}</td><td>${lnk(d.chain,d.factory,d.name)}</td>
+    <td class="num">$${fmt(d.volume_4h)}</td><td class="num">$${fmt(d.fees_4h)}</td><td class="num">${chg(d.fees_change_pct)}</td>
+    <td class="num">${d.pools}</td><td>${flag(d,p.fee_movers||[],p.new_dexes||[])}</td></tr>`).join("")
+    || `<tr><td colspan="7" class="mut">والو ف آخر run.</td></tr>`;
+  const lend = [...(p.new_lending||[]), ...(p.lending_movers||[]), ...(p.top_lending||[])].filter((d,i,a)=>a.findIndex(x=>x.key===d.key)===i);
+  document.getElementById("pa_lend").innerHTML = lend.map(d => `<tr><td>${esc(d.chain)}</td><td>${lnk(d.chain,d.address,d.name||d.type)}</td>
+    <td class="num">$${fmt(d.borrows)}</td><td class="num">${chg(d.change_pct)}</td><td class="num">$${fmt(d.interest_4h)}</td>
+    <td class="num">$${fmt(d.revenue_4h)}</td><td class="num">$${fmt(d.net_borrow_4h)}</td><td class="num">${d.users_sample}</td>
+    <td>${flag(d,p.lending_movers||[],p.new_lending||[])}</td></tr>`).join("")
+    || `<tr><td colspan="9" class="mut">${p.top_lending ? "والو ف آخر run." : "كيتسنى أول run ديال المرحلة 2."}</td></tr>`;
+  const vl = [...(p.new_vaults||[]), ...(p.vault_movers||[]), ...(p.vault_inflows||[]), ...(p.top_vaults||[])].filter((d,i,a)=>a.findIndex(x=>x.key===d.key)===i);
+  document.getElementById("pa_vault").innerHTML = vl.map(d => `<tr><td>${esc(d.chain)}</td><td>${lnk(d.chain,d.address)}</td>
+    <td class="num">$${fmt(d.tvl)}</td><td class="num">${chg(d.change_pct)}</td><td class="num">$${fmt(d.net_flow_4h)}</td>
+    <td class="num">${d.depositors_sample}</td><td>${flag(d,p.vault_movers||[],p.new_vaults||[])}</td></tr>`).join("")
+    || `<tr><td colspan="7" class="mut">${p.top_vaults ? "والو ف آخر run." : "كيتسنى أول run ديال المرحلة 2."}</td></tr>`;
 }
 
 async function load(){
@@ -204,6 +255,7 @@ async function load(){
     <td>${DONE[`testnet:${c.testnet}:${c.address}`] ? `<span class="pill ok">تحلل</span>` : `<span class="pill warn">كيتسنى</span>`}</td></tr>`).join("")
     || `<tr><td colspan="5" class="mut">والو جديد ف آخر scan (أول scan ديال كل testnet كيكون baseline).</td></tr>`;
 
+  loadPA(EXP);
   document.getElementById("runs").innerHTML = (runs||[]).slice().reverse().slice(0,60).map(r => `<tr>
     <td class="mut">${esc(r.at.slice(5,16).replace("T"," "))}</td><td class="num">${r.networks_scanned ?? r.networks}</td><td class="num">${fmt(r.pools)}</td>
     <td class="num">${fmt(r.new)}</td><td class="num">${fmt(r.market_pass)}</td><td class="num">${fmt(r.shortlisted)}</td></tr>`).join("")
