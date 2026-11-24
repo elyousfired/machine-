@@ -111,6 +111,17 @@ def main():
         known = con.execute("SELECT 1 FROM sinks WHERE key=?", (f'sink:{s["chain"]}:{s["address"]}',)).fetchone()
         # an established contract that simply wasn't in the top list before is not "new": require age < 7d
         old = (not known and not baseline and mints.younger_than_7d(onchain.CHAINS[s["chain"]]["rpc"], s) is False)
+        if not known and not baseline and not old:
+            try:
+                s.update(mints.read_contract(onchain.CHAINS[s["chain"]]["rpc"], s["address"]))
+            except Exception:
+                pass
+            a = s["address"].lower()
+            bot_like = (a.startswith("0x000000") or a.startswith("0xc0ffee")
+                        or (s.get("kind") == "other" and (s.get("code_bytes") or 0) < 8000))
+            if bot_like or s.get("kind") in ("dex_lp", "nft", "token"):
+                old = True     # stored, never reported
+                stats["sinks_noise_dropped"] = stats.get("sinks_noise_dropped", 0) + 1
         if db.save_sink(con, now, s, baseline, old):
             sinks.append(s)
     for s in raw_sinks:
@@ -148,8 +159,24 @@ def main():
             if c.get("kind") == "dex_lp":
                 db.save_mint(con, now, c, "skip_lp")
                 continue
-            db.save_mint(con, now, c, "new")
             new_mints.append(c)
+    # bot farms: many new contracts sharing one code template -> keep one representative
+    groups = {}
+    for c in new_mints:
+        groups.setdefault(c.get("code_hash") or c["address"], []).append(c)
+    kept = []
+    for h, g in groups.items():
+        seen_farm = con.execute("SELECT 1 FROM mints WHERE stage='bot_farm' AND data LIKE ?", (f'%"{h}"%',)).fetchone()
+        if len(g) >= 3 or seen_farm:
+            for c in g:
+                db.save_mint(con, now, c, "bot_farm")
+            stats.setdefault("mint_farms_dropped", 0)
+            stats["mint_farms_dropped"] += len(g)
+        else:
+            for c in g:
+                db.save_mint(con, now, c, "new")
+            kept += g
+    new_mints = kept
     for c in raw_m:
         db.hist(con, now, f'mint:{c["chain"]}:{c["address"]}', {"recipients": c["recipients"], "mints": c["mints"]})
     stats["mints_hot"] = len(raw_m)

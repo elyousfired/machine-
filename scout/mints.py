@@ -7,6 +7,8 @@ Every ERC20/ERC721/ERC1155-style mint is a Transfer log whose `from` is 0x0. get
 Then we read the contract over RPC (name/symbol/supply/proxy + function selectors in bytecode) and classify it.
 Read-only JSON-RPC, never raises.
 """
+import hashlib
+import re
 import time
 import requests
 
@@ -100,6 +102,10 @@ def read_contract(urls, addr):
     except ValueError:
         pass
     impl = "0x" + impl_slot[-40:] if impl_slot and int(impl_slot, 16) else None
+    clone = re.match(r"^0x363d3d373d3d3d363d73([0-9a-f]{40})5af43d82803e903d91602b57fd5bf3", code.lower())
+    if clone and not impl:
+        impl = "0x" + clone.group(1)          # EIP-1167 minimal proxy (clone)
+        info["clone"] = True
     if impl:
         info["proxy_impl"] = impl
         try:
@@ -107,6 +113,7 @@ def read_contract(urls, addr):
         except Exception:
             pass
     c = code.lower()
+    info["code_hash"] = hashlib.sha256(c.encode()).hexdigest()[:16]   # same hash = same contract template (bot farms)
     info["features"] = [k for k, sels in SELECTORS.items() if any(("63" + s) in c for s in sels)]
     f = set(info["features"])
     info["kind"] = ("vault" if "vault_4626" in f else "lending" if "lending" in f else "staking" if "staking" in f

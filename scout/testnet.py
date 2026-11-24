@@ -68,8 +68,25 @@ def _rpc1(urls, method, params):
     return js["result"]
 
 
+INFRA = {"0xca11bde05977b3631167028862be2a173976ca11", "0x0000000071727de22e5e9d8baf0edac6f37da032",
+         "0x5ff137d4b0fdcd49dca30c7cf57e578a026d2789", "0x4337084d9e255ff0702461cf8895ce9e3b5ff108",
+         "0x1c7d4b196cb0c7b01d743fbc6116a902379c7238", "0xfff9976782d46cc05630d1f6ebab18b2324d6b14",
+         "0x4200000000000000000000000000000000000006", "0x4200000000000000000000000000000000000010",
+         "0x000000000022d473030f116ddee9f6b43ac78ba3", "0x00000000000000adc04c56bf30ac9d3c0aaf14dc"}
+
+
+def _keep(a, n, t):
+    """Drop infra and faucet/one-shot patterns (few users, ~1 tx each)."""
+    if a.lower() in INFRA:
+        return False
+    if n < 100 and t / max(n, 1) < 1.2:
+        return False
+    return True
+
+
 def _rank(name, cfg, users, txs, t0):
-    hot = sorted(((a, len(s)) for a, s in users.items() if len(s) >= MIN_USERS), key=lambda x: -x[1])[:60]
+    hot = sorted(((a, len(s)) for a, s in users.items() if len(s) >= MIN_USERS and _keep(a, len(s), txs[a])),
+                 key=lambda x: -x[1])[:60]
     return [{"testnet": name, "address": a, "users_sample": n, "txs_sample": txs[a],
              "explorer": f'{cfg.get("explorer", "")}/{"address/" if not cfg.get("type") else ""}{a}{cfg.get("suffix", "")}', "chainid": cfg.get("chainid")}
             for a, n in hot]
@@ -186,7 +203,8 @@ def scan_net(name, cfg, hours=4):
                 users.setdefault(to, set()).add(tx.get("from", "").lower())
                 txs[to] = txs.get(to, 0) + 1
 
-    hot = sorted(((a, len(s)) for a, s in users.items() if len(s) >= MIN_USERS), key=lambda x: -x[1])[:60]
+    hot = sorted(((a, len(s)) for a, s in users.items() if len(s) >= MIN_USERS and _keep(a, len(s), txs[a])),
+                 key=lambda x: -x[1])[:60]
     out = []
     if hot:
         codes = _post(urls, [{"jsonrpc": "2.0", "id": k, "method": "eth_getCode", "params": [a, "latest"]}

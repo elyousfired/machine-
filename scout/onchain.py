@@ -58,6 +58,7 @@ def scan_chain(chain, hours=4):
     start = max(1, latest - int(hours * 3600 / secs_per_block))
 
     inflow, covered_from = {}, latest + 1
+    amounts = {}      # recipient -> list of rounded transfer amounts (detect one operator batch-funding)
     # walk backwards from the newest block so a time cut still covers the most recent part
     hi, step = latest, 2000
     while hi >= start and time.time() - t0 < PER_CHAIN_BUDGET_S:
@@ -73,12 +74,27 @@ def scan_chain(chain, hours=4):
         for lg in logs:
             dec = cfg["tokens"].get(lg["address"].lower(), 6)
             to = "0x" + lg["topics"][2][-40:]
-            inflow[to] = inflow.get(to, 0) + int(lg["data"], 16) / 10 ** dec
+            v = int(lg["data"], 16) / 10 ** dec
+            inflow[to] = inflow.get(to, 0) + v
+            if v >= 1000:
+                amounts.setdefault(to, []).append(round(v))
         covered_from, hi = lo, lo - 1
         if len(logs) < 3000 and step < 20000:
             step *= 2
 
-    big = sorted(((a, v) for a, v in inflow.items() if v >= MIN_INFLOW_USD), key=lambda x: -x[1])[:150]
+    # identical amounts sent to >=5 different contracts = one operator funding a batch, not organic deposits
+    by_amount = {}
+    for to, lst in amounts.items():
+        for v in set(lst):
+            by_amount.setdefault(v, set()).add(to)
+    batch_amounts = {v for v, tos in by_amount.items() if len(tos) >= 5}
+
+    def batch_funded(a):
+        lst = amounts.get(a, [])
+        return lst and sum(v for v in lst if v in batch_amounts) >= 0.8 * inflow[a]
+
+    big = sorted(((a, v) for a, v in inflow.items() if v >= MIN_INFLOW_USD and not batch_funded(a)),
+                 key=lambda x: -x[1])[:150]
     out = []
     for addr, usd in big:
         if time.time() - t0 > PER_CHAIN_BUDGET_S + 40:
