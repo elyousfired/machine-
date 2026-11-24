@@ -1,0 +1,39 @@
+name: protocol-agent
+on:
+  schedule:
+    - cron: "41 * * * *"   # hourly tick, guard keeps real runs ~every 4h
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency:
+  group: protocol-agent
+  cancel-in-progress: false
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Guard (skip if last run < 3h40m ago)
+        id: guard
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then echo "go=1" >> $GITHUB_OUTPUT; exit 0; fi
+          last=$(python3 -c "import json;print(json.load(open('data/protocols/latest.json'))['generated_at'])" 2>/dev/null || echo 1970-01-01T00:00:00Z)
+          age=$(( $(date -u +%s) - $(date -u -d "$last" +%s) ))
+          if [ $age -ge 13200 ]; then echo "go=1" >> $GITHUB_OUTPUT; else echo "go=0" >> $GITHUB_OUTPUT; fi
+      - uses: actions/setup-python@v5
+        if: steps.guard.outputs.go == '1'
+        with:
+          python-version: "3.12"
+      - if: steps.guard.outputs.go == '1'
+        run: pip install -r requirements.txt && python -m protocol_agent.run
+      - name: Commit results
+        if: steps.guard.outputs.go == '1'
+        run: |
+          git config user.name "protocol-agent-bot"
+          git config user.email "protocol-agent-bot@users.noreply.github.com"
+          git add data/protocols data/protocols.sqlite
+          git diff --cached --quiet && exit 0
+          git commit -m "protocol-agent $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3; do git pull --rebase -X ours -q && git push && exit 0; sleep 5; done
+          exit 1
