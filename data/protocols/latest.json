@@ -1,0 +1,13 @@
+{
+ "generated_at": "2026-11-24T19:26:57Z",
+ "coverage_pct": {
+  "eth": 0,
+  "base": 0,
+  "arbitrum": 0,
+  "bsc": 0
+ },
+ "dexes_measured": 0,
+ "top_fees": [],
+ "fee_movers": [],
+ "new_dexes": []
+}
