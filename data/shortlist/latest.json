@@ -1,35 +1,35 @@
 {
- "generated_at": "2026-11-24T04:48:03Z",
+ "generated_at": "2026-11-24T19:07:54Z",
  "stats": {
-  "pools": 349,
-  "new": 737,
-  "market_pass": 8,
-  "shortlisted": 3,
-  "young_rechecked": 494,
-  "young_promoted": 0,
+  "pools": 324,
+  "new": 885,
+  "market_pass": 9,
+  "shortlisted": 4,
+  "young_rechecked": 666,
+  "young_promoted": 1,
   "networks": 222,
-  "networks_scanned": 32,
-  "sinks_checked": 270,
-  "new_sinks": 58,
+  "networks_scanned": 33,
+  "sinks_checked": 250,
+  "new_sinks": 27,
   "onchain_hours": {
    "eth": 4.0,
-   "base": 2.39,
+   "base": 2.92,
    "arbitrum": 0.01,
-   "bsc": 1.41
+   "bsc": 2.05
   },
   "sinks_baseline_run": false,
-  "testnet_hot": 38,
-  "testnet_new": 20,
+  "testnet_hot": 37,
+  "testnet_new": 15,
   "testnets": {
-   "sepolia": 26,
+   "sepolia": 27,
    "base-sepolia": 2,
    "arbitrum-sepolia": 3,
    "optimism-sepolia": 0,
-   "bsc-testnet": 0,
+   "bsc-testnet": 1,
    "monad-testnet": 0,
    "linea-sepolia": 0,
    "scroll-sepolia": "fail",
-   "eth-hoodi": 4,
+   "eth-hoodi": 1,
    "unichain-sepolia": 0,
    "zksync-sepolia": 0,
    "mantle-sepolia": 1,
@@ -46,44 +46,86 @@
    "solana-devnet": 0,
    "solana-testnet": 0
   },
-  "mints_hot": 20,
-  "mints_new": 14,
-  "mints_chains_ok": 18,
+  "mints_hot": 6,
+  "mints_new": 0,
+  "mints_chains_ok": 19,
   "mints_chains": 38,
-  "outcome_snapshots": 0
+  "outcome_snapshots": 39
  },
  "tokens": [
   {
-   "score": 76,
+   "score": 78,
    "warnings": [],
    "market": {
     "network": "solana",
-    "pool": "CpfB8pTVj8Uzu55nKj6sX4KmV6zVe7J2t3C22mLgCVGg",
-    "name": "GROKIA / SOL",
-    "token": "3cL47ohWa2HApLYKtqPsqkjaxJ6HLvT5Ri1KvWdXpump",
+    "pool": "EkEXwkZqweA8rbv31KwjbYzSE3SoSgez1VrYkvu6uY2w",
+    "name": "cateball / SOL",
+    "token": "4npJ3avxnGhCzKbWQpLrQXAHsjWzKr4JqBsbu5Fspump",
     "dex": "pumpswap",
-    "created_at": "2026-11-24T02:15:33Z",
-    "liquidity_usd": 118775.0166,
-    "fdv_usd": 2466945.77583209,
+    "created_at": "2026-11-22T09:06:49Z",
+    "liquidity_usd": 65268.5479,
+    "fdv_usd": 755068.767567271,
     "mcap_usd": null,
-    "vol_24h": 1964665.83809871,
-    "buys_24h": 21722,
-    "sells_24h": 13614,
-    "buyers_24h": 9114,
-    "price_chg_24h": 514.216
+    "vol_24h": 632009.793773892,
+    "buys_24h": 11823,
+    "sells_24h": 5849,
+    "buyers_24h": 2968,
+    "price_chg_24h": 1.304
    },
    "info": {
-    "symbol": "GROKIA",
+    "symbol": "cateball",
     "websites": [
-     "https://grokiasol.fun"
+     "https://www.cateball.lol"
     ],
-    "twitter": "GrokiaMeme",
+    "twitter": "cateballcoin",
     "telegram": null,
     "discord": null,
-    "description": "Grok’s AI influencer",
-    "gt_score": 53.81818181818182,
-    "holder_count": 3339,
-    "top10_pct": 27.34
+    "description": "Cateball is a meme token on the Solana blockchain centered on a white cat curled into a round shape, resembling a snowball. The name combines “cate,” meaning cat in the project's concept, with “ball,” describing the mascot's rounded sleeping pose. Its visual identity features a sleeping white-cat character, snow-themed artwork, and the tagline “The cat. The ball. The cut.” The project's focus is its cat-themed meme identity and related creative content. It does not claim affiliation with Kabosu, Dogecoin, or the separate CATE and Snowball token projects.",
+    "gt_score": 58.18181818181819,
+    "holder_count": 15320,
+    "top10_pct": 6.9783
+   },
+   "security": {
+    "source": "goplus-sol",
+    "ok": true,
+    "mintable": false,
+    "freezable": false,
+    "closable": false,
+    "balance_mutable": false,
+    "non_transferable": false
+   }
+  },
+  {
+   "score": 75,
+   "warnings": [],
+   "market": {
+    "network": "solana",
+    "pool": "7v3yUnuNayZ6KwbAxJSd3TXnk2WT92q18zJiB677nNso",
+    "name": "DONJENSEN / SOL",
+    "token": "5LDowscYVD3a6ZS4m8gCqG5nU16eLTwRXhciFi1bpump",
+    "dex": "pumpswap",
+    "created_at": "2026-11-24T02:34:03Z",
+    "liquidity_usd": 100590.9973,
+    "fdv_usd": 1931269.82371715,
+    "mcap_usd": null,
+    "vol_24h": 1755537.41404216,
+    "buys_24h": 132642,
+    "sells_24h": 102764,
+    "buyers_24h": 10781,
+    "price_chg_24h": 461.056
+   },
+   "info": {
+    "symbol": "DONJENSEN",
+    "websites": [
+     "https://donjensen.site"
+    ],
+    "twitter": "donjensenx",
+    "telegram": null,
+    "discord": null,
+    "description": "Kiss the ring. Hold the line. $DONJENSEN, the Don of Solana memes 🌹",
+    "gt_score": 60.8831168831169,
+    "holder_count": 10434,
+    "top10_pct": 13.5971
    },
    "security": {
     "source": "goplus-sol",
@@ -99,33 +141,83 @@
    "score": 72,
    "warnings": [],
    "market": {
-    "network": "solana",
-    "pool": "FnHWfV49ywCtGCDTyf34AVN8BiXxcgXUKqLctkrkP1gQ",
-    "name": "JIMMY / SOL",
-    "token": "38M2z4UCfZEkUHFzD48vhKQhFhNyRGto8pZbLjNipump",
-    "dex": "pumpswap",
-    "created_at": "2026-11-23T21:11:11Z",
-    "liquidity_usd": 47336.3641,
-    "fdv_usd": 372114.328261799,
-    "mcap_usd": null,
-    "vol_24h": 2048771.12312741,
-    "buys_24h": 23338,
-    "sells_24h": 17726,
-    "buyers_24h": 6136,
-    "price_chg_24h": 1204.732
+    "network": "eth",
+    "pool": "0x922ee8ad1c00e86f7d67be1fd8ae5b11f1c4b1695fb5522c67b0f7512e382ddd",
+    "name": "DOGEBALL / ETH",
+    "token": "0xba41ff65fd0a19aa75dd4e6a04e9d3c15acab887",
+    "dex": "uniswap-v4-ethereum",
+    "created_at": "2026-11-24T14:38:47Z",
+    "liquidity_usd": 70444.7989,
+    "fdv_usd": 953109.3972,
+    "mcap_usd": 953109.3972,
+    "vol_24h": 113668.119882993,
+    "buys_24h": 171,
+    "sells_24h": 25,
+    "buyers_24h": 151,
+    "price_chg_24h": 56015.46
    },
    "info": {
-    "symbol": "JIMMY",
+    "symbol": "DOGEBALL",
     "websites": [
-     "https://archive.4plebs.org/s4s/thread/1665870"
+     "https://www.dogeballtoken.fun"
     ],
-    "twitter": "onzhainmozart_4/status/2124972940458434964",
+    "twitter": "dogeball_eth",
     "telegram": null,
     "discord": null,
-    "description": "",
-    "gt_score": 49.24675324675325,
-    "holder_count": 2278,
-    "top10_pct": 26.0992
+    "description": "Meet $DOGEBALL, the world’s only crypto playing DOGE! Combining the legendary DOGE spirit with the fun, energy, and competitive excitement of a ball game, DOGEBALL brings a fresh twist to meme culture. Built for the community, fueled by internet humor, and inspired by the unstoppable power of memes, $DOGEBALL is here to make crypto more entertaining. Whether you're a DOGE fan, a meme enthusiast, or simply looking for the next big meme phenomenon, DOGEBALL invites you to join the game, share the fun, and become part of the movement. The ball is in your court — are you ready to play DOGEBALL?",
+    "gt_score": 56.95238095238094,
+    "holder_count": 282,
+    "top10_pct": 28.0641
+   },
+   "security": {
+    "source": "goplus-evm",
+    "ok": true,
+    "honeypot": false,
+    "open_source": true,
+    "proxy": false,
+    "mintable": false,
+    "hidden_owner": false,
+    "take_back_ownership": false,
+    "pausable": false,
+    "cannot_sell_all": false,
+    "blacklist": false,
+    "buy_tax": 0.0,
+    "sell_tax": 0.0,
+    "owner": null,
+    "creator_pct": 0.0,
+    "lp_locked_pct": 1.0,
+    "holder_count": "120"
+   }
+  },
+  {
+   "score": 67,
+   "warnings": [],
+   "market": {
+    "network": "solana",
+    "pool": "CSvKMfrQ2TedEZEDpFSoHbGqxNb1A3w5o2vVM6Y5eoQ5",
+    "name": "DUVAL / SOL",
+    "token": "7fmD1p3jzva28EPP9bPqbDoxZGj5j398yJoE3EVypump",
+    "dex": "pumpswap",
+    "created_at": "2026-11-24T10:11:57Z",
+    "liquidity_usd": 32283.7041,
+    "fdv_usd": 158757.024240294,
+    "mcap_usd": null,
+    "vol_24h": 2365067.9256509,
+    "buys_24h": 34796,
+    "sells_24h": 25943,
+    "buyers_24h": 7244,
+    "price_chg_24h": 468.32
+   },
+   "info": {
+    "symbol": "DUVAL",
+    "websites": [],
+    "twitter": "dv3333333/status/2125170356264575398",
+    "telegram": null,
+    "discord": null,
+    "description": "Deployed using https://j7tracker.io",
+    "gt_score": 48.20779220779221,
+    "holder_count": 2126,
+    "top10_pct": 31.7568
    },
    "security": {
     "source": "goplus-sol",
@@ -136,906 +228,329 @@
     "balance_mutable": false,
     "non_transferable": false
    }
-  },
-  {
-   "score": 66,
-   "warnings": [
-    "no_security_data"
-   ],
-   "market": {
-    "network": "eth",
-    "pool": "0xc262a95ca99580f9eec06fd814cb2dfc6fe907a4921fbc33cd03abe12eb6e524",
-    "name": "WSTAR / ETH",
-    "token": "0x160a8a73059d54f68d77ac1626c08425ec2ec0e0",
-    "dex": "uniswap-v4-ethereum",
-    "created_at": "2026-11-18T01:40:23Z",
-    "liquidity_usd": 30019.684,
-    "fdv_usd": 143988.4944,
-    "mcap_usd": 143988.4944,
-    "vol_24h": 200453.227590839,
-    "buys_24h": 545,
-    "sells_24h": 405,
-    "buyers_24h": 261,
-    "price_chg_24h": -95.374
-   },
-   "info": {
-    "symbol": "WSTAR",
-    "websites": [
-     "https://www.wantedstar.site"
-    ],
-    "twitter": "WantedStarCoin",
-    "telegram": null,
-    "discord": null,
-    "description": "Wanted Star (WSTAR) is an Ethereum-based meme token built around a star-themed internet character and a playful “wanted” visual identity. The project focuses on community participation, online memes, and the sharing of its branding across social channels. WSTAR is intended for entertainment and community use; it does not represent ownership in a company, a claim on revenue, or a guaranteed financial return. The project’s published information identifies its token contract and official social account so users can verify the token and follow updates. No additional product utility is currently described by the project.",
-    "gt_score": 35.06285714285715,
-    "holder_count": 982,
-    "top10_pct": 18.5163
-   },
-   "security": {
-    "source": "goplus-evm",
-    "ok": false,
-    "honeypot": false,
-    "open_source": false,
-    "proxy": false,
-    "mintable": false,
-    "hidden_owner": false,
-    "take_back_ownership": false,
-    "pausable": false,
-    "cannot_sell_all": false,
-    "blacklist": false,
-    "buy_tax": null,
-    "sell_tax": null,
-    "owner": null,
-    "creator_pct": null,
-    "lp_locked_pct": 0,
-    "holder_count": null
-   }
   }
  ],
  "new_sinks": [
   {
    "chain": "eth",
-   "address": "0xe08d97e151473a848c3d9ca3f323cb720472d015",
-   "inflow_usd": 4285526816,
-   "block_7d": 26432455
+   "address": "0x002fbe208a0078001c3800005f00c28367638b9f",
+   "inflow_usd": 79902454,
+   "block_7d": 26436876
   },
   {
    "chain": "eth",
-   "address": "0x50f02612ea1f79a84ef72d6912a5452f40a88edd",
-   "inflow_usd": 607802391,
-   "block_7d": 26432455
+   "address": "0x53bcdcc18f3bada2cd749a72b28d55eb7abb3dd2",
+   "inflow_usd": 19231906,
+   "block_7d": 26436876
   },
   {
    "chain": "eth",
-   "address": "0x492d255234c83f2ddc5aa904d8a9db6743e9f046",
-   "inflow_usd": 288340683,
-   "block_7d": 26432455
+   "address": "0x74ad2f789ed583dbd141bbdafc673fe1f033718b",
+   "inflow_usd": 16432051,
+   "block_7d": 26436876
   },
   {
    "chain": "eth",
-   "address": "0x7966319bab61f7d6473a64277897885893c2ee94",
-   "inflow_usd": 232214258,
-   "block_7d": 26432455
+   "address": "0x1e26642cad6cf90b6dab8e262dfe3b42f378fd1d",
+   "inflow_usd": 15719952,
+   "block_7d": 26436876
   },
   {
    "chain": "eth",
-   "address": "0x0c339ac7b721c78b6e3a3d8d1257e1972635ee99",
-   "inflow_usd": 223400764,
-   "block_7d": 26432455
+   "address": "0x9761ddf8e79930b334f1be1bd93abe3695061cca",
+   "inflow_usd": 15719952,
+   "block_7d": 26436876
   },
   {
    "chain": "eth",
-   "address": "0xf1d2d880c5dde7cc912636c2b4d080b3fe5f7b50",
-   "inflow_usd": 133936458,
-   "block_7d": 26432455
+   "address": "0x111116056ad60f0f4fb52d60852f9acd2fafca11",
+   "inflow_usd": 15454564,
+   "block_7d": 26436876
   },
   {
    "chain": "eth",
-   "address": "0x4659362bb53d0d7c97c136753ba512dadfe2467b",
-   "inflow_usd": 126543039,
-   "block_7d": 26432455
+   "address": "0xc7fb3461473b90de370e8c2941653a7cb01b813b",
+   "inflow_usd": 11829083,
+   "block_7d": 26436876
   },
   {
    "chain": "eth",
-   "address": "0xeeaa2562f89bd75d920d785aacd0c401a0105597",
-   "inflow_usd": 72555622,
-   "block_7d": 26432455
+   "address": "0x55e86664a4f6542e928375ea1fe7dc29aa666172",
+   "inflow_usd": 10000000,
+   "block_7d": 26436876
   },
   {
    "chain": "eth",
-   "address": "0x31ce87fa87ef4f6aa25c4b77af93ec3a12d9360a",
-   "inflow_usd": 61006514,
-   "block_7d": 26432455
+   "address": "0x056b269eb1f75477a8666ae8c7fe01b64dd55ecc",
+   "inflow_usd": 9655002,
+   "block_7d": 26436876
   },
   {
-   "chain": "eth",
+   "chain": "base",
+   "address": "0x167ad13ed086b2b26f16114a999d5f12dd240dc0",
+   "inflow_usd": 1499324,
+   "block_7d": 58766168
+  },
+  {
+   "chain": "arbitrum",
+   "address": "0x0729e2a4716d9f7dd17858d5d504426d228697f7",
+   "inflow_usd": 398250,
+   "block_7d": 525006838
+  },
+  {
+   "chain": "arbitrum",
+   "address": "0xf41429fc96ff446b8118359ba16854e07c393591",
+   "inflow_usd": 398250,
+   "block_7d": 525006838
+  },
+  {
+   "chain": "bsc",
+   "address": "0xd545345f66ded9c68548d08e9e6acd3c87b0996c",
+   "inflow_usd": 8169344,
+   "block_7d": 134174856
+  },
+  {
+   "chain": "bsc",
+   "address": "0x5be10189f009334aacae23d7102d64527e32bbdb",
+   "inflow_usd": 774196,
+   "block_7d": 134174856
+  },
+  {
+   "chain": "bsc",
+   "address": "0x5d439a1e32481113762f6d35644eecd9ec64072f",
+   "inflow_usd": 656148,
+   "block_7d": 134174856
+  },
+  {
+   "chain": "bsc",
+   "address": "0x9008d19f58aabd9ed0d60971565aa8510560ab41",
+   "inflow_usd": 645637,
+   "block_7d": 134174856
+  },
+  {
+   "chain": "bsc",
+   "address": "0xcd8183a614f281c88f4c043696d8b9bab92cd83b",
+   "inflow_usd": 591450,
+   "block_7d": 134174856
+  },
+  {
+   "chain": "bsc",
+   "address": "0xb33a6bdf4192ebd826ee14967c48f08d3b889fad",
+   "inflow_usd": 507653,
+   "block_7d": 134174856
+  },
+  {
+   "chain": "bsc",
+   "address": "0x783a045d2fbe37ce593c0c19e5b32b1504f5b49e",
+   "inflow_usd": 501207,
+   "block_7d": 134174856
+  },
+  {
+   "chain": "bsc",
+   "address": "0x463df4e44218539645f7c4ec1b1404127bd7f32b",
+   "inflow_usd": 482107,
+   "block_7d": 134174856
+  },
+  {
+   "chain": "bsc",
+   "address": "0xb8d02e032afd395310db52a18f16f562dae24a8c",
+   "inflow_usd": 482059,
+   "block_7d": 134174856
+  },
+  {
+   "chain": "bsc",
+   "address": "0x1bd39ffd375e7f1ad90af3e472539b3d63cf3021",
+   "inflow_usd": 450468,
+   "block_7d": 134174856
+  },
+  {
+   "chain": "bsc",
+   "address": "0xb72aff607ae2a677edb832196da471bedc289f4b",
+   "inflow_usd": 447684,
+   "block_7d": 134174856
+  },
+  {
+   "chain": "bsc",
+   "address": "0x8593a23946272ab188175b0157e54ff4cab5ff9a",
+   "inflow_usd": 408684,
+   "block_7d": 134174856
+  },
+  {
+   "chain": "bsc",
+   "address": "0xbbe24bb49bc8261e23160f9c0c6370aec2d6886c",
+   "inflow_usd": 408223,
+   "block_7d": 134174856
+  },
+  {
+   "chain": "bsc",
    "address": "0x0000000000be226afde21672a5e4adc45692e69d",
-   "inflow_usd": 56133542,
-   "block_7d": 26432455
-  },
-  {
-   "chain": "eth",
-   "address": "0xeda03592fc94bb8f68bbd518ba6e6d223e3248ec",
-   "inflow_usd": 53307839,
-   "block_7d": 26432455
-  },
-  {
-   "chain": "eth",
-   "address": "0x26704ccfcd45b5780dcd58d38b12f5e0cdb481a0",
-   "inflow_usd": 41481904,
-   "block_7d": 26432455
-  },
-  {
-   "chain": "eth",
-   "address": "0x77acd80b3ddb03374d49cfc56b87de3859f2676f",
-   "inflow_usd": 31834868,
-   "block_7d": 26432455
-  },
-  {
-   "chain": "eth",
-   "address": "0x78b5b14e788c8e7ffc3d6909ac92364829d850cb",
-   "inflow_usd": 31830128,
-   "block_7d": 26432455
-  },
-  {
-   "chain": "eth",
-   "address": "0x541db7d11c61e3a62827f16024ce41c2e1b9d769",
-   "inflow_usd": 31579435,
-   "block_7d": 26432455
-  },
-  {
-   "chain": "eth",
-   "address": "0x615cfffd4634f374f330fe688faa79ad38e255d5",
-   "inflow_usd": 31576041,
-   "block_7d": 26432455
-  },
-  {
-   "chain": "eth",
-   "address": "0xaf225a36cdb0a35aff50c41cc48366054dedd972",
-   "inflow_usd": 31250495,
-   "block_7d": 26432455
-  },
-  {
-   "chain": "eth",
-   "address": "0x34defaf9336d0b903b8fcdb9b48697b19522b03d",
-   "inflow_usd": 31248226,
-   "block_7d": 26432455
-  },
-  {
-   "chain": "eth",
-   "address": "0xc3d422d0fcf1d687c27a42ddc37998f332250900",
-   "inflow_usd": 30902594,
-   "block_7d": 26432455
-  },
-  {
-   "chain": "eth",
-   "address": "0x22afbb76e6deb6bf480150213a3adbda5adb6a48",
-   "inflow_usd": 30901887,
-   "block_7d": 26432455
-  },
-  {
-   "chain": "eth",
-   "address": "0x9151f5c7a37968d8ca8176c0647073dfe77bd918",
-   "inflow_usd": 18658786,
-   "block_7d": 26432455
-  },
-  {
-   "chain": "eth",
-   "address": "0x225f99aaaa914d0481ef3a0bedd8aabf1b9c4d1d",
-   "inflow_usd": 17247188,
-   "block_7d": 26432455
-  },
-  {
-   "chain": "eth",
-   "address": "0x6c96de32cea08842dcc4058c14d3aaad7fa41dee",
-   "inflow_usd": 17217972,
-   "block_7d": 26432455
-  },
-  {
-   "chain": "eth",
-   "address": "0x682ea8aa9b23250e0e240580e8ae55205f612979",
-   "inflow_usd": 13190059,
-   "block_7d": 26432455
-  },
-  {
-   "chain": "eth",
-   "address": "0xe2e7a17dff93280dec073c995595155283e3c372",
-   "inflow_usd": 11588591,
-   "block_7d": 26432455
-  },
-  {
-   "chain": "eth",
-   "address": "0x7a33e07faf9efdd97e538c31d4b655c0d993bc2f",
-   "inflow_usd": 10166457,
-   "block_7d": 26432455
-  },
-  {
-   "chain": "eth",
-   "address": "0x1dfc6bec8499fcb5e3151c7c6d27feb9d7eae1d4",
-   "inflow_usd": 9570935,
-   "block_7d": 26432455
-  },
-  {
-   "chain": "eth",
-   "address": "0x1f748c76de468e9d11bd340fa9d5cbadf315dfb0",
-   "inflow_usd": 9448287,
-   "block_7d": 26432455
-  },
-  {
-   "chain": "eth",
-   "address": "0x29065a4c1f2f20d1e263930088890d6f49fe715a",
-   "inflow_usd": 7000000,
-   "block_7d": 26432455
-  },
-  {
-   "chain": "eth",
-   "address": "0x585d44727129b9c69791b10238ca605932938b4f",
-   "inflow_usd": 6207482,
-   "block_7d": 26432455
-  },
-  {
-   "chain": "eth",
-   "address": "0xbf3a9504d555752ae12d2c482e957c66c4a32131",
-   "inflow_usd": 5841634,
-   "block_7d": 26432455
-  },
-  {
-   "chain": "eth",
-   "address": "0xd1e9242e075db4bdd3f3c721d7d5fd4180a94a7e",
-   "inflow_usd": 5841634,
-   "block_7d": 26432455
-  },
-  {
-   "chain": "eth",
-   "address": "0x6c5d5d47a39fe9f8ca14731a9a42bd31d64fb40d",
-   "inflow_usd": 5795179,
-   "block_7d": 26432455
-  },
-  {
-   "chain": "eth",
-   "address": "0x23f5e9c35820f4bab695ac1f19c203cc3f8e1e11",
-   "inflow_usd": 5795179,
-   "block_7d": 26432455
-  },
-  {
-   "chain": "eth",
-   "address": "0xbebc44782c7db0a1a60cb6fe97d0b483032ff1c7",
-   "inflow_usd": 5595181,
-   "block_7d": 26432455
-  },
-  {
-   "chain": "eth",
-   "address": "0x3ffe25727429bb7fd91cab16ab003f7013b25a43",
-   "inflow_usd": 5343696,
-   "block_7d": 26432455
+   "inflow_usd": 395896,
+   "block_7d": 134174856
   },
   {
    "chain": "bsc",
-   "address": "0x32bb631bf965dd9fdeecbd99f1da0d2d1daab227",
-   "inflow_usd": 5703735,
-   "block_7d": 134061595
-  },
-  {
-   "chain": "bsc",
-   "address": "0x128463a60784c4d3f46c23af3f65ed859ba87974",
-   "inflow_usd": 5480768,
-   "block_7d": 134061595
-  },
-  {
-   "chain": "bsc",
-   "address": "0xad4836bbf3671ebd4f2e1f49119c1184655e47ca",
-   "inflow_usd": 4995000,
-   "block_7d": 134061595
-  },
-  {
-   "chain": "bsc",
-   "address": "0xcf512172905c048f5c7736e5ac0a2ce929b0decc",
-   "inflow_usd": 1160715,
-   "block_7d": 134061595
-  },
-  {
-   "chain": "bsc",
-   "address": "0x4620f5c127a6055fbebb1f71327d60ff079c9060",
-   "inflow_usd": 1010281,
-   "block_7d": 134061595
-  },
-  {
-   "chain": "bsc",
-   "address": "0x588ac4873afd12e2f1f51db13af2cdcd95af3531",
-   "inflow_usd": 889650,
-   "block_7d": 134061595
-  },
-  {
-   "chain": "bsc",
-   "address": "0xfc0c4222b3a0c9b060c0b959dec62442036b9035",
-   "inflow_usd": 799305,
-   "block_7d": 134061595
-  },
-  {
-   "chain": "bsc",
-   "address": "0x489d46e43c1132461f5b89fd0cff2c5d8bd0dc97",
-   "inflow_usd": 664227,
-   "block_7d": 134061595
-  },
-  {
-   "chain": "bsc",
-   "address": "0x26deb24a2623cf54452ab5183e2c34551831d54d",
-   "inflow_usd": 649101,
-   "block_7d": 134061595
-  },
-  {
-   "chain": "bsc",
-   "address": "0x462f78dff23b56764882accf62970fbc5acc5bf0",
-   "inflow_usd": 641270,
-   "block_7d": 134061595
-  },
-  {
-   "chain": "bsc",
-   "address": "0x6beb5a40c032afc305961162d8204cda16decfa5",
-   "inflow_usd": 598267,
-   "block_7d": 134061595
-  },
-  {
-   "chain": "bsc",
-   "address": "0x9c49c2715fd5bc9f491be7c329a1a3b4f88a0d01",
-   "inflow_usd": 591190,
-   "block_7d": 134061595
-  },
-  {
-   "chain": "bsc",
-   "address": "0xeb76547574acf7b4c67fdf96b6c67dfd722e658f",
-   "inflow_usd": 508340,
-   "block_7d": 134061595
-  },
-  {
-   "chain": "bsc",
-   "address": "0xcc0cb5494b294618c6e5ce5f55ab87adec731e9c",
-   "inflow_usd": 493644,
-   "block_7d": 134061595
-  },
-  {
-   "chain": "bsc",
-   "address": "0x563d4fe7bbe71084c8c566093af6bb552eed2cf4",
-   "inflow_usd": 402056,
-   "block_7d": 134061595
-  },
-  {
-   "chain": "bsc",
-   "address": "0xcc51557bb504ea0803ce02d06d7f33278fc1b89a",
-   "inflow_usd": 390020,
-   "block_7d": 134061595
-  },
-  {
-   "chain": "bsc",
-   "address": "0x18d7ae5f7d23ba2443b657575f4ef4dec89a3f13",
-   "inflow_usd": 376201,
-   "block_7d": 134061595
-  },
-  {
-   "chain": "bsc",
-   "address": "0x45f4d687da7e80b07e2e924c06077450f6628e50",
-   "inflow_usd": 357538,
-   "block_7d": 134061595
-  },
-  {
-   "chain": "bsc",
-   "address": "0x1e0d2191a75d2cd74aeb917459d3f9cd8a9a280c",
-   "inflow_usd": 345863,
-   "block_7d": 134061595
-  },
-  {
-   "chain": "bsc",
-   "address": "0x512319a7bedfe6fe16978d430c6773696310ce76",
-   "inflow_usd": 309536,
-   "block_7d": 134061595
-  },
-  {
-   "chain": "bsc",
-   "address": "0x5f8ea66658dc64b671a3e807ff9df33928230f49",
-   "inflow_usd": 302402,
-   "block_7d": 134061595
-  },
-  {
-   "chain": "bsc",
-   "address": "0x8943d0d2c78932b36cab6b20a3cf7dc340a188b4",
-   "inflow_usd": 273842,
-   "block_7d": 134061595
+   "address": "0xc1d13492285eb664951e201bf7c80c7c6318a1b5",
+   "inflow_usd": 365384,
+   "block_7d": 134174856
   }
  ],
  "new_testnet": [
   {
    "testnet": "sepolia",
-   "address": "0x93083f60f1877a6ba974d5ed88bb74943deb8390",
-   "users_sample": 97,
-   "txs_sample": 98,
-   "explorer": "https://sepolia.etherscan.io/address/0x93083f60f1877a6ba974d5ed88bb74943deb8390",
+   "address": "0xd09416d328dfaa07a422a1df233d1d968b80fbf8",
+   "users_sample": 239,
+   "txs_sample": 267,
+   "explorer": "https://sepolia.etherscan.io/address/0xd09416d328dfaa07a422a1df233d1d968b80fbf8",
    "chainid": 11155111
   },
   {
    "testnet": "sepolia",
-   "address": "0xe787c35f6a875567409c4970ba7b41a0cb9d1b4d",
-   "users_sample": 91,
-   "txs_sample": 92,
-   "explorer": "https://sepolia.etherscan.io/address/0xe787c35f6a875567409c4970ba7b41a0cb9d1b4d",
+   "address": "0x94220c1c340336527c719bcf06067ca7769ac185",
+   "users_sample": 163,
+   "txs_sample": 163,
+   "explorer": "https://sepolia.etherscan.io/address/0x94220c1c340336527c719bcf06067ca7769ac185",
    "chainid": 11155111
   },
   {
    "testnet": "sepolia",
-   "address": "0xd4778aa86d4ef3513a5a1c4d8d6e121f3ba58236",
-   "users_sample": 87,
-   "txs_sample": 140,
-   "explorer": "https://sepolia.etherscan.io/address/0xd4778aa86d4ef3513a5a1c4d8d6e121f3ba58236",
+   "address": "0x7b118bd63bbe9023a2a509cecd48bc283d150539",
+   "users_sample": 158,
+   "txs_sample": 158,
+   "explorer": "https://sepolia.etherscan.io/address/0x7b118bd63bbe9023a2a509cecd48bc283d150539",
    "chainid": 11155111
   },
   {
    "testnet": "sepolia",
-   "address": "0xc959483dba39aa9e78757139af0e9a2edeb3f42d",
-   "users_sample": 62,
-   "txs_sample": 101,
-   "explorer": "https://sepolia.etherscan.io/address/0xc959483dba39aa9e78757139af0e9a2edeb3f42d",
+   "address": "0x63d01003f67d8807799fdfbdeefb583d3c8f7f73",
+   "users_sample": 153,
+   "txs_sample": 154,
+   "explorer": "https://sepolia.etherscan.io/address/0x63d01003f67d8807799fdfbdeefb583d3c8f7f73",
    "chainid": 11155111
   },
   {
    "testnet": "sepolia",
-   "address": "0x7b79995e5f793a07bc00c21412e50ecae098e7f9",
+   "address": "0xf5777e2a039887aa9362cb3b71bdd5287505e717",
+   "users_sample": 147,
+   "txs_sample": 147,
+   "explorer": "https://sepolia.etherscan.io/address/0xf5777e2a039887aa9362cb3b71bdd5287505e717",
+   "chainid": 11155111
+  },
+  {
+   "testnet": "sepolia",
+   "address": "0xf467ec26cf1911a0ff87e3a6d36b3aec915506a9",
+   "users_sample": 106,
+   "txs_sample": 120,
+   "explorer": "https://sepolia.etherscan.io/address/0xf467ec26cf1911a0ff87e3a6d36b3aec915506a9",
+   "chainid": 11155111
+  },
+  {
+   "testnet": "sepolia",
+   "address": "0x947528f677cf514b35393fe5fbb2a31b444c11a8",
+   "users_sample": 84,
+   "txs_sample": 84,
+   "explorer": "https://sepolia.etherscan.io/address/0x947528f677cf514b35393fe5fbb2a31b444c11a8",
+   "chainid": 11155111
+  },
+  {
+   "testnet": "sepolia",
+   "address": "0xcaa0757808a96f9f4ee76c04256536d6c17e6e27",
+   "users_sample": 73,
+   "txs_sample": 73,
+   "explorer": "https://sepolia.etherscan.io/address/0xcaa0757808a96f9f4ee76c04256536d6c17e6e27",
+   "chainid": 11155111
+  },
+  {
+   "testnet": "sepolia",
+   "address": "0xc985cb7225bbb30876d8876f21aff46f8444b4ef",
+   "users_sample": 70,
+   "txs_sample": 153,
+   "explorer": "https://sepolia.etherscan.io/address/0xc985cb7225bbb30876d8876f21aff46f8444b4ef",
+   "chainid": 11155111
+  },
+  {
+   "testnet": "sepolia",
+   "address": "0x18f652c41a5d30b4b49a9962800b34a6f1abfe41",
+   "users_sample": 64,
+   "txs_sample": 64,
+   "explorer": "https://sepolia.etherscan.io/address/0x18f652c41a5d30b4b49a9962800b34a6f1abfe41",
+   "chainid": 11155111
+  },
+  {
+   "testnet": "sepolia",
+   "address": "0xbdc1fe97e787ae7f653ffbccd74ec49814fe6aa1",
    "users_sample": 62,
    "txs_sample": 62,
-   "explorer": "https://sepolia.etherscan.io/address/0x7b79995e5f793a07bc00c21412e50ecae098e7f9",
+   "explorer": "https://sepolia.etherscan.io/address/0xbdc1fe97e787ae7f653ffbccd74ec49814fe6aa1",
    "chainid": 11155111
   },
   {
    "testnet": "sepolia",
-   "address": "0x94a9d9ac8a22534e3faca9f4e7f2e2cf85d5e4c8",
-   "users_sample": 56,
-   "txs_sample": 387,
-   "explorer": "https://sepolia.etherscan.io/address/0x94a9d9ac8a22534e3faca9f4e7f2e2cf85d5e4c8",
+   "address": "0x4f12ac126d55bc871b60b21b7ab829841d94db11",
+   "users_sample": 60,
+   "txs_sample": 2431,
+   "explorer": "https://sepolia.etherscan.io/address/0x4f12ac126d55bc871b60b21b7ab829841d94db11",
    "chainid": 11155111
   },
   {
    "testnet": "sepolia",
-   "address": "0xb84df6837f20a0c03c2f378a350c3357d7bb54bf",
-   "users_sample": 43,
-   "txs_sample": 51,
-   "explorer": "https://sepolia.etherscan.io/address/0xb84df6837f20a0c03c2f378a350c3357d7bb54bf",
+   "address": "0x28b6f412904834dee78a4fa464f2089f5264770c",
+   "users_sample": 45,
+   "txs_sample": 45,
+   "explorer": "https://sepolia.etherscan.io/address/0x28b6f412904834dee78a4fa464f2089f5264770c",
    "chainid": 11155111
   },
   {
    "testnet": "sepolia",
-   "address": "0x991bb602f8d30b8d263912129f8eeb21a590f0a4",
-   "users_sample": 39,
-   "txs_sample": 39,
-   "explorer": "https://sepolia.etherscan.io/address/0x991bb602f8d30b8d263912129f8eeb21a590f0a4",
-   "chainid": 11155111
-  },
-  {
-   "testnet": "sepolia",
-   "address": "0x77b2ffc0f57598cae1db76cb398059cf5d10a7e7",
-   "users_sample": 38,
-   "txs_sample": 39,
-   "explorer": "https://sepolia.etherscan.io/address/0x77b2ffc0f57598cae1db76cb398059cf5d10a7e7",
-   "chainid": 11155111
-  },
-  {
-   "testnet": "sepolia",
-   "address": "0x956962c34687a954e611a83619abaa37ce6bc78a",
-   "users_sample": 32,
-   "txs_sample": 34,
-   "explorer": "https://sepolia.etherscan.io/address/0x956962c34687a954e611a83619abaa37ce6bc78a",
-   "chainid": 11155111
-  },
-  {
-   "testnet": "sepolia",
-   "address": "0xc8bdca3cfd13bcb2b1e5c4aa3bc35c7196009e2b",
-   "users_sample": 32,
-   "txs_sample": 32,
-   "explorer": "https://sepolia.etherscan.io/address/0xc8bdca3cfd13bcb2b1e5c4aa3bc35c7196009e2b",
-   "chainid": 11155111
-  },
-  {
-   "testnet": "sepolia",
-   "address": "0x96171664cb348b5617d28efc2917932a043b1ee3",
-   "users_sample": 31,
-   "txs_sample": 34,
-   "explorer": "https://sepolia.etherscan.io/address/0x96171664cb348b5617d28efc2917932a043b1ee3",
-   "chainid": 11155111
-  },
-  {
-   "testnet": "sepolia",
-   "address": "0x079a4bf1cbd0e4ce15391340cb46efa6396abc82",
-   "users_sample": 30,
+   "address": "0x18eb5daceb55e69de7154ae5e9067bc1c6f2f42b",
+   "users_sample": 42,
    "txs_sample": 42,
-   "explorer": "https://sepolia.etherscan.io/address/0x079a4bf1cbd0e4ce15391340cb46efa6396abc82",
+   "explorer": "https://sepolia.etherscan.io/address/0x18eb5daceb55e69de7154ae5e9067bc1c6f2f42b",
    "chainid": 11155111
   },
   {
    "testnet": "sepolia",
-   "address": "0xe20534a32f9162488a90026f268a74fbe28d272d",
-   "users_sample": 29,
-   "txs_sample": 71,
-   "explorer": "https://sepolia.etherscan.io/address/0xe20534a32f9162488a90026f268a74fbe28d272d",
+   "address": "0x10c15c29fb208047df6247514c0416c217e6f6e2",
+   "users_sample": 33,
+   "txs_sample": 33,
+   "explorer": "https://sepolia.etherscan.io/address/0x10c15c29fb208047df6247514c0416c217e6f6e2",
    "chainid": 11155111
-  },
-  {
-   "testnet": "sepolia",
-   "address": "0xfa6419a3d3503a016df3a59f690734862ca2a78d",
-   "users_sample": 25,
-   "txs_sample": 67,
-   "explorer": "https://sepolia.etherscan.io/address/0xfa6419a3d3503a016df3a59f690734862ca2a78d",
-   "chainid": 11155111
-  },
-  {
-   "testnet": "base-sepolia",
-   "address": "0xf0cd47f6fb1f19e2588ba76ddce0ea87e96e4497",
-   "users_sample": 27,
-   "txs_sample": 27,
-   "explorer": "https://sepolia.basescan.org/address/0xf0cd47f6fb1f19e2588ba76ddce0ea87e96e4497",
-   "chainid": 84532
-  },
-  {
-   "testnet": "eth-hoodi",
-   "address": "0x4d38bd670764c49cce1e59eeaebd05974760acbd",
-   "users_sample": 155,
-   "txs_sample": 326,
-   "explorer": "https://hoodi.etherscan.io/address/0x4d38bd670764c49cce1e59eeaebd05974760acbd",
-   "chainid": 560048
-  },
-  {
-   "testnet": "eth-hoodi",
-   "address": "0x9e2ddb3386d5dce991a2595e8bc44756f864c6e3",
-   "users_sample": 106,
-   "txs_sample": 117,
-   "explorer": "https://hoodi.etherscan.io/address/0x9e2ddb3386d5dce991a2595e8bc44756f864c6e3",
-   "chainid": 560048
-  },
-  {
-   "testnet": "eth-hoodi",
-   "address": "0x1d150609ee9edcc6143506ba55a4faaedd562cd9",
-   "users_sample": 44,
-   "txs_sample": 54,
-   "explorer": "https://hoodi.etherscan.io/address/0x1d150609ee9edcc6143506ba55a4faaedd562cd9",
-   "chainid": 560048
-  },
-  {
-   "testnet": "polygon-amoy",
-   "address": "0x00000000000fb5c9adea0298d729a0cb3823cc07",
-   "users_sample": 37,
-   "txs_sample": 51,
-   "explorer": "https://amoy.polygonscan.com/address/0x00000000000fb5c9adea0298d729a0cb3823cc07",
-   "chainid": 80002
   }
  ],
- "new_mints": [
-  {
-   "chain": "ink",
-   "address": "0x9761ddf8e79930b334f1be1bd93abe3695061cca",
-   "mints": 26,
-   "recipients": 26,
-   "std": "erc20",
-   "block_7d": 61393840,
-   "name": "Advanced Strategies USDC",
-   "symbol": "sentoraUSDC",
-   "code_bytes": 7514,
-   "decimals": 6,
-   "total_supply": 189337939.322595,
-   "features": [
-    "erc20",
-    "owner"
-   ],
-   "kind": "token"
-  },
-  {
-   "chain": "ink",
-   "address": "0x7bcbcfc1d0779597f4fa403ea404c66b726c2cf1",
-   "mints": 27,
-   "recipients": 25,
-   "std": "erc721",
-   "block_7d": 61393840,
-   "name": "NFTJJSS",
-   "symbol": "ECR",
-   "code_bytes": 4764,
-   "decimals": 0,
-   "total_supply": 27.0,
-   "features": [
-    "erc20",
-    "erc721",
-    "owner"
-   ],
-   "kind": "nft"
-  },
-  {
-   "chain": "ink",
-   "address": "0xfd12f55e4fa1b58b11b4f6260b0130f4ec8f9a8b",
-   "mints": 27,
-   "recipients": 25,
-   "std": "erc721",
-   "block_7d": 61393840,
-   "name": "NFTAYGJE",
-   "symbol": "FQHK",
-   "code_bytes": 4764,
-   "decimals": 0,
-   "total_supply": 27.0,
-   "features": [
-    "erc20",
-    "erc721",
-    "owner"
-   ],
-   "kind": "nft"
-  },
-  {
-   "chain": "ink",
-   "address": "0xb4a9c83d55a9a0793f8cde84c23375c779ab6f66",
-   "mints": 24,
-   "recipients": 24,
-   "std": "erc721",
-   "block_7d": 61393840,
-   "name": "NFTPDG",
-   "symbol": "WHE",
-   "code_bytes": 4764,
-   "decimals": 0,
-   "total_supply": 24.0,
-   "features": [
-    "erc20",
-    "erc721",
-    "owner"
-   ],
-   "kind": "nft"
-  },
-  {
-   "chain": "ink",
-   "address": "0xfd7767249f2fdb796faf9af5028c0200bd3fa773",
-   "mints": 27,
-   "recipients": 24,
-   "std": "erc721",
-   "block_7d": 61393840,
-   "name": "NFTVKLD",
-   "symbol": "ZIZ",
-   "code_bytes": 4764,
-   "decimals": 0,
-   "total_supply": 27.0,
-   "features": [
-    "erc20",
-    "erc721",
-    "owner"
-   ],
-   "kind": "nft"
-  },
-  {
-   "chain": "ink",
-   "address": "0xf93aeb8842309705fcddec0ec8673232076951c8",
-   "mints": 24,
-   "recipients": 24,
-   "std": "erc721",
-   "block_7d": 61393840,
-   "name": "NFTFQD",
-   "symbol": "KNEQB",
-   "code_bytes": 4764,
-   "decimals": 0,
-   "total_supply": 24.0,
-   "features": [
-    "erc20",
-    "erc721",
-    "owner"
-   ],
-   "kind": "nft"
-  },
-  {
-   "chain": "ink",
-   "address": "0x61f7499ccdccc18fc47b61df558be6bf71c1861f",
-   "mints": 24,
-   "recipients": 24,
-   "std": "erc721",
-   "block_7d": 61393840,
-   "name": "NFTYWWV",
-   "symbol": "XRQEG",
-   "code_bytes": 4764,
-   "decimals": 0,
-   "total_supply": 24.0,
-   "features": [
-    "erc20",
-    "erc721",
-    "owner"
-   ],
-   "kind": "nft"
-  },
-  {
-   "chain": "ink",
-   "address": "0x5095f1895cbe0c1a5e8c107eccba8150bbf529e0",
-   "mints": 24,
-   "recipients": 24,
-   "std": "erc721",
-   "block_7d": 61393840,
-   "name": "NFTYUME",
-   "symbol": "NPO",
-   "code_bytes": 4764,
-   "decimals": 0,
-   "total_supply": 24.0,
-   "features": [
-    "erc20",
-    "erc721",
-    "owner"
-   ],
-   "kind": "nft"
-  },
-  {
-   "chain": "ink",
-   "address": "0x37030c77c18ec29d8b283ea5cfc743476c46344c",
-   "mints": 23,
-   "recipients": 23,
-   "std": "erc721",
-   "block_7d": 61393840,
-   "name": "NFTJZUBGC",
-   "symbol": "CLHOU",
-   "code_bytes": 4764,
-   "decimals": 0,
-   "total_supply": 23.0,
-   "features": [
-    "erc20",
-    "erc721",
-    "owner"
-   ],
-   "kind": "nft"
-  },
-  {
-   "chain": "ink",
-   "address": "0xf77867d74463999839af94e1576651570075f8be",
-   "mints": 23,
-   "recipients": 23,
-   "std": "erc721",
-   "block_7d": 61393840,
-   "name": "NFTAXLP",
-   "symbol": "ONODM",
-   "code_bytes": 4764,
-   "decimals": 0,
-   "total_supply": 23.0,
-   "features": [
-    "erc20",
-    "erc721",
-    "owner"
-   ],
-   "kind": "nft"
-  },
-  {
-   "chain": "ink",
-   "address": "0x2b17ac71dad5a5fe7d043a01f410c69c36a77cc9",
-   "mints": 23,
-   "recipients": 23,
-   "std": "erc721",
-   "block_7d": 61393840,
-   "name": "NFTWSPP",
-   "symbol": "OFGH",
-   "code_bytes": 4764,
-   "decimals": 0,
-   "total_supply": 23.0,
-   "features": [
-    "erc20",
-    "erc721",
-    "owner"
-   ],
-   "kind": "nft"
-  },
-  {
-   "chain": "monad",
-   "address": "0x486ced7bc3276c013bc584a41236d7f94171ad32",
-   "mints": 21,
-   "recipients": 21,
-   "std": "erc721",
-   "block_7d": 122914658,
-   "name": "12-0861-82",
-   "symbol": "4851",
-   "code_bytes": 11679,
-   "decimals": 0,
-   "total_supply": 21.0,
-   "features": [
-    "erc20",
-    "erc721",
-    "public_mint",
-    "owner"
-   ],
-   "kind": "nft"
-  },
-  {
-   "chain": "monad",
-   "address": "0x9129074fd181abce316248240d6a67bbcb7fd55c",
-   "mints": 21,
-   "recipients": 21,
-   "std": "erc721",
-   "block_7d": 122914658,
-   "name": "0408:9060",
-   "symbol": "541",
-   "code_bytes": 11679,
-   "decimals": 0,
-   "total_supply": 21.0,
-   "features": [
-    "erc20",
-    "erc721",
-    "public_mint",
-    "owner"
-   ],
-   "kind": "nft"
-  },
-  {
-   "chain": "monad",
-   "address": "0x23857dffc1b08456cc4231858e875d789f8a6e97",
-   "mints": 21,
-   "recipients": 21,
-   "std": "erc721",
-   "block_7d": 122914658,
-   "name": "165244921",
-   "symbol": "19787",
-   "code_bytes": 11679,
-   "decimals": 0,
-   "total_supply": 21.0,
-   "features": [
-    "erc20",
-    "erc721",
-    "public_mint",
-    "owner"
-   ],
-   "kind": "nft"
-  }
- ],
+ "new_mints": [],
  "new_protocols": [
   {
-   "id": "nouny",
-   "name": "NOUNY",
+   "id": "bust",
+   "name": "Bust",
    "url": "",
-   "twitter": "nounyagent",
-   "category": "AI Agents",
+   "twitter": "getbusttrade",
+   "category": "Derivatives",
    "chains": [
-    "Robinhood Chain"
+    "Solana"
    ],
-   "tvl": 20.002588440467548,
+   "tvl": 1785.0804004845895,
    "audits": "0",
    "audit_links": null,
-   "token_address": "robinhood:0xCaeED5281bd1eEB26d5f8bd550Bf5C3727bA6514",
+   "token_address": "solana:EoV9JQYi57tqjyQbWLdXVarYpEu82FsP8SDnkbFmpump",
    "gecko_id": null,
-   "description": "No-code trading agents for crypto and tokenized stocks, run from a non-custodial vault only your wallet can withdraw from, plus on-chain USDG payroll and hooked Uniswap v4 pools on Robinhood Chain.",
-   "listed_at": 1795460157
+   "description": "Bust is a Solana perpetuals protocol with up to 1000x leverage. Traders trade against a USDC vault and can earn xBUST on net losses.",
+   "listed_at": 1795541240
   },
   {
-   "id": "coinbase-wallet-perps",
-   "name": "Coinbase Wallet Perps",
-   "url": "https://www.coinbase.com/wallet",
-   "twitter": "CoinbaseWallet",
-   "category": "Interface",
-   "chains": [],
-   "tvl": null,
+   "id": "aurove",
+   "name": "Aurove",
+   "url": "",
+   "twitter": "aurove_xyz",
+   "category": "Liquid Staking",
+   "chains": [
+    "Mezo"
+   ],
+   "tvl": 1679.877356542856,
    "audits": "0",
    "audit_links": null,
    "token_address": null,
    "gecko_id": null,
-   "description": "Coinbase Wallet Perps is a non-custodial perpetual futures trading interface that enables users to open and manage leveraged positions on Hyperliquid directly through Coinbase Wallet.",
-   "listed_at": 1795482294
-  },
-  {
-   "id": "pocket-universe-perps",
-   "name": "Pocket Universe Perps",
-   "url": "https://www.pocketuniverse.app",
-   "twitter": "PocketUniverseZ",
-   "category": "Interface",
-   "chains": [],
-   "tvl": null,
-   "audits": "0",
-   "audit_links": null,
-   "token_address": null,
-   "gecko_id": null,
-   "description": "Pocket Universe Perps is a non-custodial trading interface that enables users to trade Hyperliquid perpetual futures through the Pocket Universe application.",
-   "listed_at": 1795482605
-  },
-  {
-   "id": "pocket-universe-spot",
-   "name": "Pocket Universe Spot",
-   "url": "https://www.pocketuniverse.app",
-   "twitter": "PocketUniverseZ",
-   "category": "Interface",
-   "chains": [],
-   "tvl": null,
-   "audits": "0",
-   "audit_links": null,
-   "token_address": null,
-   "gecko_id": null,
-   "description": "Pocket Universe Spot is a non-custodial trading interface that enables users to trade Hyperliquid spot markets through the Pocket Universe application.",
-   "listed_at": 1795482610
+   "description": "Aurove is the liquid locked protocol for Mezo Earn. It enables users to swap, LP and earn yields on their locked BTC and MEZO seamlessly without managing their locked positions or votes.",
+   "listed_at": 1795494366
   }
  ]
 }
