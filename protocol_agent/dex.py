@@ -44,7 +44,7 @@ FACTORY_NAMES = {
 PA_RPC = {"eth": ["https://eth.drpc.org", "https://rpc.mevblocker.io", "https://ethereum-rpc.publicnode.com"],
           "base": ["https://base.drpc.org", "https://1rpc.io/base", "https://mainnet.base.org"],
           "arbitrum": ["https://arbitrum.drpc.org", "https://arb1.arbitrum.io/rpc"],
-          "bsc": ["https://bsc.drpc.org", "https://1rpc.io/bnb", "https://bsc-dataseed.bnbchain.org"]}
+          "bsc": ["https://rpc-bsc.48.club", "https://1rpc.io/bnb", "https://bsc.drpc.org"]}
 MAX_CHUNK_BLOCKS = 45    # 1rpc caps getLogs at 50 blocks
 
 
