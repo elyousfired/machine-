@@ -58,19 +58,32 @@ def get_logs(urls, frm, to, topics):
     return None
 
 
+def call_urls(chain):
+    """eth_call / blocks go to publicnode first (fine for calls), keeping drpc's public quota for getLogs."""
+    return onchain.CHAINS[chain]["rpc"] + PA_RPC[chain]
+
+
 def _post(urls, payload):
+    """next RPC on exception OR on an error response (rate limits come back as JSON errors)."""
     for url in urls:
         try:
-            return requests.post(url, json=payload, timeout=40).json()
+            js = requests.post(url, json=payload, timeout=40).json()
         except Exception:
             time.sleep(1)
+            continue
+        bad = (isinstance(js, dict) and "error" in js) if isinstance(payload, dict) else not isinstance(js, list)
+        if isinstance(payload, list) and isinstance(js, list) and js and all("error" in x for x in js):
+            bad = True
+        if not bad:
+            return js
     raise RuntimeError("rpc failed")
 
 
 def _one(urls, method, params):
-    js = _post(urls, {"jsonrpc": "2.0", "id": 1, "method": method, "params": params})
-    if not isinstance(js, dict) or "error" in js:
-        raise ValueError(str(js)[:200])
+    try:
+        js = _post(urls, {"jsonrpc": "2.0", "id": 1, "method": method, "params": params})
+    except RuntimeError as e:
+        raise ValueError(f"{method}: all rpcs failed") from e
     return js["result"]
 
 
@@ -85,7 +98,7 @@ def native_price(chain):
 
 def pool_meta(urls, pools, cache):
     """token0/token1/factory/fee for unknown pools, batched 30 pools (120 calls) per request; cached in DB."""
-    todo = [p for p in pools if p not in cache]
+    todo = [p for p in pools if not (cache.get(p) or {}).get("factory")]   # retry pools a rate-limited run left empty
     for i in range(0, len(todo), 30):
         chunk = todo[i:i + 30]
         batch = []
@@ -112,7 +125,7 @@ def _signed(h):
 
 
 def scan_chain(chain, cache, hours=4):
-    urls = PA_RPC[chain]
+    urls, curls = PA_RPC[chain], call_urls(chain)
     t0 = time.time()
     quotes = {a: (1.0, d) for a, d in onchain.CHAINS[chain]["tokens"].items()}
     quotes.update({a: (1.0, d) for a, d in EXTRA_STABLES.get(chain, {}).items()})
@@ -120,9 +133,9 @@ def scan_chain(chain, cache, hours=4):
     if px:
         quotes[NATIVE[chain][0]] = (px, NATIVE[chain][1])
 
-    latest = int(_one(urls, "eth_blockNumber", []), 16)
+    latest = int(_one(curls, "eth_blockNumber", []), 16)
     probe = max(1, latest - 2000)
-    b = _post(urls, [{"jsonrpc": "2.0", "id": i, "method": "eth_getBlockByNumber", "params": [hex(n), False]}
+    b = _post(curls, [{"jsonrpc": "2.0", "id": i, "method": "eth_getBlockByNumber", "params": [hex(n), False]}
                      for i, n in enumerate((latest, probe))])
     ts = {x["id"]: int(x["result"]["timestamp"], 16) for x in b}
     spb = max(0.05, (ts[0] - ts[1]) / (latest - probe))
@@ -144,7 +157,7 @@ def scan_chain(chain, cache, hours=4):
         raise RuntimeError("no chunk could be read")
     scale = window / sampled_blocks
 
-    pool_meta(urls, list(swaps), cache)
+    pool_meta(curls, list(swaps), cache)
     dexes = {}
     for pool, evs in swaps.items():
         m = cache.get(pool) or {}

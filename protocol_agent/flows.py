@@ -65,11 +65,12 @@ def quotes(chain):
     return q
 
 
-def sample(urls, topics, hours, budget_s):
+def sample(urls, topics, hours, budget_s, curls=None):
     t0 = time.time()
-    latest = int(dex._one(urls, "eth_blockNumber", []), 16)
+    curls = curls or urls
+    latest = int(dex._one(curls, "eth_blockNumber", []), 16)
     probe = max(1, latest - 2000)
-    b = dex._post(urls, [{"jsonrpc": "2.0", "id": i, "method": "eth_getBlockByNumber", "params": [hex(n), False]}
+    b = dex._post(curls, [{"jsonrpc": "2.0", "id": i, "method": "eth_getBlockByNumber", "params": [hex(n), False]}
                          for i, n in enumerate((latest, probe))])
     ts = {x["id"]: int(x["result"]["timestamp"], 16) for x in b}
     spb = max(0.05, (ts[0] - ts[1]) / (latest - probe))
@@ -229,11 +230,11 @@ def _compound(chain, urls, logs, scale, q, spb):
 
 
 def scan_chain(chain, hours=4):
-    urls = dex.PA_RPC[chain]
+    urls, curls = dex.PA_RPC[chain], dex.call_urls(chain)
     q = quotes(chain)
-    logs, scale, spb, cov = sample(urls, TOPICS, hours, PER_CHAIN_BUDGET_S)
-    vaults = _vaults(chain, urls, logs, scale, q)
-    lending = _aave(chain, urls, logs, scale, q) + _compound(chain, urls, logs, scale, q, spb)
+    logs, scale, spb, cov = sample(urls, TOPICS, hours, PER_CHAIN_BUDGET_S, curls)
+    vaults = _vaults(chain, curls, logs, scale, q)
+    lending = _aave(chain, curls, logs, scale, q) + _compound(chain, curls, logs, scale, q, spb)
     for r in lending:
         for f in ("supply_4h", "borrow_4h", "repay_4h", "borrows", "interest_4h", "revenue_4h"):
             r[f] = round(r[f])
