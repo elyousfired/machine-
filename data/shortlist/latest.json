@@ -1,28 +1,28 @@
 {
- "generated_at": "2026-11-25T12:54:24Z",
+ "generated_at": "2026-11-25T22:31:52Z",
  "stats": {
-  "pools": 323,
-  "new": 1134,
-  "market_pass": 6,
-  "shortlisted": 3,
-  "young_rechecked": 921,
-  "young_promoted": 0,
+  "pools": 338,
+  "new": 934,
+  "market_pass": 5,
+  "shortlisted": 2,
+  "young_rechecked": 697,
+  "young_promoted": 1,
   "networks": 222,
-  "networks_scanned": 31,
-  "sinks_noise_dropped": 26,
-  "sinks_checked": 220,
-  "new_sinks": 4,
+  "networks_scanned": 32,
+  "sinks_noise_dropped": 31,
+  "sinks_checked": 249,
+  "new_sinks": 7,
   "onchain_hours": {
    "eth": 4.0,
    "base": 4.0,
    "arbitrum": 0.01,
-   "bsc": 1.86
+   "bsc": 3.12
   },
   "sinks_baseline_run": false,
-  "testnet_hot": 16,
-  "testnet_new": 4,
+  "testnet_hot": 12,
+  "testnet_new": 1,
   "testnets": {
-   "sepolia": 13,
+   "sepolia": 10,
    "base-sepolia": 0,
    "arbitrum-sepolia": 1,
    "optimism-sepolia": 0,
@@ -33,7 +33,7 @@
    "eth-hoodi": 1,
    "unichain-sepolia": 0,
    "zksync-sepolia": 0,
-   "mantle-sepolia": 1,
+   "mantle-sepolia": 0,
    "blast-sepolia": "fail",
    "ink-sepolia": 0,
    "berachain-bepolia": 0,
@@ -47,52 +47,52 @@
    "solana-devnet": 0,
    "solana-testnet": 0
   },
-  "mints_hot": 17,
-  "mints_new": 7,
-  "mints_chains_ok": 18,
+  "mints_hot": 7,
+  "mints_new": 1,
+  "mints_chains_ok": 19,
   "mints_chains": 38,
-  "outcome_snapshots": 44
+  "outcome_snapshots": 47
  },
  "tokens": [
   {
-   "score": 87,
+   "score": 69,
    "warnings": [
-    "no_security_data"
+    "lp_not_locked"
    ],
    "market": {
     "network": "eth",
-    "pool": "0x3193fb534f41522adc9e74bebfe670b38561495c0ed47269b980a15718c4e564",
-    "name": "NPS / ETH",
-    "token": "0xb1dc57ed65b3bce06e1d5645d0304fe84cc8963d",
+    "pool": "0xebcc56de21579ba29b2d21e9af057ad350800b56d53b74196e131b17154b3faf",
+    "name": "JIMMY / ETH",
+    "token": "0x9274ca211cef8cd671340bd083d9f3c1901c4e3d",
     "dex": "uniswap-v4-ethereum",
-    "created_at": "2026-11-23T09:20:35Z",
-    "liquidity_usd": 298722.4129,
-    "fdv_usd": 13868209.56,
-    "mcap_usd": 13868209.56,
-    "vol_24h": 2696454.38163506,
-    "buys_24h": 1609,
-    "sells_24h": 861,
-    "buyers_24h": 572,
-    "price_chg_24h": 891.229
+    "created_at": "2026-11-25T13:50:23Z",
+    "liquidity_usd": 62317.181,
+    "fdv_usd": 585137.8761,
+    "mcap_usd": null,
+    "vol_24h": 282179.476172393,
+    "buys_24h": 600,
+    "sells_24h": 310,
+    "buyers_24h": 465,
+    "price_chg_24h": 27913.082
    },
    "info": {
-    "symbol": "NPS",
+    "symbol": "JIMMY",
     "websites": [
-     "https://www.npshiba.fun"
+     "https://jimmyrustles.vip"
     ],
-    "twitter": "npshibacoin",
-    "telegram": "npshibacoin",
+    "twitter": "jimmy_apecoin",
+    "telegram": "jimmy_apecoin",
     "discord": null,
-    "description": "Non-Playable Shiba isn’t just another dog coin riding the endless wave of canine memes. It’s the memecoin powered by the original Shiba Inu meme—the one so instantly recognizable it almost feels illegal to claim. While countless tokens borrow the dog, Non-Playable Shiba owns the cultural weight of the meme itself. Non-playable means no forced utility theater, no fake game, no empty roadmap promises. Just pure, unapologetic meme energy backed by the most iconic dog face on the internet. The question isn’t whether dogs are over. The question is: which Shiba is actually playable? This one isn’t. And that’s the point.",
-    "gt_score": 45.02857142857143,
-    "holder_count": 832,
-    "top10_pct": 21.1505
+    "description": "Anon dropped 4chan Zoo back in 2014.\nAll the memes that he dropped in there became multi 8 figs - 10 fig runners except one.",
+    "gt_score": 63.30158730158729,
+    "holder_count": 464,
+    "top10_pct": 12.7382
    },
    "security": {
     "source": "goplus-evm",
-    "ok": false,
+    "ok": true,
     "honeypot": false,
-    "open_source": false,
+    "open_source": true,
     "proxy": false,
     "mintable": false,
     "hidden_owner": false,
@@ -100,85 +100,43 @@
     "pausable": false,
     "cannot_sell_all": false,
     "blacklist": false,
-    "buy_tax": null,
-    "sell_tax": null,
+    "buy_tax": 0.0,
+    "sell_tax": 0.0,
     "owner": null,
-    "creator_pct": null,
+    "creator_pct": 0.0,
     "lp_locked_pct": 0,
-    "holder_count": null
+    "holder_count": "350"
    }
   },
   {
-   "score": 78,
+   "score": 67,
    "warnings": [],
    "market": {
     "network": "solana",
-    "pool": "CixcofsPwHnYWjsoDxXxvLd6uM5fH7w8MFPL9mpQpqtX",
-    "name": "BASKET / SOL",
-    "token": "3Tg6YnNrfPdFfsY14MaNsDMWLseAyrUDS3myJtbaJN6f",
-    "dex": "raydium",
-    "created_at": "2026-11-25T04:43:02Z",
-    "liquidity_usd": 160582.0673,
-    "fdv_usd": 1296602.465,
-    "mcap_usd": null,
-    "vol_24h": 3936248.06736516,
-    "buys_24h": 35918,
-    "sells_24h": 25990,
-    "buyers_24h": 8715,
-    "price_chg_24h": 1791.34
-   },
-   "info": {
-    "symbol": "BASKET",
-    "websites": [
-     "https://basketlaunch.xyz"
-    ],
-    "twitter": "Basketdotxyz",
-    "telegram": null,
-    "discord": null,
-    "description": "",
-    "gt_score": 51.740259740259745,
-    "holder_count": 4941,
-    "top10_pct": 25.1027
-   },
-   "security": {
-    "source": "goplus-sol",
-    "ok": true,
-    "mintable": false,
-    "freezable": false,
-    "closable": false,
-    "balance_mutable": false,
-    "non_transferable": false
-   }
-  },
-  {
-   "score": 66,
-   "warnings": [],
-   "market": {
-    "network": "solana",
-    "pool": "4f4F69asRNnyyCidkkmNG9EsFt1fGw2CWiNeqcRwAtN8",
-    "name": "JaoJiu / SOL",
-    "token": "2UyrvgCRXiEwiKRVk96gs6B4myrBHZAfcLyMVLE8vSCy",
+    "pool": "7kNYdYbHbGMdQczmKSxqNzg4p4pGc6VpERzMfPBptGso",
+    "name": "Pompom / SOL",
+    "token": "5EmvWDizkpjAXbcfCcVq69w1id8GaLzi4LLwtuSgpump",
     "dex": "pumpswap",
-    "created_at": "2026-11-25T07:15:38Z",
-    "liquidity_usd": 28857.0557,
-    "fdv_usd": 152396.1625,
+    "created_at": "2026-11-25T11:16:45Z",
+    "liquidity_usd": 42583.9319,
+    "fdv_usd": 272853.189095075,
     "mcap_usd": null,
-    "vol_24h": 1474631.19394335,
-    "buys_24h": 21054,
-    "sells_24h": 15477,
-    "buyers_24h": 5019,
-    "price_chg_24h": 390.113
+    "vol_24h": 3476887.96475693,
+    "buys_24h": 47724,
+    "sells_24h": 37430,
+    "buyers_24h": 11843,
+    "price_chg_24h": 911.821
    },
    "info": {
-    "symbol": "JaoJiu",
+    "symbol": "Pompom",
     "websites": [],
-    "twitter": "grok/status/2125479916686675995",
+    "twitter": "KodaqSOL/status/2125548259917680702",
     "telegram": null,
     "discord": null,
-    "description": "",
+    "description": "Deployed using https://j7tracker.io",
     "gt_score": 48.20779220779221,
-    "holder_count": 1681,
-    "top10_pct": 26.7569
+    "holder_count": 4287,
+    "top10_pct": 21.6501
    },
    "security": {
     "source": "goplus-sol",
@@ -194,29 +152,15 @@
  "new_sinks": [
   {
    "chain": "eth",
-   "address": "0xce0b17e6e94c9068b760557ba11a7bb1943f5674",
-   "inflow_usd": 9665673,
-   "block_7d": 26442251,
-   "name": "",
-   "symbol": "",
-   "code_bytes": 11784,
-   "decimals": 0,
-   "total_supply": 0.0,
-   "code_hash": "e726e2d31678cec3",
-   "features": [
-    "vault_4626"
-   ],
-   "kind": "vault"
-  },
-  {
-   "chain": "eth",
-   "address": "0x45312ea0eff7e09c83cbe249fa1d7598c4c8cd4e",
-   "inflow_usd": 8647599,
-   "block_7d": 26442251,
-   "name": "",
-   "symbol": "",
-   "code_bytes": 15254,
-   "code_hash": "692f2e036aa969c6",
+   "address": "0x356b8d89c1e1239cbbb9de4815c39a1474d5ba7d",
+   "inflow_usd": 39651568,
+   "block_7d": 26445111,
+   "name": "Syrup USDT",
+   "symbol": "syrupUSDT",
+   "code_bytes": 11660,
+   "decimals": 6,
+   "total_supply": 210856615.645345,
+   "code_hash": "5913ca6d9c175228",
    "features": [
     "erc20",
     "vault_4626"
@@ -225,167 +169,127 @@
   },
   {
    "chain": "eth",
-   "address": "0xbfe734baab130048e20a64e800c4c2ec25756284",
-   "inflow_usd": 8124792,
-   "block_7d": 26442251,
-   "name": "",
-   "symbol": "",
-   "code_bytes": 11784,
-   "decimals": 0,
-   "total_supply": 0.0,
-   "code_hash": "7834f19519765384",
-   "features": [
-    "vault_4626"
-   ],
-   "kind": "vault"
-  },
-  {
-   "chain": "eth",
-   "address": "0xe0181090c22579b6a217f1522cbf8c9f1f0c1965",
-   "inflow_usd": 8086312,
-   "block_7d": 26442251,
-   "name": "RockawayX USDC Yield",
-   "symbol": "roxUSDCy",
-   "code_bytes": 21808,
+   "address": "0xbeef01735c132ada46aa9aa4c54623caa92a64cb",
+   "inflow_usd": 9669712,
+   "block_7d": 26445111,
+   "name": "Steakhouse USDC",
+   "symbol": "steakUSDC",
+   "code_bytes": 19340,
    "decimals": 18,
-   "total_supply": 27290037.86606746,
-   "code_hash": "80c0341311dfa607",
+   "total_supply": 56281941.43549551,
+   "code_hash": "cb8ccd4216e28979",
    "features": [
     "erc20",
     "vault_4626",
     "owner"
    ],
    "kind": "vault"
+  },
+  {
+   "chain": "base",
+   "address": "0xc97bd8d9010cee56b36931525b383143e5c9657b",
+   "inflow_usd": 2101445,
+   "block_7d": 59258792,
+   "name": "",
+   "symbol": "",
+   "code_bytes": 8405,
+   "decimals": 0,
+   "total_supply": 0.0,
+   "code_hash": "def8cdc572c313c7",
+   "features": [
+    "erc20",
+    "lending"
+   ],
+   "kind": "lending"
+  },
+  {
+   "chain": "base",
+   "address": "0x44151e04d30d5c2573c34413bf53ff3361434f2c",
+   "inflow_usd": 1924568,
+   "block_7d": 59258792,
+   "name": "",
+   "symbol": "",
+   "code_bytes": 8405,
+   "decimals": 0,
+   "total_supply": 0.0,
+   "code_hash": "5afedc1fbc7c501f",
+   "features": [
+    "erc20",
+    "lending"
+   ],
+   "kind": "lending"
+  },
+  {
+   "chain": "bsc",
+   "address": "0xe2fa480bd15c45574ccd3e7d6c95dd911bc7a238",
+   "inflow_usd": 920884,
+   "block_7d": 134393653,
+   "name": "",
+   "symbol": "",
+   "code_bytes": 14205,
+   "decimals": 0,
+   "total_supply": 0.0,
+   "code_hash": "c2e72f923b75647f",
+   "features": [],
+   "kind": "other"
+  },
+  {
+   "chain": "bsc",
+   "address": "0xe6eeda550918638529c6cf2ea14f9ea0572d6f88",
+   "inflow_usd": 372966,
+   "block_7d": 134393653,
+   "name": "",
+   "symbol": "",
+   "code_bytes": 18084,
+   "decimals": 0,
+   "total_supply": 0.0,
+   "code_hash": "cddf1f83ccd035fc",
+   "features": [
+    "erc20",
+    "vault_4626"
+   ],
+   "kind": "vault"
+  },
+  {
+   "chain": "bsc",
+   "address": "0x00fc00edbe7c003b006f870068c548940000223e",
+   "inflow_usd": 346201,
+   "block_7d": 134393653,
+   "name": "",
+   "symbol": "",
+   "code_bytes": 20299,
+   "decimals": 0,
+   "total_supply": 0.0,
+   "code_hash": "256655ec0e53bea1",
+   "features": [
+    "owner"
+   ],
+   "kind": "other"
   }
  ],
  "new_testnet": [
   {
    "testnet": "sepolia",
-   "address": "0x5feab8db4534f9f7e2669bb260c57a01ad1c12e3",
-   "users_sample": 44,
-   "txs_sample": 105,
-   "explorer": "https://sepolia.etherscan.io/address/0x5feab8db4534f9f7e2669bb260c57a01ad1c12e3",
+   "address": "0x10d8b8daa26d307489803e10477de69c0492b610",
+   "users_sample": 47,
+   "txs_sample": 121,
+   "explorer": "https://sepolia.etherscan.io/address/0x10d8b8daa26d307489803e10477de69c0492b610",
    "chainid": 11155111
-  },
-  {
-   "testnet": "sepolia",
-   "address": "0xf1daa8021ebb6e4bd8baee3da1ef4e8a61ae93d4",
-   "users_sample": 40,
-   "txs_sample": 3239,
-   "explorer": "https://sepolia.etherscan.io/address/0xf1daa8021ebb6e4bd8baee3da1ef4e8a61ae93d4",
-   "chainid": 11155111
-  },
-  {
-   "testnet": "sepolia",
-   "address": "0xa7615e515c9280c9f0e5cec137a7697b2aa4cf93",
-   "users_sample": 39,
-   "txs_sample": 91,
-   "explorer": "https://sepolia.etherscan.io/address/0xa7615e515c9280c9f0e5cec137a7697b2aa4cf93",
-   "chainid": 11155111
-  },
-  {
-   "testnet": "eth-hoodi",
-   "address": "0x28e1b4b40489f6c99a0c02bee424d20826b330a7",
-   "users_sample": 40,
-   "txs_sample": 1953,
-   "explorer": "https://hoodi.etherscan.io/address/0x28e1b4b40489f6c99a0c02bee424d20826b330a7",
-   "chainid": 560048
   }
  ],
  "new_mints": [
   {
-   "chain": "ink",
-   "address": "0x6b4d553e201e38fee69307cc95d1557f0e888ad2",
-   "mints": 1384,
-   "recipients": 1314,
-   "std": "erc721",
-   "block_7d": 61509436,
-   "name": "NFTBLSU",
-   "symbol": "SPS",
-   "code_bytes": 4764,
-   "decimals": 0,
-   "total_supply": 2117.0,
-   "code_hash": "70844c018c6ff744",
-   "features": [
-    "erc20",
-    "erc721",
-    "owner"
-   ],
-   "kind": "nft"
-  },
-  {
-   "chain": "ink",
-   "address": "0x243c5fdaf5ea827e9a7d7e75c5ce2c783332c627",
-   "mints": 24,
-   "recipients": 24,
-   "std": "erc721",
-   "block_7d": 61509436,
-   "name": "Galactic Dreams",
-   "symbol": "STARZ",
-   "code_bytes": 4449,
-   "decimals": 0,
-   "total_supply": 652.0,
-   "code_hash": "177f070b4c098e06",
-   "features": [
-    "erc20",
-    "erc721",
-    "public_mint",
-    "owner"
-   ],
-   "kind": "nft"
-  },
-  {
-   "chain": "ink",
-   "address": "0xd289f21b2ef677d261ad314793091a7ff3bb239a",
-   "mints": 24,
-   "recipients": 24,
-   "std": "erc721",
-   "block_7d": 61509436,
-   "name": "Galactic Dreams",
-   "symbol": "STELLA",
-   "code_bytes": 4449,
-   "decimals": 0,
-   "total_supply": 31.0,
-   "code_hash": "177f070b4c098e06",
-   "features": [
-    "erc20",
-    "erc721",
-    "public_mint",
-    "owner"
-   ],
-   "kind": "nft"
-  },
-  {
-   "chain": "hyperevm",
-   "address": "0x68a042e03088c50b7644e34b0fddffdfd19d828d",
-   "mints": 954,
-   "recipients": 115,
-   "std": "erc20",
-   "block_7d": 51596946,
-   "name": "Oripa",
-   "symbol": "ORIPA",
-   "code_bytes": 163,
-   "decimals": 18,
-   "total_supply": 7320768.14,
-   "proxy_impl": "0x4e33fb6a98683cfb296cdc9ab786350a3ef2868b",
-   "code_hash": "d3449d22ee006f1a",
-   "features": [
-    "erc20"
-   ],
-   "kind": "token"
-  },
-  {
    "chain": "monad",
-   "address": "0x3f2a10c80e0ed2b9c03263a88a245cabbea1347b",
-   "mints": 29,
-   "recipients": 29,
+   "address": "0x233c9f00a8b1eec5b7a1fa662518b8747dfb9471",
+   "mints": 33,
+   "recipients": 33,
    "std": "erc721",
-   "block_7d": 123296266,
-   "name": "Operator Node Relay",
-   "symbol": "OPTR",
+   "block_7d": 123410514,
+   "name": "White Line Exit Node",
+   "symbol": "WLEX",
    "code_bytes": 18514,
    "decimals": 0,
-   "total_supply": 57.0,
+   "total_supply": 92.0,
    "code_hash": "b790b74aa6bc05c9",
    "features": [
     "erc20",
@@ -393,47 +297,83 @@
     "pausable"
    ],
    "kind": "nft"
-  },
-  {
-   "chain": "abstract-testnet",
-   "address": "0x9c764fa0eade1164ea793cc23a1b536ae7261e27",
-   "mints": 50,
-   "recipients": 50,
-   "std": "erc20",
-   "block_7d": 18896338,
-   "age": "<7d",
-   "name": "Migration Fixture 20",
-   "symbol": "MF20",
-   "code_bytes": 3520,
-   "decimals": 18,
-   "total_supply": 1000000.0,
-   "code_hash": "84ebf72da8bcab50",
-   "features": [
-    "erc20",
-    "owner"
-   ],
-   "kind": "token"
-  },
-  {
-   "chain": "abstract-testnet",
-   "address": "0x087ce55cd02909897916eea445f3050c889ad4d6",
-   "mints": 48,
-   "recipients": 48,
-   "std": "erc20",
-   "block_7d": 18896338,
-   "age": "<7d",
-   "name": "Migration Fixture 20 Six",
-   "symbol": "MF20S",
-   "code_bytes": 3520,
-   "decimals": 6,
-   "total_supply": 1000000.0,
-   "code_hash": "f8b6cb35df16a928",
-   "features": [
-    "erc20",
-    "owner"
-   ],
-   "kind": "token"
   }
  ],
- "new_protocols": []
+ "new_protocols": [
+  {
+   "id": "curve-stellar",
+   "name": "Curve Stellar",
+   "url": "https://stellar.curve.finance",
+   "twitter": "CurveFinance",
+   "category": "Dexs",
+   "chains": [
+    "Stellar"
+   ],
+   "tvl": 1499053.9340045643,
+   "audits": "0",
+   "audit_links": null,
+   "token_address": null,
+   "gecko_id": null,
+   "description": "Curve StableSwap deployment on Stellar, offering low-slippage swaps between pegged assets via Soroban pool contracts.",
+   "listed_at": 1795630553
+  },
+  {
+   "id": "theorem",
+   "name": "Theorem",
+   "url": "",
+   "twitter": "theorem_markets",
+   "category": "Dexs",
+   "chains": [
+    "Ethereum"
+   ],
+   "tvl": 46165.436668559305,
+   "audits": "0",
+   "audit_links": null,
+   "token_address": null,
+   "gecko_id": null,
+   "description": "Theorem is a decentralized exchange for tokenized real-world assets, providing NAV-aware liquidity pools, market-maker quotes and compliance-aware trading on Ethereum.",
+   "listed_at": 1795631001
+  },
+  {
+   "id": "qhooks",
+   "name": "QHooks",
+   "url": "",
+   "twitter": "qHooks_",
+   "category": "Launchpad",
+   "chains": [
+    "Robinhood Chain",
+    "Solana",
+    "Elysium Kinetiq",
+    "Base",
+    "Arbitrum",
+    "Binance",
+    "Ethereum",
+    "Monad"
+   ],
+   "tvl": 19022.416822453084,
+   "audits": "0",
+   "audit_links": null,
+   "token_address": "robinhood:0x20429af7ca3b0ce4d99edbaa0693f26c5df05195",
+   "gecko_id": "qhooks",
+   "description": "An ecosystem for launching and trading tokens, built for people and AI agents alike: Uniswap v4 hook launches, a trading terminal and agent tools, live on Robinhood Chain and six more chains.",
+   "listed_at": 1795600774
+  },
+  {
+   "id": "eloscape",
+   "name": "Eloscape",
+   "url": "",
+   "twitter": "eloscapeHQ",
+   "category": "Gamified Mining",
+   "chains": [
+    "Elysium Kinetiq"
+   ],
+   "tvl": 3779.6209173906855,
+   "audits": "0",
+   "audit_links": null,
+   "token_address": "elysium:0xe107e5d99910f544f88ef961e3ca6d88f06f29dd",
+   "gecko_id": null,
+   "description": "Eloscape is a virtual mining protocol on Elysium. Users deploy HYPE across a 5x5 grid to mine ELO, a Hyperliquid-native store of value experiment.",
+   "listed_at": 1795600554
+  }
+ ]
 }
