@@ -1,30 +1,30 @@
 {
- "generated_at": "2026-11-26T05:03:54Z",
+ "generated_at": "2026-11-26T15:15:00Z",
  "stats": {
-  "pools": 390,
-  "new": 907,
-  "market_pass": 5,
+  "pools": 346,
+  "new": 1025,
+  "market_pass": 10,
   "shortlisted": 4,
-  "young_rechecked": 620,
-  "young_promoted": 1,
+  "young_rechecked": 780,
+  "young_promoted": 0,
   "networks": 222,
-  "networks_scanned": 31,
-  "sinks_noise_dropped": 26,
-  "sinks_checked": 256,
-  "new_sinks": 5,
+  "networks_scanned": 30,
+  "sinks_noise_dropped": 24,
+  "sinks_checked": 253,
+  "new_sinks": 14,
   "onchain_hours": {
    "eth": 4.0,
-   "base": 4.0,
+   "base": 2.72,
    "arbitrum": 0.01,
-   "bsc": 2.3
+   "bsc": 1.22
   },
   "sinks_baseline_run": false,
-  "testnet_hot": 12,
-  "testnet_new": 1,
+  "testnet_hot": 9,
+  "testnet_new": 2,
   "testnets": {
-   "sepolia": 8,
-   "base-sepolia": 0,
-   "arbitrum-sepolia": 2,
+   "sepolia": 5,
+   "base-sepolia": 1,
+   "arbitrum-sepolia": 0,
    "optimism-sepolia": 0,
    "bsc-testnet": 0,
    "monad-testnet": 0,
@@ -40,52 +40,93 @@
    "abstract-testnet": 0,
    "sonic-testnet": "fail",
    "megaeth-testnet": 0,
-   "polygon-amoy": 1,
+   "polygon-amoy": 2,
    "avalanche-fuji": 0,
    "sui-testnet": "fail",
    "aptos-testnet": 0,
    "solana-devnet": 0,
    "solana-testnet": 0
   },
-  "mint_farms_dropped": 11,
-  "mints_hot": 20,
-  "mints_new": 0,
-  "mints_chains_ok": 19,
+  "mints_hot": 9,
+  "mints_new": 2,
+  "mints_chains_ok": 18,
   "mints_chains": 38,
-  "outcome_snapshots": 51
+  "outcome_snapshots": 55
  },
  "tokens": [
   {
-   "score": 74,
+   "score": 81,
    "warnings": [],
    "market": {
     "network": "solana",
-    "pool": "7wNXypS79Whx7vX8NCrkdhQAFiYVbQZbBuqrRdKMRbve",
-    "name": "Grodia / SOL",
-    "token": "6HS1aeSk7osT5B1CzLp1HTRTAweFr5wurfMHS4vppump",
+    "pool": "DDcyemq9bkyqtC93djkwaH6VaMKCjVsoCUVGV29q7teB",
+    "name": "PUMPCHAN / SOL",
+    "token": "Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump",
     "dex": "pumpswap",
-    "created_at": "2026-11-25T22:26:54Z",
-    "liquidity_usd": 73467.3325,
-    "fdv_usd": 998142.054925216,
+    "created_at": "2026-11-26T01:31:10Z",
+    "liquidity_usd": 224010.2539,
+    "fdv_usd": 8799779.95585513,
     "mcap_usd": null,
-    "vol_24h": 1933842.94837565,
-    "buys_24h": 80677,
-    "sells_24h": 33538,
-    "buyers_24h": 11194,
-    "price_chg_24h": 583.66
+    "vol_24h": 4830867.15175023,
+    "buys_24h": 45831,
+    "sells_24h": 31078,
+    "buyers_24h": 15238,
+    "price_chg_24h": 28239.847
    },
    "info": {
-    "symbol": "Grodia",
+    "symbol": "PUMPCHAN",
     "websites": [
-     "https://thegrodia.site"
+     "https://www.thepumpchan.lol"
     ],
-    "twitter": "thegrodia",
+    "twitter": "ThePumpChan",
     "telegram": null,
     "discord": null,
-    "description": "zero sells. zero fud. zero chill. one tattoo. babe. ",
+    "description": "The girl on the curve. $PUMPCHAN\nThe curve. The girl. The launch.",
+    "gt_score": 60.8831168831169,
+    "holder_count": 15064,
+    "top10_pct": 12.9144
+   },
+   "security": {
+    "source": "goplus-sol",
+    "ok": true,
+    "mintable": false,
+    "freezable": false,
+    "closable": false,
+    "balance_mutable": false,
+    "non_transferable": false
+   }
+  },
+  {
+   "score": 78,
+   "warnings": [],
+   "market": {
+    "network": "solana",
+    "pool": "FUzScAtZzSt9rzMtt2pCDLPpJ1ikYC5LgDNjYtfWyqdj",
+    "name": "NORFEATH / SOL",
+    "token": "3gmFG4sFDJErDV8pacFrL2uUPXeGJTYLjfRy4hFypump",
+    "dex": "pumpswap",
+    "created_at": "2026-11-25T21:05:41Z",
+    "liquidity_usd": 52536.1703,
+    "fdv_usd": 491859.091663336,
+    "mcap_usd": null,
+    "vol_24h": 2262129.6204432,
+    "buys_24h": 191017,
+    "sells_24h": 99376,
+    "buyers_24h": 14476,
+    "price_chg_24h": 292.04
+   },
+   "info": {
+    "symbol": "NORFEATH",
+    "websites": [
+     "https://norfeather.lol"
+    ],
+    "twitter": "flynorfeather",
+    "telegram": null,
+    "discord": null,
+    "description": "Sixty-knot nor'easter winds can't ground a centennial turkey. A hundred years of stitched amber satin facing Sixth Avenue gusts head-on. With golden mooring cables gripped tight, this captain leads the hundred-balloon fleet straight through the storm without losing a single stitch.",
     "gt_score": 59.63636363636364,
-    "holder_count": 10085,
-    "top10_pct": 5.475
+    "holder_count": 11139,
+    "top10_pct": 6.5105
    },
    "security": {
     "source": "goplus-sol",
@@ -98,78 +139,34 @@
    }
   },
   {
-   "score": 73,
+   "score": 67,
    "warnings": [],
    "market": {
     "network": "solana",
-    "pool": "CcHPiGNPbwf65NFSL3D8H4M4RWdPrZh8LpcATynurXQg",
-    "name": "MONEY / SOL",
-    "token": "DeACAbp2GMzapB6Z2K8qdkTZupmNbKc6EZx9bnbCpump",
+    "pool": "qkiYfkcm2QGfpNbEpuXvA5wiXq4F6ZdUWnZk2Y19cym",
+    "name": "PAIR / SOL",
+    "token": "32rBxcFjCFnyqZ41CEPM5AL67X1dcw8w83vZt6Kxpump",
     "dex": "pumpswap",
-    "created_at": "2026-11-25T23:48:06Z",
-    "liquidity_usd": 65215.0962,
-    "fdv_usd": 752796.041475811,
+    "created_at": "2026-11-26T13:25:24Z",
+    "liquidity_usd": 37722.429,
+    "fdv_usd": 262992.0859,
     "mcap_usd": null,
-    "vol_24h": 1994620.66487366,
-    "buys_24h": 30760,
-    "sells_24h": 16345,
-    "buyers_24h": 9172,
-    "price_chg_24h": 132.83
+    "vol_24h": 1383449.76899047,
+    "buys_24h": 22010,
+    "sells_24h": 16875,
+    "buyers_24h": 5373,
+    "price_chg_24h": 851.395
    },
    "info": {
-    "symbol": "MONEY",
-    "websites": [
-     "https://moneyismeme.fun"
-    ],
-    "twitter": "MoneyMemeX",
-    "telegram": null,
-    "discord": null,
-    "description": "Money is Meme",
-    "gt_score": 50.49350649350649,
-    "holder_count": 3512,
-    "top10_pct": 28.8577
-   },
-   "security": {
-    "source": "goplus-sol",
-    "ok": true,
-    "mintable": false,
-    "freezable": false,
-    "closable": false,
-    "balance_mutable": false,
-    "non_transferable": false
-   }
-  },
-  {
-   "score": 73,
-   "warnings": [],
-   "market": {
-    "network": "solana",
-    "pool": "9sBikgSUu5U3q1JbFwdkWJ4Kb3q7kjEujoo4gd5vYumg",
-    "name": "Zero / SOL",
-    "token": "DTSkmo3sCCKLCh91dJLiWCpwcKtK3yDBZMqZGSV1pump",
-    "dex": "pumpswap",
-    "created_at": "2026-11-26T00:13:22Z",
-    "liquidity_usd": 51374.467,
-    "fdv_usd": 387413.660506031,
-    "mcap_usd": null,
-    "vol_24h": 3919986.34212521,
-    "buys_24h": 36921,
-    "sells_24h": 33819,
-    "buyers_24h": 7595,
-    "price_chg_24h": 1249.56
-   },
-   "info": {
-    "symbol": "Zero",
-    "websites": [
-     "https://fomo.family/profile/ZeroSumEnjoyer"
-    ],
-    "twitter": "comethankme12/status/2125743883300524380",
+    "symbol": "PAIR",
+    "websites": [],
+    "twitter": "packletack/status/2125941964868649205",
     "telegram": null,
     "discord": null,
     "description": "Deployed using https://j7tracker.io",
-    "gt_score": 46.33766233766234,
-    "holder_count": 3010,
-    "top10_pct": 32.3923
+    "gt_score": 44.05194805194805,
+    "holder_count": 2501,
+    "top10_pct": 24.0678
    },
    "security": {
     "source": "goplus-sol",
@@ -182,72 +179,58 @@
    }
   },
   {
-   "score": 70,
+   "score": 57,
    "warnings": [
-    "lp_not_locked"
+    "no_security_data",
+    "chain_without_security_scan"
    ],
    "market": {
-    "network": "eth",
-    "pool": "0x9a51d99a4330c6a2031110cec8980c253b2827b368780c8fce30835b42f12395",
-    "name": "XTEN / ETH",
-    "token": "0xbe75b4c40f4dbe7ad8d492355f230564427fdd73",
-    "dex": "uniswap-v4-ethereum",
-    "created_at": "2026-11-25T22:32:11Z",
-    "liquidity_usd": 127768.5135,
-    "fdv_usd": 2466818.861,
-    "mcap_usd": null,
-    "vol_24h": 1097975.58469786,
-    "buys_24h": 1541,
-    "sells_24h": 338,
-    "buyers_24h": 803,
-    "price_chg_24h": 75992.54
+    "network": "bittensor",
+    "pool": "0-129",
+    "name": "SN129 / TAO",
+    "token": "129",
+    "dex": "subnet-tokens",
+    "created_at": "2026-11-26T10:59:01Z",
+    "liquidity_usd": 143457.7739,
+    "fdv_usd": 178356.178935489,
+    "mcap_usd": 178356.178935489,
+    "vol_24h": 840035.250972446,
+    "buys_24h": 364,
+    "sells_24h": 222,
+    "buyers_24h": 99,
+    "price_chg_24h": -56.387
    },
    "info": {
-    "symbol": "XTEN",
+    "symbol": "SN129",
     "websites": [
-     "https://www.extendedapp.site"
+     "https://www.microtensor.cloud"
     ],
-    "twitter": "x10_app",
+    "twitter": null,
     "telegram": null,
     "discord": null,
-    "description": "",
-    "gt_score": 73.65079365079366,
-    "holder_count": 574,
-    "top10_pct": 7.9231
+    "description": "Task-specific small models that match frontier quality at a fraction of the cost, with proof. Miners fine-tune specialists; validators test them on hidden, rotating tasks and re-run their calls, so every published score is a verified measurement, not a claim.",
+    "gt_score": 55.1219512195122,
+    "holder_count": null,
+    "top10_pct": null
    },
    "security": {
-    "source": "goplus-evm",
-    "ok": true,
-    "honeypot": false,
-    "open_source": true,
-    "proxy": false,
-    "mintable": false,
-    "hidden_owner": false,
-    "take_back_ownership": false,
-    "pausable": false,
-    "cannot_sell_all": false,
-    "blacklist": false,
-    "buy_tax": 0.0,
-    "sell_tax": 0.0,
-    "owner": null,
-    "creator_pct": 0.0,
-    "lp_locked_pct": 0,
-    "holder_count": "582"
+    "source": "none",
+    "ok": false
    }
   }
  ],
  "new_sinks": [
   {
    "chain": "eth",
-   "address": "0x90dfcb5e560fe64475882f566cfadce466ada106",
-   "inflow_usd": 10157910,
-   "block_7d": 26446987,
+   "address": "0x2b9681015a1fa2225d1fc8ae40538d3d64c58290",
+   "inflow_usd": 43644378,
+   "block_7d": 26450045,
    "name": "",
    "symbol": "",
    "code_bytes": 11784,
    "decimals": 0,
    "total_supply": 0.0,
-   "code_hash": "e6e0352ab6c33c17",
+   "code_hash": "7eefdd76fa5c373e",
    "features": [
     "vault_4626"
    ],
@@ -255,28 +238,14 @@
   },
   {
    "chain": "eth",
-   "address": "0xfc6722b202eb47576da35692eb2dd487102de7e1",
-   "inflow_usd": 6238394,
-   "block_7d": 26446987,
-   "name": "",
-   "symbol": "",
-   "code_bytes": 22015,
-   "decimals": 0,
-   "total_supply": 0.0,
-   "code_hash": "65bad5a9a3c163f7",
-   "features": [],
-   "kind": "other"
-  },
-  {
-   "chain": "eth",
-   "address": "0x3bd9adae6643ddcddd02746b8b60075e56df9478",
-   "inflow_usd": 5078955,
-   "block_7d": 26446987,
-   "name": "RockawayX Tori Ecosystem",
-   "symbol": "roxTORI",
+   "address": "0xbeef088055857739c12cd3765f20b7679def0f51",
+   "inflow_usd": 23076372,
+   "block_7d": 26450045,
+   "name": "Steakhouse Prime USDC",
+   "symbol": "steakUSDC",
    "code_bytes": 21808,
    "decimals": 18,
-   "total_supply": 13426037.057793783,
+   "total_supply": 110635718.43870258,
    "code_hash": "80c0341311dfa607",
    "features": [
     "erc20",
@@ -286,30 +255,196 @@
    "kind": "vault"
   },
   {
-   "chain": "bsc",
-   "address": "0x111116056ad60f0f4fb52d60852f9acd2fafca11",
-   "inflow_usd": 422231,
-   "block_7d": 134445783,
+   "chain": "eth",
+   "address": "0xe6eeda550918638529c6cf2ea14f9ea0572d6f88",
+   "inflow_usd": 9833755,
+   "block_7d": 26450045,
    "name": "",
    "symbol": "",
-   "code_bytes": 22545,
+   "code_bytes": 18084,
    "decimals": 0,
    "total_supply": 0.0,
-   "code_hash": "121364cd279391c4",
+   "code_hash": "cddf1f83ccd035fc",
+   "features": [
+    "erc20",
+    "vault_4626"
+   ],
+   "kind": "vault"
+  },
+  {
+   "chain": "eth",
+   "address": "0xdd0f28e19c1780eb6396170735d45153d261490d",
+   "inflow_usd": 8760639,
+   "block_7d": 26450045,
+   "name": "Gauntlet USDC Prime",
+   "symbol": "gtUSDC",
+   "code_bytes": 19340,
+   "decimals": 18,
+   "total_supply": 14165117.953187369,
+   "code_hash": "6512285a13924929",
+   "features": [
+    "erc20",
+    "vault_4626",
+    "owner"
+   ],
+   "kind": "vault"
+  },
+  {
+   "chain": "eth",
+   "address": "0xef4cb7e87f212f128f0b24cf35861e52b3c78a6a",
+   "inflow_usd": 8387387,
+   "block_7d": 26450045,
+   "name": "",
+   "symbol": "",
+   "code_bytes": 11784,
+   "decimals": 0,
+   "total_supply": 0.0,
+   "code_hash": "ef9bc65cd5b44c6b",
+   "features": [
+    "vault_4626"
+   ],
+   "kind": "vault"
+  },
+  {
+   "chain": "eth",
+   "address": "0xb0c424116172b55cbb6dd3136f5989f7959e5b91",
+   "inflow_usd": 8387387,
+   "block_7d": 26450045,
+   "name": "Spark Blue Chip USDT Vault",
+   "symbol": "sparkUSDTbc",
+   "code_bytes": 21808,
+   "decimals": 18,
+   "total_supply": 45273399.28548587,
+   "code_hash": "1662550638e3d664",
+   "features": [
+    "erc20",
+    "vault_4626",
+    "owner"
+   ],
+   "kind": "vault"
+  },
+  {
+   "chain": "eth",
+   "address": "0xa2f362079dbc570a6df5bd04ad91002d17c0db9a",
+   "inflow_usd": 8210294,
+   "block_7d": 26450045,
+   "name": "",
+   "symbol": "",
+   "code_bytes": 11784,
+   "decimals": 0,
+   "total_supply": 0.0,
+   "code_hash": "5b506d1865918f9d",
+   "features": [
+    "vault_4626"
+   ],
+   "kind": "vault"
+  },
+  {
+   "chain": "eth",
+   "address": "0xe3490297a08d6fc8da46edb7b6142e4f461b62d3",
+   "inflow_usd": 5687204,
+   "block_7d": 26450045,
+   "name": "",
+   "symbol": "",
+   "code_bytes": 24027,
+   "decimals": 0,
+   "total_supply": 0.0,
+   "code_hash": "914b0e8c15ed30c4",
+   "features": [
+    "public_mint",
+    "owner"
+   ],
+   "kind": "other"
+  },
+  {
+   "chain": "eth",
+   "address": "0x1c87feac33e2ad0a81a250fa63db4b1c2687bb05",
+   "inflow_usd": 5224512,
+   "block_7d": 26450045,
+   "name": "",
+   "symbol": "",
+   "code_bytes": 11784,
+   "decimals": 0,
+   "total_supply": 0.0,
+   "code_hash": "cfae7961a429cd83",
+   "features": [
+    "vault_4626"
+   ],
+   "kind": "vault"
+  },
+  {
+   "chain": "bsc",
+   "address": "0xd0f7b94bf06675d13e8ba9a2546835a1c32a80b8",
+   "inflow_usd": 1205092,
+   "block_7d": 134529082,
+   "name": "",
+   "symbol": "",
+   "code_bytes": 10640,
+   "decimals": 0,
+   "total_supply": 0.0,
+   "code_hash": "24aadfb3d602ce96",
+   "features": [
+    "erc20",
+    "vault_4626",
+    "owner"
+   ],
+   "kind": "vault"
+  },
+  {
+   "chain": "bsc",
+   "address": "0x77b540b3be76d96fcbe0d7b84fcc5ed5f4fb0436",
+   "inflow_usd": 627613,
+   "block_7d": 134529082,
+   "name": "",
+   "symbol": "",
+   "code_bytes": 24415,
+   "decimals": 0,
+   "total_supply": 0.0,
+   "code_hash": "ea5af31aea2992a8",
+   "features": [
+    "owner"
+   ],
+   "kind": "other"
+  },
+  {
+   "chain": "bsc",
+   "address": "0x13b207677d77853614ce78a0dc0658e8ca9061e0",
+   "inflow_usd": 450627,
+   "block_7d": 134529082,
+   "name": "",
+   "symbol": "",
+   "code_bytes": 16206,
+   "decimals": 0,
+   "total_supply": 0.0,
+   "code_hash": "7a346a3f9c983dd4",
    "features": [],
    "kind": "other"
   },
   {
    "chain": "bsc",
-   "address": "0xa563aea6c1b13b957c50f5a077bc17b5acdb6fa7",
-   "inflow_usd": 293554,
-   "block_7d": 134445783,
+   "address": "0x45355a464068ac8eac3ef6f2a8e3a708cc6d898e",
+   "inflow_usd": 378875,
+   "block_7d": 134529082,
    "name": "",
    "symbol": "",
    "code_bytes": 20024,
    "decimals": 0,
    "total_supply": 0.0,
-   "code_hash": "ba6b114f1d02b26b",
+   "code_hash": "6746adf456459d8f",
+   "features": [],
+   "kind": "other"
+  },
+  {
+   "chain": "bsc",
+   "address": "0x1a3259dfd8b8153fa3055fc06af119c57d9ff8b8",
+   "inflow_usd": 306637,
+   "block_7d": 134529082,
+   "name": "",
+   "symbol": "",
+   "code_bytes": 20024,
+   "decimals": 0,
+   "total_supply": 0.0,
+   "code_hash": "25b14bf229af239b",
    "features": [],
    "kind": "other"
   }
@@ -317,44 +452,62 @@
  "new_testnet": [
   {
    "testnet": "sepolia",
-   "address": "0x8de5923c756ecf959c1794791f77af5f9b938aef",
-   "users_sample": 39,
-   "txs_sample": 78,
-   "explorer": "https://sepolia.etherscan.io/address/0x8de5923c756ecf959c1794791f77af5f9b938aef",
+   "address": "0x9f4a6b24bd9c6a921fc147d0437927a6cc49a96b",
+   "users_sample": 27,
+   "txs_sample": 49,
+   "explorer": "https://sepolia.etherscan.io/address/0x9f4a6b24bd9c6a921fc147d0437927a6cc49a96b",
    "chainid": 11155111
-  }
- ],
- "new_mints": [],
- "new_protocols": [
-  {
-   "id": "picoswap-aggregator",
-   "name": "PicoSwap Aggregator",
-   "url": "https://app.picoswap.xyz",
-   "twitter": "picoswapxyz",
-   "category": "DEX Aggregator",
-   "chains": [],
-   "tvl": null,
-   "audits": "0",
-   "audit_links": null,
-   "token_address": null,
-   "gecko_id": null,
-   "description": "PicoSwap is a non-custodial trading app. Swaps and bridges across 25+ chains route through Relay, with a 0x or Jupiter price check; limit orders and DCA run on CoW Protocol and Jupiter; perps and spot trade on Hyperliquid through its builder code. Half of every swap fee is paid back to traders in USDC",
-   "listed_at": 1795647828
   },
   {
-   "id": "voltswap-aggregator",
-   "name": "VoltSwap Aggregator",
-   "url": "https://voltswap.finance",
-   "twitter": "voltswap",
-   "category": "DEX Aggregator",
-   "chains": [],
-   "tvl": null,
-   "audits": "0",
-   "audit_links": null,
-   "token_address": "meter:0x8Df95e66Cb0eF38F91D2776DA3c921768982fBa0",
-   "gecko_id": null,
-   "description": "VoltSwap is a DEX Aggregator in the Sui ecosystem.",
-   "listed_at": 1795653364
+   "testnet": "base-sepolia",
+   "address": "0x67bbc91a62ac5384d8e1e6cf93fc5817375a3a37",
+   "users_sample": 51,
+   "txs_sample": 70,
+   "explorer": "https://sepolia.basescan.org/address/0x67bbc91a62ac5384d8e1e6cf93fc5817375a3a37",
+   "chainid": 84532
   }
- ]
+ ],
+ "new_mints": [
+  {
+   "chain": "monad",
+   "address": "0x1389e498f7e2523e4c98d82d8ffe579d3294bdac",
+   "mints": 37,
+   "recipients": 37,
+   "std": "erc721",
+   "block_7d": 123610717,
+   "name": "Auric Horizon Vault",
+   "symbol": "AHVT",
+   "code_bytes": 20671,
+   "decimals": 0,
+   "total_supply": 40.0,
+   "code_hash": "3d1169ce8c5ff888",
+   "features": [
+    "erc20",
+    "erc721",
+    "pausable"
+   ],
+   "kind": "nft"
+  },
+  {
+   "chain": "monad",
+   "address": "0xff59f2f02e845218f031351d1da3b42858c35f4a",
+   "mints": 27,
+   "recipients": 27,
+   "std": "erc721",
+   "block_7d": 123610717,
+   "name": "Deep Space Frog Dynasty",
+   "symbol": "DSFD",
+   "code_bytes": 20671,
+   "decimals": 0,
+   "total_supply": 87.0,
+   "code_hash": "3d1169ce8c5ff888",
+   "features": [
+    "erc20",
+    "erc721",
+    "pausable"
+   ],
+   "kind": "nft"
+  }
+ ],
+ "new_protocols": []
 }
