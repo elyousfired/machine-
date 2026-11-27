@@ -1,30 +1,30 @@
 {
- "generated_at": "2026-11-26T23:52:53Z",
+ "generated_at": "2026-11-27T08:31:10Z",
  "stats": {
-  "pools": 356,
-  "new": 1068,
-  "market_pass": 16,
-  "shortlisted": 3,
-  "young_rechecked": 813,
-  "young_promoted": 3,
+  "pools": 312,
+  "new": 1021,
+  "market_pass": 9,
+  "shortlisted": 6,
+  "young_rechecked": 810,
+  "young_promoted": 2,
   "networks": 222,
-  "networks_scanned": 31,
-  "sinks_noise_dropped": 20,
-  "sinks_checked": 244,
-  "new_sinks": 9,
+  "networks_scanned": 30,
+  "sinks_noise_dropped": 21,
+  "sinks_checked": 237,
+  "new_sinks": 2,
   "onchain_hours": {
    "eth": 4.0,
-   "base": 3.44,
+   "base": 4.0,
    "arbitrum": 0.01,
-   "bsc": 1.53
+   "bsc": 1.52
   },
   "sinks_baseline_run": false,
-  "testnet_hot": 15,
-  "testnet_new": 6,
+  "testnet_hot": 14,
+  "testnet_new": 5,
   "testnets": {
-   "sepolia": 10,
-   "base-sepolia": 1,
-   "arbitrum-sepolia": 0,
+   "sepolia": 8,
+   "base-sepolia": 0,
+   "arbitrum-sepolia": 1,
    "optimism-sepolia": 0,
    "bsc-testnet": 0,
    "monad-testnet": 0,
@@ -39,104 +39,53 @@
    "berachain-bepolia": 0,
    "abstract-testnet": 0,
    "sonic-testnet": "fail",
-   "megaeth-testnet": 0,
-   "polygon-amoy": 3,
+   "megaeth-testnet": 3,
+   "polygon-amoy": 1,
    "avalanche-fuji": 0,
    "sui-testnet": "fail",
    "aptos-testnet": 0,
    "solana-devnet": 0,
    "solana-testnet": 0
   },
-  "mints_hot": 8,
+  "mint_farms_dropped": 2,
+  "mints_hot": 12,
   "mints_new": 2,
-  "mints_chains_ok": 19,
+  "mints_chains_ok": 18,
   "mints_chains": 38,
-  "outcome_snapshots": 25
+  "outcome_snapshots": 28
  },
  "tokens": [
   {
-   "score": 85,
-   "warnings": [],
-   "market": {
-    "network": "eth",
-    "pool": "0x796b05002bdfa2aaa9f01fc0ce0ceedbd1e20e0e8e1d1e282e1bbade325646ba",
-    "name": "PEJAK / ETH",
-    "token": "0xe018d1e8747ac44d87d35197ba1e9a73a721097c",
-    "dex": "uniswap-v4-ethereum",
-    "created_at": "2026-11-22T01:40:59Z",
-    "liquidity_usd": 299150.3042,
-    "fdv_usd": 13348367.77,
-    "mcap_usd": 13348367.77,
-    "vol_24h": 1293904.02024961,
-    "buys_24h": 682,
-    "sells_24h": 335,
-    "buyers_24h": 231,
-    "price_chg_24h": 215.446
-   },
-   "info": {
-    "symbol": "PEJAK",
-    "websites": [
-     "https://pepewojak.fun"
-    ],
-    "twitter": "pepewojak_X",
-    "telegram": null,
-    "discord": null,
-    "description": "Pepe Wojak (PEJAK) is a meme token on Ethereum that brings together two of the most recognizable characters in internet culture: Pepe the frog and Wojak, the simple sketched face known for expressing every human feeling online. The project imagines what happens when the smug confidence of Pepe meets the honest emotions of Wojak, creating a hybrid character who captures both the wins and the losses of crypto life. Rather than presenting itself as complex financial infrastructure, PEJAK focuses on humor, storytelling, and shared internet culture.",
-    "gt_score": 72.06349206349208,
-    "holder_count": 711,
-    "top10_pct": 16.938
-   },
-   "security": {
-    "source": "goplus-evm",
-    "ok": true,
-    "honeypot": false,
-    "open_source": true,
-    "proxy": false,
-    "mintable": false,
-    "hidden_owner": false,
-    "take_back_ownership": false,
-    "pausable": false,
-    "cannot_sell_all": false,
-    "blacklist": false,
-    "buy_tax": 0.0,
-    "sell_tax": 0.0,
-    "owner": null,
-    "creator_pct": 0.0,
-    "lp_locked_pct": 1.0,
-    "holder_count": "712"
-   }
-  },
-  {
-   "score": 73,
+   "score": 77,
    "warnings": [],
    "market": {
     "network": "solana",
-    "pool": "AirCDeU4yL6hjuina65mtWAKzmex7STKZSiNMYZhzKt2",
-    "name": "Snowball / SOL",
-    "token": "9TKbd3VFaMSXsEAicD9JVQWpWwAoLi4fSgWmZL2cpump",
+    "pool": "FQ86N5mg3XWdJzGsrBRKRYtxD4ftDpvkyPzx53rFhpFP",
+    "name": "KAI / SOL",
+    "token": "G2ZDG8q3QMYk3KR58JFFYsvaTk4Gy94UzMo7Re7spump",
     "dex": "pumpswap",
-    "created_at": "2026-11-25T18:22:09Z",
-    "liquidity_usd": 51514.8313,
-    "fdv_usd": 414338.501397392,
+    "created_at": "2026-11-27T00:44:17Z",
+    "liquidity_usd": 133947.7147,
+    "fdv_usd": 3013708.37043483,
     "mcap_usd": null,
-    "vol_24h": 1540908.20740523,
-    "buys_24h": 25622,
-    "sells_24h": 21265,
-    "buyers_24h": 5796,
-    "price_chg_24h": 879.593
+    "vol_24h": 3296341.27346522,
+    "buys_24h": 52052,
+    "sells_24h": 31711,
+    "buyers_24h": 9052,
+    "price_chg_24h": 653.797
    },
    "info": {
-    "symbol": "Snowball",
+    "symbol": "KAI",
     "websites": [
-     "https://holdersnowball.fun"
+     "https://kaikensol.fun"
     ],
-    "twitter": "holdersnowball/status/2125654985811591446",
+    "twitter": "KaiKenMemeX",
     "telegram": null,
     "discord": null,
-    "description": "",
-    "gt_score": 57.558441558441565,
-    "holder_count": 113633,
-    "top10_pct": 26.4179
+    "description": "The Last Inu, the last of the 6 Japanese Inu dog breeds. ",
+    "gt_score": 56.311688311688314,
+    "holder_count": 5198,
+    "top10_pct": 25.5749
    },
    "security": {
     "source": "goplus-sol",
@@ -153,32 +102,196 @@
    "warnings": [],
    "market": {
     "network": "solana",
-    "pool": "4XVReVDHQDFUM6FfvTmo7FdmEq7ZGWxZ1Jhj7qVA68wx",
-    "name": "duk / SOL",
-    "token": "DG2EJSEtPBge5F7zBCTZG78p27LTCiq8tUkJ39qupump",
+    "pool": "6h2yPTQ4CaXcUjMYr6B6MkDmLqTzuLkZuh25aT4thrbZ",
+    "name": "DEXDATA / SOL",
+    "token": "63jDWWFwp25ChLvsofbVRMprRbhiXuWoWVxrwFfypump",
     "dex": "pumpswap",
-    "created_at": "2026-11-26T10:06:30Z",
-    "liquidity_usd": 31213.3735,
-    "fdv_usd": 110615.3573,
+    "created_at": "2026-11-26T21:25:07Z",
+    "liquidity_usd": 37677.9534,
+    "fdv_usd": 248641.3136,
     "mcap_usd": null,
-    "vol_24h": 699840.402660769,
-    "buys_24h": 8859,
-    "sells_24h": 6899,
-    "buyers_24h": 2591,
-    "price_chg_24h": 279.434
+    "vol_24h": 1232884.62976732,
+    "buys_24h": 15060,
+    "sells_24h": 11342,
+    "buyers_24h": 3728,
+    "price_chg_24h": 717.978
    },
    "info": {
-    "symbol": "duk",
+    "symbol": "DEXDATA",
     "websites": [
-     "https://duk.fun"
+     "https://dexdata.org"
     ],
-    "twitter": "justdukfun/status/2125882614338715649",
+    "twitter": "dexdataorg/status/2126061290481385515",
+    "telegram": null,
+    "discord": null,
+    "description": "Solana screener, verified token profiles and Data API.\r\nPrivacy focused Enhanced Token Info for $29 in SOL or USDC, wallet only.",
+    "gt_score": 49.24675324675325,
+    "holder_count": 1302,
+    "top10_pct": 30.7885
+   },
+   "security": {
+    "source": "goplus-sol",
+    "ok": true,
+    "mintable": false,
+    "freezable": false,
+    "closable": false,
+    "balance_mutable": false,
+    "non_transferable": false
+   }
+  },
+  {
+   "score": 71,
+   "warnings": [],
+   "market": {
+    "network": "solana",
+    "pool": "DjkYZZ9WLjTnm4LJ2N37LtgnJXxJt4D4DNxJ7YcCgnkt",
+    "name": "ZOTH / SOL",
+    "token": "2QXbXCXinZtrsEYzG6fEmAPX4fpndiv82oJu59o8pEcu",
+    "dex": "pumpswap",
+    "created_at": "2026-11-27T02:23:54Z",
+    "liquidity_usd": 129658.3445,
+    "fdv_usd": 635292.6909,
+    "mcap_usd": null,
+    "vol_24h": 17542746.2591354,
+    "buys_24h": 19699,
+    "sells_24h": 17918,
+    "buyers_24h": 2103,
+    "price_chg_24h": 87.084
+   },
+   "info": {
+    "symbol": "ZOTH",
+    "websites": [],
+    "twitter": "zothdotio",
+    "telegram": null,
+    "discord": null,
+    "description": "Zoth",
+    "gt_score": 54.85714285714286,
+    "holder_count": 2086,
+    "top10_pct": 25.7334
+   },
+   "security": {
+    "source": "goplus-sol",
+    "ok": true,
+    "mintable": false,
+    "freezable": false,
+    "closable": false,
+    "balance_mutable": false,
+    "non_transferable": false
+   }
+  },
+  {
+   "score": 71,
+   "warnings": [],
+   "market": {
+    "network": "solana",
+    "pool": "9s1uPZZuzpPu1qNLPr7VDn8azXxxbXRAyEtanZv8PsAr",
+    "name": "DragonRiders / SPCX",
+    "token": "5xrT8y2KU2YwzipwCMNxxTc8KAGQd4wjtGTc2WyJJCMh",
+    "dex": "pumpswap",
+    "created_at": "2026-11-27T02:09:49Z",
+    "liquidity_usd": 29659.0699,
+    "fdv_usd": 111620.8521,
+    "mcap_usd": null,
+    "vol_24h": 734869.433571692,
+    "buys_24h": 11388,
+    "sells_24h": 8059,
+    "buyers_24h": 3115,
+    "price_chg_24h": -14.704
+   },
+   "info": {
+    "symbol": "DragonRiders",
+    "websites": [
+     "https://www.reddit.com/r/spacex"
+    ],
+    "twitter": "bbaoo777/status/2126127836255641998",
     "telegram": null,
     "discord": null,
     "description": "Deployed using https://j7tracker.io",
-    "gt_score": 42.18181818181819,
-    "holder_count": 748,
-    "top10_pct": 38.009
+    "gt_score": 38.44155844155844,
+    "holder_count": 1498,
+    "top10_pct": 37.1508
+   },
+   "security": {
+    "source": "goplus-sol",
+    "ok": true,
+    "mintable": false,
+    "freezable": false,
+    "closable": false,
+    "balance_mutable": false,
+    "non_transferable": false
+   }
+  },
+  {
+   "score": 71,
+   "warnings": [],
+   "market": {
+    "network": "solana",
+    "pool": "HJ4AFisW1oo8HVmyXL2QjjnAv4Y25NThse2LcpCreqtu",
+    "name": "Kibo / SOL",
+    "token": "7XSYaJygcuNe6Q3kPvwsJpg4ZrFL1AEUFb8kCuzppump",
+    "dex": "pumpswap",
+    "created_at": "2026-11-27T05:31:29Z",
+    "liquidity_usd": 26351.2327,
+    "fdv_usd": 135601.3965,
+    "mcap_usd": null,
+    "vol_24h": 635600.307312738,
+    "buys_24h": 10842,
+    "sells_24h": 7834,
+    "buyers_24h": 2953,
+    "price_chg_24h": 387.577
+   },
+   "info": {
+    "symbol": "Kibo",
+    "websites": [
+     "https://x.com/aws_official/status/2126135650982433123?a=yOBe1J4HLldYgXst4dU&s=20"
+    ],
+    "twitter": "early404/status/2126184901430980810",
+    "telegram": null,
+    "discord": null,
+    "description": "Lets do this!",
+    "gt_score": 46.75324675324675,
+    "holder_count": 1131,
+    "top10_pct": 27.763
+   },
+   "security": {
+    "source": "goplus-sol",
+    "ok": true,
+    "mintable": false,
+    "freezable": false,
+    "closable": false,
+    "balance_mutable": false,
+    "non_transferable": false
+   }
+  },
+  {
+   "score": 66,
+   "warnings": [],
+   "market": {
+    "network": "solana",
+    "pool": "3HZez3ezzSDTZaT12pqMZwii8Ury9rknjQumsJQYwYt7",
+    "name": "Elonmas / SOL",
+    "token": "6B5X3keXJ4J8LLvswa2mbqMhrRDbt85Jo88sbB6apump",
+    "dex": "pumpswap",
+    "created_at": "2026-11-26T05:03:46Z",
+    "liquidity_usd": 21202.5594,
+    "fdv_usd": 72322.3184885257,
+    "mcap_usd": null,
+    "vol_24h": 961236.410544347,
+    "buys_24h": 15113,
+    "sells_24h": 12222,
+    "buyers_24h": 4253,
+    "price_chg_24h": -61.016
+   },
+   "info": {
+    "symbol": "Elonmas",
+    "websites": [],
+    "twitter": "dv3333333/status/2125816503110935022",
+    "telegram": null,
+    "discord": null,
+    "description": "Deployed using https://j7tracker.io",
+    "gt_score": 48.20779220779221,
+    "holder_count": 2495,
+    "top10_pct": 30.3627
    },
    "security": {
     "source": "goplus-sol",
@@ -193,219 +306,89 @@
  ],
  "new_sinks": [
   {
-   "chain": "eth",
-   "address": "0x83a1a627e4202ddec4e3625f8f212c97fd931e6f",
-   "inflow_usd": 7860485,
-   "block_7d": 26452607,
+   "chain": "bsc",
+   "address": "0x8ba4eadd2e37a69e6d923e65f8437bfff7a99b64",
+   "inflow_usd": 10000000,
+   "block_7d": 134665768,
    "name": "",
    "symbol": "",
-   "code_bytes": 11674,
-   "decimals": 0,
-   "total_supply": 0.0,
-   "code_hash": "2ad58e28778fde98",
-   "features": [
-    "erc20",
-    "vault_4626",
-    "lending"
-   ],
-   "kind": "vault"
-  },
-  {
-   "chain": "eth",
-   "address": "0xf007476bb27430795138c511f18f821e8d1e5ee2",
-   "inflow_usd": 4184100,
-   "block_7d": 26452607,
-   "name": "",
-   "symbol": "",
-   "code_bytes": 3861,
-   "decimals": 0,
-   "total_supply": 0.0,
-   "code_hash": "26b9255f44f48b2f",
-   "features": [
-    "erc20",
-    "vault_4626"
-   ],
-   "kind": "vault"
-  },
-  {
-   "chain": "eth",
-   "address": "0x1f2f10d1c40777ae1da742455c65828ff36df387",
-   "inflow_usd": 3572266,
-   "block_7d": 26452607,
-   "name": "",
-   "symbol": "",
-   "code_bytes": 13835,
-   "code_hash": "c679ae99f86cc4ed",
+   "code_bytes": 9017,
+   "code_hash": "0d238da04f1653ab",
    "features": [],
    "kind": "other"
   },
   {
-   "chain": "eth",
-   "address": "0xbeef003c68896c7d2c3c60d363e8d71a49ab2bf9",
-   "inflow_usd": 3445365,
-   "block_7d": 26452607,
-   "name": "Steakhouse Prime USDT",
-   "symbol": "steakUSDT",
-   "code_bytes": 21808,
-   "decimals": 18,
-   "total_supply": 67478113.26055773,
-   "code_hash": "1662550638e3d664",
-   "features": [
-    "erc20",
-    "vault_4626",
-    "owner"
-   ],
-   "kind": "vault"
-  },
-  {
-   "chain": "eth",
-   "address": "0x4cd00e387622c35bddb9b4c962c136462338bc31",
-   "inflow_usd": 2779553,
-   "block_7d": 26452607,
+   "chain": "bsc",
+   "address": "0xa0bb1ebf52a9307f30509d3b385754c33b7f2e26",
+   "inflow_usd": 689838,
+   "block_7d": 134665768,
    "name": "",
    "symbol": "",
-   "code_bytes": 8628,
+   "code_bytes": 8733,
    "decimals": 0,
    "total_supply": 0.0,
-   "code_hash": "c1897f573dc70ee2",
+   "code_hash": "c86327ac98a29cdf",
    "features": [
     "owner"
    ],
    "kind": "other"
-  },
-  {
-   "chain": "eth",
-   "address": "0x3ed6aa32c930253fc990de58ff882b9186cd0072",
-   "inflow_usd": 2623670,
-   "block_7d": 26452607,
-   "name": "cap USDC",
-   "symbol": "capUSDC",
-   "code_bytes": 45,
-   "decimals": 6,
-   "total_supply": 8122326.994711,
-   "clone": true,
-   "proxy_impl": "0xd8063123bba3b480569244ae66bfe72b6c84b00d",
-   "code_hash": "ccaff188f029d5de",
-   "features": [
-    "erc20",
-    "vault_4626"
-   ],
-   "kind": "vault"
-  },
-  {
-   "chain": "eth",
-   "address": "0x7d7f72d393f242da6e22d3b970491c06742984ff",
-   "inflow_usd": 2623670,
-   "block_7d": 26452607,
-   "name": "Aave V3 USDC Lender",
-   "symbol": "ysUSDC",
-   "code_bytes": 10701,
-   "decimals": 6,
-   "total_supply": 7088344.391814,
-   "proxy_impl": "0x254a93feff3beef9ca004e913bb5443754e8ab19",
-   "code_hash": "182da5c9c9763d8d",
-   "features": [
-    "erc20",
-    "vault_4626"
-   ],
-   "kind": "vault"
-  },
-  {
-   "chain": "eth",
-   "address": "0x6a000f20005980200259b80c5102003040001068",
-   "inflow_usd": 2254723,
-   "block_7d": 26452607,
-   "name": "",
-   "symbol": "",
-   "code_bytes": 24562,
-   "decimals": 0,
-   "total_supply": 0.0,
-   "code_hash": "1ed5f1d02174bf7b",
-   "features": [],
-   "kind": "other"
-  },
-  {
-   "chain": "eth",
-   "address": "0x8cb3649114051ca5119141a34c200d65dc0faa73",
-   "inflow_usd": 1389270,
-   "block_7d": 26452607,
-   "name": "Gauntlet USDT Prime",
-   "symbol": "gtUSDT",
-   "code_bytes": 19340,
-   "decimals": 18,
-   "total_supply": 3329211.642838762,
-   "code_hash": "eeab00b5bf903f8b",
-   "features": [
-    "erc20",
-    "vault_4626",
-    "owner"
-   ],
-   "kind": "vault"
   }
  ],
  "new_testnet": [
   {
    "testnet": "sepolia",
-   "address": "0xf685c9ef74e1daca8d712da20fa87fcd4aaaef4f",
-   "users_sample": 47,
-   "txs_sample": 132,
-   "explorer": "https://sepolia.etherscan.io/address/0xf685c9ef74e1daca8d712da20fa87fcd4aaaef4f",
+   "address": "0x4eb05a2aff60b43eee7d3c52cc8ae0d2aa7f1d58",
+   "users_sample": 37,
+   "txs_sample": 65,
+   "explorer": "https://sepolia.etherscan.io/address/0x4eb05a2aff60b43eee7d3c52cc8ae0d2aa7f1d58",
    "chainid": 11155111
   },
   {
    "testnet": "sepolia",
-   "address": "0xeb26539f8d549505a53db4f903aac59218cc8749",
-   "users_sample": 47,
+   "address": "0x2e133daedd727cc013481a26c1aba0bd2d47c8e4",
+   "users_sample": 30,
    "txs_sample": 92,
-   "explorer": "https://sepolia.etherscan.io/address/0xeb26539f8d549505a53db4f903aac59218cc8749",
+   "explorer": "https://sepolia.etherscan.io/address/0x2e133daedd727cc013481a26c1aba0bd2d47c8e4",
    "chainid": 11155111
   },
   {
    "testnet": "sepolia",
-   "address": "0x5cee33817f8c6af65bd4043b37a755dfd52a7695",
-   "users_sample": 32,
-   "txs_sample": 57,
-   "explorer": "https://sepolia.etherscan.io/address/0x5cee33817f8c6af65bd4043b37a755dfd52a7695",
+   "address": "0x3320b95782d61829b615933109328bef282fb020",
+   "users_sample": 26,
+   "txs_sample": 95,
+   "explorer": "https://sepolia.etherscan.io/address/0x3320b95782d61829b615933109328bef282fb020",
    "chainid": 11155111
   },
   {
-   "testnet": "sepolia",
-   "address": "0x8a82a9f78b03b5c61498c7f2b2cd4fc0595e7f38",
-   "users_sample": 29,
-   "txs_sample": 45,
-   "explorer": "https://sepolia.etherscan.io/address/0x8a82a9f78b03b5c61498c7f2b2cd4fc0595e7f38",
-   "chainid": 11155111
+   "testnet": "megaeth-testnet",
+   "address": "0xc903c68c1d389ced76fee0349067a4295828e6c2",
+   "users_sample": 74,
+   "txs_sample": 111,
+   "explorer": "https://www.megaexplorer.xyz/address/0xc903c68c1d389ced76fee0349067a4295828e6c2",
+   "chainid": 6342
   },
   {
-   "testnet": "sepolia",
-   "address": "0xdb9b1e94b5b69df7e401ddbede43491141047db3",
-   "users_sample": 27,
-   "txs_sample": 35,
-   "explorer": "https://sepolia.etherscan.io/address/0xdb9b1e94b5b69df7e401ddbede43491141047db3",
-   "chainid": 11155111
-  },
-  {
-   "testnet": "polygon-amoy",
-   "address": "0xe7a24bcb724f6487aec4ee59c4bb4cab28bf04be",
+   "testnet": "megaeth-testnet",
+   "address": "0x72d4db19e3ae6f8ed47b5337ab00d69685277cf4",
    "users_sample": 47,
-   "txs_sample": 66,
-   "explorer": "https://amoy.polygonscan.com/address/0xe7a24bcb724f6487aec4ee59c4bb4cab28bf04be",
-   "chainid": 80002
+   "txs_sample": 98,
+   "explorer": "https://www.megaexplorer.xyz/address/0x72d4db19e3ae6f8ed47b5337ab00d69685277cf4",
+   "chainid": 6342
   }
  ],
  "new_mints": [
   {
    "chain": "monad",
-   "address": "0xaab7800528c16de965204f65eb346572a1c640e1",
-   "mints": 49,
-   "recipients": 49,
+   "address": "0xa228564fd26350fabf1cd63475a9f2b099262df8",
+   "mints": 103,
+   "recipients": 103,
    "std": "erc721",
-   "block_7d": 123720149,
-   "name": "Obsidian Socket Prime",
-   "symbol": "OBSP",
+   "block_7d": 123829319,
+   "name": "Quantum Module Prime",
+   "symbol": "QUMP",
    "code_bytes": 20731,
    "decimals": 0,
-   "total_supply": 208.0,
+   "total_supply": 103.0,
    "code_hash": "f76f2f48b59e6349",
    "features": [
     "erc20",
@@ -415,126 +398,89 @@
    "kind": "nft"
   },
   {
-   "chain": "monad",
-   "address": "0x0bebd5545587747251426792743721cf14a24994",
-   "mints": 44,
-   "recipients": 44,
-   "std": "erc721",
-   "block_7d": 123720149,
-   "name": "Quantum Socket Prime",
-   "symbol": "QUSP",
-   "code_bytes": 20731,
-   "decimals": 0,
-   "total_supply": 50.0,
-   "code_hash": "f76f2f48b59e6349",
+   "chain": "mantle-sepolia",
+   "address": "0xe25b4a901de64b833337f5833bc1a2c42089ac3f",
+   "mints": 42,
+   "recipients": 42,
+   "std": "erc20",
+   "block_7d": 46810160,
+   "age": "<7d",
+   "name": "Mantle Test Token",
+   "symbol": "MTT",
+   "code_bytes": 5378,
+   "decimals": 18,
+   "total_supply": 42000000.0,
+   "code_hash": "866a3f4875dbaa39",
    "features": [
     "erc20",
-    "erc721",
-    "pausable"
+    "public_mint",
+    "owner"
    ],
-   "kind": "nft"
+   "kind": "token_public_mint"
   }
  ],
  "new_protocols": [
   {
-   "id": "own",
-   "name": "Own",
-   "url": "",
-   "twitter": "owndotmoney",
-   "category": "CDP",
-   "chains": [
-    "Robinhood Chain"
-   ],
-   "tvl": 113825.59569860733,
-   "audits": "2",
-   "audit_links": [
-    "https://github.com/own-protocol/own-v2/tree/main/audits"
-   ],
-   "token_address": "robinhood:0x0a8b4763c71ac39101b3b8a97e62da0b81549a4f",
-   "gecko_id": "own-money",
-   "description": "Own lets anyone mint eUSD, a stablecoin backed by tokenized stocks, ETH and stock/eUSD LP positions on Robinhood Chain.",
-   "listed_at": 1795711537
-  },
-  {
-   "id": "guanaco",
-   "name": "Guanaco",
-   "url": "",
-   "twitter": "guanacofi",
-   "category": "Dexs",
-   "chains": [
-    "Bitcoincash"
-   ],
-   "tvl": 18042.217089652335,
-   "audits": "0",
-   "audit_links": null,
-   "token_address": "bitcoincash:742a7585d0d5cb35b2a45d26425e23b059b72e82d7036dd97e85da5ab57a8d6c",
-   "gecko_id": null,
-   "description": "Guanaco is a decentralized AMM and liquidity protocol built natively on Bitcoin Cash using CashTokens.",
-   "listed_at": 1795700556
-  },
-  {
-   "id": "tine",
-   "name": "Tine",
-   "url": "",
-   "twitter": "TineProtocol",
+   "id": "pear-vaults",
+   "name": "Pear Vaults",
+   "url": "https://www.pear.garden/",
+   "twitter": "pear_protocol",
    "category": "Yield",
    "chains": [
-    "Ethereum"
+    "Hyperliquid L1"
    ],
-   "tvl": 1662.9237930417867,
-   "audits": null,
-   "audit_links": null,
-   "token_address": "0x2809cB5f9Fb1BB934dBF5f6f5e6F568bB48Cd8aa",
-   "gecko_id": null,
-   "description": "Tine is an Ethereum savings protocol for wstETH. Depositors earn TINE and can choose a term to share in the pool’s staking yield.",
-   "listed_at": 1795666300
-  },
-  {
-   "id": "popular",
-   "name": "POPULAR",
-   "url": "",
-   "twitter": "popular_sui",
-   "category": "Launchpad",
-   "chains": [
-    "Sui"
-   ],
-   "tvl": 709.1158806448553,
+   "tvl": 1296614.9235906962,
    "audits": "0",
    "audit_links": null,
-   "token_address": "sui:0xf37a4ca45f2e1f14352c24485aa774888ccb6ac969cde3ef3443ba7d9e957bba::pop::POP",
-   "gecko_id": "popular",
-   "description": "Memecoin launchpad and launchpad aggregator on Sui: bonding curves that graduate into Cetus pools with burned LP, plus lending against memecoins.",
-   "listed_at": 1795709538
-  },
-  {
-   "id": "privo",
-   "name": "PRIVO",
-   "url": "",
-   "twitter": "privoexchange",
-   "category": "Perps Aggregator",
-   "chains": [],
-   "tvl": null,
-   "audits": "0",
-   "audit_links": null,
-   "token_address": "robinhood:0xD5eE65798eb4E0528CdF9B6C23b663d8a2276dA0",
+   "token_address": null,
    "gecko_id": null,
-   "description": "PRIVO is a trading layer on Robinhood Chain for tokenized stocks and crypto. It routes spot trades through Uniswap and perps through Orderly, and supports baskets of 2 to 8 stock tokens in one transaction, limit and TWAP orders, and copy trading. Users sign every trade.",
-   "listed_at": 1795711323
+   "description": "Pear Vaults take USDC deposits on HyperEVM and run pair-trading strategies through HyperCore trading accounts, with idle USDC supplied to Hyperliquid Earn.",
+   "listed_at": 1795746843
   },
   {
-   "id": "yeno-perps",
-   "name": "YeNo Perps",
-   "url": "https://yeno.trade",
-   "twitter": "yenomarkets",
-   "category": "Perps Aggregator",
+   "id": "ravn-dex-aggregator",
+   "name": "RAVN DEX Aggregator",
+   "url": "https://ravn.exchange",
+   "twitter": "ravnexchange",
+   "category": "DEX Aggregator",
    "chains": [],
    "tvl": null,
    "audits": "0",
    "audit_links": null,
    "token_address": null,
    "gecko_id": null,
-   "description": "YeNo Perps is YeNo's trading interface for Polymarket Perps perpetual futures, routing orders through YeNo's builder address.",
-   "listed_at": 1795735383
+   "description": "RAVN is a cross-chain execution layer for native Bitcoin, EVM and Solana: one API that finds and executes the best route across bridges, DEXs and aggregators.",
+   "listed_at": 1795746100
+  },
+  {
+   "id": "ravn-bridge-aggregator",
+   "name": "RAVN Bridge Aggregator",
+   "url": "https://ravn.exchange",
+   "twitter": "ravnexchange",
+   "category": "Bridge Aggregator",
+   "chains": [],
+   "tvl": null,
+   "audits": "0",
+   "audit_links": null,
+   "token_address": null,
+   "gecko_id": null,
+   "description": "RAVN is a cross-chain execution layer for native Bitcoin, EVM and Solana: one API that finds and executes the best route across bridges, DEXs and aggregators.",
+   "listed_at": 1795746107
+  },
+  {
+   "id": "carbium",
+   "name": "Carbium",
+   "url": "https://carbium.sh/quote",
+   "twitter": "carbiumio",
+   "category": "DEX Aggregator",
+   "chains": [],
+   "tvl": null,
+   "audits": "0",
+   "audit_links": null,
+   "token_address": null,
+   "gecko_id": null,
+   "description": "Solana DEX aggregator. The Carbium Quote API finds a route across 17 venue families and returns one unsigned transaction for the Carbium Router, which the trader signs with their own wallet.",
+   "listed_at": 1795746112
   }
  ]
 }
