@@ -1,174 +1,90 @@
 {
- "generated_at": "2026-11-28T01:58:59Z",
+ "generated_at": "2026-11-28T10:26:15Z",
  "stats": {
-  "pools": 326,
-  "new": 961,
-  "market_pass": 9,
-  "shortlisted": 7,
-  "young_rechecked": 730,
-  "young_promoted": 0,
+  "pools": 325,
+  "new": 1016,
+  "market_pass": 5,
+  "shortlisted": 3,
+  "young_rechecked": 791,
+  "young_promoted": 1,
   "networks": 221,
   "networks_scanned": 31,
-  "sinks_noise_dropped": 23,
-  "sinks_checked": 254,
-  "new_sinks": 7,
+  "sinks_noise_dropped": 29,
+  "sinks_checked": 276,
+  "new_sinks": 6,
   "onchain_hours": {
    "eth": 4.0,
    "base": 4.0,
    "arbitrum": 0.01,
-   "bsc": 2.19
+   "bsc": 2.31
   },
   "sinks_baseline_run": false,
-  "testnet_hot": 17,
-  "testnet_new": 4,
+  "testnet_hot": 14,
+  "testnet_new": 1,
   "testnets": {
-   "sepolia": 10,
+   "sepolia": 11,
    "base-sepolia": 0,
-   "arbitrum-sepolia": 0,
+   "arbitrum-sepolia": 1,
    "optimism-sepolia": 0,
    "bsc-testnet": 0,
    "monad-testnet": 0,
    "linea-sepolia": 0,
    "scroll-sepolia": "fail",
-   "eth-hoodi": 4,
+   "eth-hoodi": 1,
    "unichain-sepolia": 0,
    "zksync-sepolia": 0,
-   "mantle-sepolia": 1,
+   "mantle-sepolia": 0,
    "blast-sepolia": "fail",
    "ink-sepolia": 0,
    "berachain-bepolia": 0,
    "abstract-testnet": 0,
    "sonic-testnet": "fail",
    "megaeth-testnet": 0,
-   "polygon-amoy": 2,
+   "polygon-amoy": 1,
    "avalanche-fuji": 0,
    "sui-testnet": "fail",
    "aptos-testnet": 0,
    "solana-devnet": 0,
    "solana-testnet": 0
   },
-  "mints_hot": 10,
-  "mints_new": 1,
+  "mints_hot": 12,
+  "mints_new": 4,
   "mints_chains_ok": 19,
   "mints_chains": 38,
-  "outcome_snapshots": 37
+  "outcome_snapshots": 33
  },
  "tokens": [
   {
-   "score": 76,
-   "warnings": [],
-   "market": {
-    "network": "solana",
-    "pool": "Br6X4CcmyiJ3Sfi5p66Arx5P1euPQrG9wGt7RknjLq83",
-    "name": "Memeball / SOL",
-    "token": "9G9Ssh55SZEoniFjMrMefug9fBy67bUvHzWAxb5Ypump",
-    "dex": "pumpswap",
-    "created_at": "2026-11-28T00:26:54Z",
-    "liquidity_usd": 58943.4883,
-    "fdv_usd": 674485.624641649,
-    "mcap_usd": null,
-    "vol_24h": 539370.645906242,
-    "buys_24h": 27125,
-    "sells_24h": 5803,
-    "buyers_24h": 9882,
-    "price_chg_24h": 1083.699
-   },
-   "info": {
-    "symbol": "Memeball",
-    "websites": [
-     "https://www.memeball.fun"
-    ],
-    "twitter": "Memeballfun",
-    "telegram": "memeballfun",
-    "discord": null,
-    "description": "Every holder makes the Memeball bigger.",
-    "gt_score": 55.688311688311686,
-    "holder_count": 9735,
-    "top10_pct": 8.7073
-   },
-   "security": {
-    "source": "goplus-sol",
-    "ok": true,
-    "mintable": false,
-    "freezable": false,
-    "closable": false,
-    "balance_mutable": false,
-    "non_transferable": false
-   }
-  },
-  {
-   "score": 76,
-   "warnings": [],
-   "market": {
-    "network": "solana",
-    "pool": "DkNJBoh2KngPNumX5BdEakmpX2fYPNu57xZFn6C2dRE1",
-    "name": "MoonBoy / SPCX",
-    "token": "GXjSWDoMQkDEbhon9ALxz8chUUsVKg3x8V3NajjDpump",
-    "dex": "pumpswap",
-    "created_at": "2026-11-27T20:39:24Z",
-    "liquidity_usd": 54499.8686,
-    "fdv_usd": 315969.054328894,
-    "mcap_usd": null,
-    "vol_24h": 3772373.60746207,
-    "buys_24h": 40009,
-    "sells_24h": 30428,
-    "buyers_24h": 9365,
-    "price_chg_24h": 20.468
-   },
-   "info": {
-    "symbol": "MoonBoy",
-    "websites": [
-     "https://moonboy.meme"
-    ],
-    "twitter": "MoonBoySPCX",
-    "telegram": "MoonBoySPCX",
-    "discord": null,
-    "description": "One small step for MoonBoy\nOne giant leap for indie art ",
-    "gt_score": 45.298701298701296,
-    "holder_count": 3888,
-    "top10_pct": 21.653
-   },
-   "security": {
-    "source": "goplus-sol",
-    "ok": true,
-    "mintable": false,
-    "freezable": false,
-    "closable": false,
-    "balance_mutable": false,
-    "non_transferable": false
-   }
-  },
-  {
    "score": 74,
    "warnings": [],
    "market": {
     "network": "solana",
-    "pool": "D4jQFsqhW5a1D8HmtSG1Q6giaAYpwthnqroigoQZyQbW",
-    "name": "MEMECARD / SOL",
-    "token": "8sAxwsNzhRj6LF5npy1HtPir94TzSgP1QaczUmGcpump",
+    "pool": "G57CFXEDFWpUSMyURZZsjYCKZykXrmU6CSxFZaoJGoT7",
+    "name": "BITCOINU / SOL",
+    "token": "ATbAsdCwrhhVg23DRnWpjqx6kx7ivoK5o8ysNmu1pump",
     "dex": "pumpswap",
-    "created_at": "2026-11-27T17:21:28Z",
-    "liquidity_usd": 86045.4412,
-    "fdv_usd": 1264428.27692186,
+    "created_at": "2026-11-28T04:47:16Z",
+    "liquidity_usd": 76783.2457,
+    "fdv_usd": 1130216.15355235,
     "mcap_usd": null,
-    "vol_24h": 2544384.42271595,
-    "buys_24h": 58817,
-    "sells_24h": 30242,
-    "buyers_24h": 10042,
-    "price_chg_24h": 212.544
+    "vol_24h": 1455761.53249532,
+    "buys_24h": 63000,
+    "sells_24h": 34766,
+    "buyers_24h": 7447,
+    "price_chg_24h": 3083.287
    },
    "info": {
-    "symbol": "MEMECARD",
+    "symbol": "BITCOINU",
     "websites": [
-     "https://x.com/ownthedoge/status/2126341448056344636"
+     "https://thebitcoinu.site"
     ],
-    "twitter": "ownthedoge/status/2126341448056344636",
+    "twitter": "thebitcoinu",
     "telegram": null,
     "discord": null,
-    "description": "Meme Card",
+    "description": "Deep in the cave, Bitcoin Inu is mining the future—one glowing block at a time. ⛏️🐕🟠",
     "gt_score": 55.06493506493507,
-    "holder_count": 6056,
-    "top10_pct": 17.2315
+    "holder_count": 5698,
+    "top10_pct": 14.2069
    },
    "security": {
     "source": "goplus-sol",
@@ -181,36 +97,34 @@
    }
   },
   {
-   "score": 74,
+   "score": 67,
    "warnings": [],
    "market": {
     "network": "solana",
-    "pool": "CdwPvwthMm9BxmWjrv3BH17TrBT1tuLoYTcx86xnY1wB",
-    "name": "MAYA / SOL",
-    "token": "H2PjSbA2365uxBUJ3EBePSm67AYPuRMgcyswBnrVpump",
+    "pool": "46973pyxHLtcjiZYtMZaQTYQji6yaxHTHqhqoc74VwCB",
+    "name": "WLFI / SOL",
+    "token": "HmGQsYJyeiWrV6jABUY2Cb3bEmVxwk6LzVxCchsCpump",
     "dex": "pumpswap",
-    "created_at": "2026-11-27T21:04:10Z",
-    "liquidity_usd": 82932.9273,
-    "fdv_usd": 1240273.75406676,
+    "created_at": "2026-11-28T04:45:10Z",
+    "liquidity_usd": 44456.2076,
+    "fdv_usd": 330543.964584228,
     "mcap_usd": null,
-    "vol_24h": 1877727.95033542,
-    "buys_24h": 56652,
-    "sells_24h": 19030,
-    "buyers_24h": 10795,
-    "price_chg_24h": 459.722
+    "vol_24h": 2140175.9333215,
+    "buys_24h": 32122,
+    "sells_24h": 23604,
+    "buyers_24h": 6633,
+    "price_chg_24h": 1088.769
    },
    "info": {
-    "symbol": "MAYA",
-    "websites": [
-     "https://mayasite.lol"
-    ],
-    "twitter": "mayasol_x",
+    "symbol": "WLFI",
+    "websites": [],
+    "twitter": "LuckiWeb3/status/2126536570404475079",
     "telegram": null,
     "discord": null,
-    "description": "Maya The Samoyed - $MAYA Born in Germany. Raised by Lingli Ye. Destined to farm memes across every timeline.",
-    "gt_score": 57.14285714285715,
-    "holder_count": 9532,
-    "top10_pct": 8.2469
+    "description": "Deployed using https://j7tracker.io",
+    "gt_score": 44.05194805194805,
+    "holder_count": 2335,
+    "top10_pct": 27.6398
    },
    "security": {
     "source": "goplus-sol",
@@ -223,120 +137,38 @@
    }
   },
   {
-   "score": 61,
+   "score": 65,
    "warnings": [
     "no_security_data"
    ],
    "market": {
     "network": "solana",
-    "pool": "3VrhjGEaG6ixPT58R3G1riM7ZCGUVSZijLhktnRCz1kv",
-    "name": "Zhaki / SOL",
-    "token": "2YAfPhCrGSW82Ra33sWgurXt4dQ29SwXusvUXdJGpump",
+    "pool": "88T4NHVEEieMQ4LFxa2Juew2VcnBkzyDueFgsfrR2VLG",
+    "name": "Vicewire / SOL",
+    "token": "viCEWiReoWxwmRRfGmWmpP1FFdB8Jm8PzZChVJ9dvg6",
     "dex": "pumpswap",
-    "created_at": "2026-11-27T12:54:48Z",
-    "liquidity_usd": 30612.4182,
-    "fdv_usd": 162712.8303,
+    "created_at": "2026-11-28T00:45:27Z",
+    "liquidity_usd": 22651.2081,
+    "fdv_usd": 95286.40461,
     "mcap_usd": null,
-    "vol_24h": 1427895.11889573,
-    "buys_24h": 15948,
-    "sells_24h": 12456,
-    "buyers_24h": 4437,
-    "price_chg_24h": 500.58
+    "vol_24h": 1000060.49223221,
+    "buys_24h": 16554,
+    "sells_24h": 13352,
+    "buyers_24h": 3762,
+    "price_chg_24h": 208.372
    },
    "info": {
-    "symbol": "Zhaki",
-    "websites": [],
-    "twitter": "h20hank",
+    "symbol": "Vicewire",
+    "websites": [
+     "https://github.com/VicewireLabs/vicewire"
+    ],
+    "twitter": "playvicewire",
     "telegram": null,
     "discord": null,
-    "description": "The viral baboon getting so famous widely ",
-    "gt_score": 48.20779220779221,
-    "holder_count": 1130,
-    "top10_pct": 31.8887
-   },
-   "security": {
-    "source": "goplus-sol",
-    "ok": false,
-    "mintable": false,
-    "freezable": false,
-    "closable": false,
-    "balance_mutable": false,
-    "non_transferable": false
-   }
-  },
-  {
-   "score": 54,
-   "warnings": [
-    "no_security_data"
-   ],
-   "market": {
-    "network": "solana",
-    "pool": "FzMbNnGZJqo1pfBSkkirwEGoR6qSoXwtf6a65sJYFqqA",
-    "name": "DAW / SOL",
-    "token": "6QYQFBgrMGmXXzcSrhAt9qJtcnF5AKtxXV39MfWRwK2B",
-    "dex": "meteora-damm-v2",
-    "created_at": "2026-11-28T02:07:29Z",
-    "liquidity_usd": 27474.371,
-    "fdv_usd": 14534.85592,
-    "mcap_usd": null,
-    "vol_24h": 26022.3574120753,
-    "buys_24h": 220,
-    "sells_24h": 67,
-    "buyers_24h": 193,
-    "price_chg_24h": 7.169
-   },
-   "info": {
-    "symbol": "DAW",
-    "websites": [],
-    "twitter": "ddddddd8a/status/2126497863060328495",
-    "telegram": null,
-    "discord": null,
-    "description": "",
-    "gt_score": 9.392207792207792,
-    "holder_count": null,
-    "top10_pct": null
-   },
-   "security": {
-    "source": "goplus-sol",
-    "ok": false,
-    "mintable": false,
-    "freezable": false,
-    "closable": false,
-    "balance_mutable": false,
-    "non_transferable": false
-   }
-  },
-  {
-   "score": 53,
-   "warnings": [
-    "no_security_data"
-   ],
-   "market": {
-    "network": "solana",
-    "pool": "9RUk2WDbFzRxjJBUN5JLg5p1Qs8KFjJBHbaQsmjdXcRR",
-    "name": "DAW / SOL",
-    "token": "GjVAHVZtJCw8gb2fq4tutcvFVX5G2fJ2wZari2Jht7LF",
-    "dex": "meteora-damm-v2",
-    "created_at": "2026-11-28T02:07:37Z",
-    "liquidity_usd": 30668.9208,
-    "fdv_usd": 16672.4801066725,
-    "mcap_usd": null,
-    "vol_24h": 53693.6518002952,
-    "buys_24h": 177,
-    "sells_24h": 94,
-    "buyers_24h": 143,
-    "price_chg_24h": 16.569
-   },
-   "info": {
-    "symbol": "DAW",
-    "websites": [],
-    "twitter": "ddddddd8a/status/2126497863060328495",
-    "telegram": null,
-    "discord": null,
-    "description": "",
-    "gt_score": 13.381818181818181,
-    "holder_count": null,
-    "top10_pct": null
+    "description": "Vicewire is a custom build of GTA VI for PC. real SOL powers the in-game economy, and payments settle on-chain.",
+    "gt_score": 49.24675324675325,
+    "holder_count": 1061,
+    "top10_pct": 32.9214
    },
    "security": {
     "source": "goplus-sol",
@@ -352,14 +184,69 @@
  "new_sinks": [
   {
    "chain": "eth",
-   "address": "0x069662d2588fcac24b5c209456db965d151556f0",
-   "inflow_usd": 4050062,
-   "block_7d": 26460505,
-   "name": "Apyx USDC",
-   "symbol": "ApyxUSDC",
+   "address": "0x65123913ed9eb531d5d0dca7f90349483c86a259",
+   "inflow_usd": 113156284,
+   "block_7d": 26462856,
+   "name": "",
+   "symbol": "",
+   "code_bytes": 13686,
+   "decimals": 0,
+   "total_supply": 0.0,
+   "code_hash": "e18f4355c0acebe9",
+   "features": [
+    "erc20",
+    "vault_4626",
+    "owner"
+   ],
+   "kind": "vault"
+  },
+  {
+   "chain": "eth",
+   "address": "0x6c26793c7f1e2785c09b460676e797b716f0bc8e",
+   "inflow_usd": 113156255,
+   "block_7d": 26462856,
+   "name": "Keyrock USDC",
+   "symbol": "kUSDC",
+   "code_bytes": 19730,
+   "decimals": 18,
+   "total_supply": 42790.53462073068,
+   "code_hash": "477ed9adca2491f2",
+   "features": [
+    "erc20",
+    "vault_4626",
+    "owner"
+   ],
+   "kind": "vault"
+  },
+  {
+   "chain": "eth",
+   "address": "0x0cc65147bf7f615a8dd9e78e2c53158f8e01754d",
+   "inflow_usd": 8935000,
+   "block_7d": 26462856,
+   "name": "",
+   "symbol": "",
+   "code_bytes": 1107,
+   "decimals": 0,
+   "total_supply": 0.0,
+   "proxy_impl": "0x0000000615b2771511daa693ac07be5622869e01",
+   "code_hash": "042418c530d19a2c",
+   "features": [
+    "erc20",
+    "vault_4626",
+    "public_mint"
+   ],
+   "kind": "vault"
+  },
+  {
+   "chain": "eth",
+   "address": "0xbeeff2c5bf38f90e3482a8b19f12e5a6d2fca757",
+   "inflow_usd": 4725001,
+   "block_7d": 26462856,
+   "name": "Steakhouse High Yield USDC",
+   "symbol": "bbqUSDC",
    "code_bytes": 21808,
    "decimals": 18,
-   "total_supply": 5261132.639683931,
+   "total_supply": 32560128.115528923,
    "code_hash": "80c0341311dfa607",
    "features": [
     "erc20",
@@ -370,99 +257,37 @@
   },
   {
    "chain": "eth",
-   "address": "0x49877d937b9a00d50557bdc3d87287b5c3a4c256",
-   "inflow_usd": 3394134,
-   "block_7d": 26460505,
+   "address": "0x8feab81d36e7576107d5de0758c1b839be31b4f6",
+   "inflow_usd": 2397809,
+   "block_7d": 26462856,
    "name": "",
    "symbol": "",
-   "code_bytes": 6980,
+   "code_bytes": 13322,
    "decimals": 0,
    "total_supply": 0.0,
-   "code_hash": "0bcef8d9d4d0cf21",
+   "code_hash": "232dad7956df64da",
    "features": [
-    "erc20",
-    "public_mint",
+    "owner",
     "pausable"
    ],
-   "kind": "token_public_mint"
+   "kind": "other"
   },
   {
-   "chain": "eth",
-   "address": "0xac21b22b5aeb11bc32de4ecf59e4538fca48b694",
-   "inflow_usd": 3202114,
-   "block_7d": 26460505,
+   "chain": "bsc",
+   "address": "0xe9e8573bb351da16c6ee7ddac0cbc70b7f9784ae",
+   "inflow_usd": 503798,
+   "block_7d": 134872668,
    "name": "",
    "symbol": "",
-   "code_bytes": 9952,
+   "code_bytes": 2739,
    "decimals": 0,
    "total_supply": 0.0,
-   "code_hash": "f4eebdf75d864e60",
+   "proxy_impl": "0x8d5e94c1eaae7d71ed4fcba2402e6b03380354f8",
+   "code_hash": "ef28d575592e4ff7",
    "features": [
     "erc20",
     "vault_4626",
     "pausable"
-   ],
-   "kind": "vault"
-  },
-  {
-   "chain": "eth",
-   "address": "0x585429b66cd69a2021267918aff8a775b9df6424",
-   "inflow_usd": 2701500,
-   "block_7d": 26460505,
-   "name": "",
-   "symbol": "",
-   "code_bytes": 11784,
-   "decimals": 0,
-   "total_supply": 0.0,
-   "code_hash": "d64144180c4b2076",
-   "features": [
-    "vault_4626"
-   ],
-   "kind": "vault"
-  },
-  {
-   "chain": "eth",
-   "address": "0x536164d4060542c910f3ce98946d31278f6799d3",
-   "inflow_usd": 2045731,
-   "block_7d": 26460505,
-   "name": "",
-   "symbol": "",
-   "code_bytes": 22881,
-   "decimals": 0,
-   "total_supply": 0.0,
-   "code_hash": "6a4a63867da5a1fe",
-   "features": [],
-   "kind": "other"
-  },
-  {
-   "chain": "eth",
-   "address": "0xe9c19e5bd10e5096519fe1d2a9d783f79b8211da",
-   "inflow_usd": 1919820,
-   "block_7d": 26460505,
-   "name": "",
-   "symbol": "",
-   "code_bytes": 20024,
-   "decimals": 0,
-   "total_supply": 0.0,
-   "code_hash": "500543439eba25e9",
-   "features": [],
-   "kind": "other"
-  },
-  {
-   "chain": "eth",
-   "address": "0xbc65ad17c5c0a2a4d159fa5a503f4992c7b545fe",
-   "inflow_usd": 1889615,
-   "block_7d": 26460505,
-   "name": "Spark USDC Vault",
-   "symbol": "sUSDC",
-   "code_bytes": 163,
-   "decimals": 18,
-   "total_supply": 75181656.78651309,
-   "proxy_impl": "0xf943cb8d5f06f2bbf352878ebef3ec5c537a20ba",
-   "code_hash": "af776564ec38c02b",
-   "features": [
-    "erc20",
-    "vault_4626"
    ],
    "kind": "vault"
   }
@@ -470,50 +295,66 @@
  "new_testnet": [
   {
    "testnet": "sepolia",
-   "address": "0x7a138fe1645add8a473925e76882b9c649ec3007",
-   "users_sample": 98,
-   "txs_sample": 206,
-   "explorer": "https://sepolia.etherscan.io/address/0x7a138fe1645add8a473925e76882b9c649ec3007",
-   "chainid": 11155111
-  },
-  {
-   "testnet": "sepolia",
-   "address": "0x2bf190e7f6c882bb028ef08e25bbda90d1b3a0d5",
-   "users_sample": 87,
-   "txs_sample": 183,
-   "explorer": "https://sepolia.etherscan.io/address/0x2bf190e7f6c882bb028ef08e25bbda90d1b3a0d5",
-   "chainid": 11155111
-  },
-  {
-   "testnet": "sepolia",
-   "address": "0x5a4378e2aceb600379bb33457020cf59d4dc0955",
-   "users_sample": 56,
-   "txs_sample": 91,
-   "explorer": "https://sepolia.etherscan.io/address/0x5a4378e2aceb600379bb33457020cf59d4dc0955",
-   "chainid": 11155111
-  },
-  {
-   "testnet": "sepolia",
-   "address": "0xca74fb172b01d5769179b5b2f73b7814456a1a2a",
-   "users_sample": 42,
-   "txs_sample": 52,
-   "explorer": "https://sepolia.etherscan.io/address/0xca74fb172b01d5769179b5b2f73b7814456a1a2a",
+   "address": "0xfb43511834702ebd5be41a7469ab97109130b316",
+   "users_sample": 25,
+   "txs_sample": 66,
+   "explorer": "https://sepolia.etherscan.io/address/0xfb43511834702ebd5be41a7469ab97109130b316",
    "chainid": 11155111
   }
  ],
  "new_mints": [
   {
-   "chain": "monad",
-   "address": "0x4951618365a50ae1938eefd6ebde510ca2fc56ac",
-   "mints": 26,
-   "recipients": 26,
+   "chain": "ink",
+   "address": "0xe0eddf1cbcf29eaac2f6a9ee10b1053a17d408f8",
+   "mints": 135,
+   "recipients": 135,
    "std": "erc721",
-   "block_7d": 124017479,
-   "name": "Quantum Array Prime",
-   "symbol": "QUAP",
+   "block_7d": 61759584,
+   "name": "SYNTINK",
+   "symbol": "SYNK",
+   "code_bytes": 6973,
+   "decimals": 0,
+   "total_supply": 135.0,
+   "code_hash": "45630e2649f9c04d",
+   "features": [
+    "erc20",
+    "erc721",
+    "public_mint",
+    "owner"
+   ],
+   "kind": "nft"
+  },
+  {
+   "chain": "ink",
+   "address": "0xc0836e5b058bbe22ae2266e1ac488a1a0fd8dce8",
+   "mints": 83,
+   "recipients": 73,
+   "std": "erc721",
+   "block_7d": 61759584,
+   "name": "Uniswap V3 Positions NFT-V1",
+   "symbol": "UNI-V3-POS",
+   "code_bytes": 24384,
+   "decimals": 0,
+   "total_supply": 66421.0,
+   "code_hash": "1f84a0221ac54bc3",
+   "features": [
+    "erc20",
+    "erc721"
+   ],
+   "kind": "nft"
+  },
+  {
+   "chain": "monad",
+   "address": "0x8df9814adabcc2bb9adcb868ea6c679ef504b2e7",
+   "mints": 41,
+   "recipients": 41,
+   "std": "erc721",
+   "block_7d": 124124509,
+   "name": "Apex Conduit Prime",
+   "symbol": "ACPR",
    "code_bytes": 20731,
    "decimals": 0,
-   "total_supply": 30.0,
+   "total_supply": 70.0,
    "code_hash": "f76f2f48b59e6349",
    "features": [
     "erc20",
@@ -521,55 +362,28 @@
     "pausable"
    ],
    "kind": "nft"
+  },
+  {
+   "chain": "megaeth-testnet",
+   "address": "0x88d28c10e2ed0df335e955ac80ecc0b12fc5b608",
+   "mints": 120,
+   "recipients": 120,
+   "std": "erc20",
+   "block_7d": 35547638,
+   "age": "<7d",
+   "name": "Tether USD (local)",
+   "symbol": "USDT",
+   "code_bytes": 2329,
+   "decimals": 6,
+   "total_supply": 38400000.0,
+   "code_hash": "8c49de3f17bd1d71",
+   "features": [
+    "erc20",
+    "public_mint",
+    "owner"
+   ],
+   "kind": "token_public_mint"
   }
  ],
- "new_protocols": [
-  {
-   "id": "stoxes.fun",
-   "name": "Stoxes.fun",
-   "url": "",
-   "twitter": "Stoxesfun",
-   "category": "Launchpad",
-   "chains": [
-    "Binance"
-   ],
-   "tvl": 10068.042531022156,
-   "audits": null,
-   "audit_links": null,
-   "token_address": "bsc:0x95c7bd108fd67ae14705577ead2361c3abfb9999",
-   "gecko_id": null,
-   "description": "Stoxes.fun is a BNB Chain launchpad for tokenized-stock and RWA projects. Tokens launch on a bonding curve quoted in BNB or Binance tokenized stocks (bStocks such as BNCB, NVDAB, SPCXB, ANTB) and graduate to PancakeSwap.",
-   "listed_at": 1795773487
-  },
-  {
-   "id": "wallet-v-aster",
-   "name": "Wallet V Aster",
-   "url": "https://walletv.io/",
-   "twitter": "WalletV_io",
-   "category": "Interface",
-   "chains": [],
-   "tvl": null,
-   "audits": "0",
-   "audit_links": null,
-   "token_address": null,
-   "gecko_id": null,
-   "description": "Trade Aster perps through Wallet V, a self-custodial all-in-one wallet with AI agent trading.",
-   "listed_at": 1795824559
-  },
-  {
-   "id": "guave",
-   "name": "Guave",
-   "url": "",
-   "twitter": "guavetrade",
-   "category": "DEX Aggregator",
-   "chains": [],
-   "tvl": null,
-   "audits": "0",
-   "audit_links": null,
-   "token_address": null,
-   "gecko_id": null,
-   "description": "Guave is a DEX aggregator that charges a flat ETH fee per swap, set by trade-size tier, and routes trades through KyberSwap's MetaRouter.",
-   "listed_at": 1795824917
-  }
- ]
+ "new_protocols": []
 }
